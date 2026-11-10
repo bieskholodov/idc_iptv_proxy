@@ -38,8 +38,8 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         cookie_jar=cookie_jar,
         headers={
             "User-Agent": "Mozilla/5.0 (SmartHub; SMART-TV; U; Linux/SmartTV) AppleWebKit/537.42",
-            "Referer": "https://idc.md",
-            "Origin": "https://idc.md",
+            "Referer": "https://iptv.idc.md/",
+            "Origin": "https://iptv.idc.md",
             "X-Requested-With": "XMLHttpRequest",
         },
     )
@@ -62,7 +62,6 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             session.cookie_jar.clear()
 
     async def _login_and_get_token() -> tuple[str | None, str]:
-        # Сначала пытаемся корректно закрыть предыдущую сессию
         await _logout()
 
         url = f"https://{host}/api/json/login"
@@ -76,14 +75,28 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             text = await resp.text()
             data = await resp.json(content_type=None)
 
-        token = (
-            data.get("ss")
-            or data.get("sid")
-            or data.get("token")
-            or (data.get("settings", {}).get("ss") if isinstance(data.get("settings"), dict) else None)
+        _LOGGER.warning(
+            "Ответ API при входе (keys=%s): %s",
+            list(data.keys()) if isinstance(data, dict) else type(data),
+            text[:400],
         )
+
+        token = None
+        if isinstance(data, dict):
+            token = (
+                data.get("ss")
+                or data.get("sid")
+                or data.get("token")
+                or (
+                    data.get("settings", {}).get("ss")
+                    if isinstance(data.get("settings"), dict)
+                    else None
+                )
+            )
         if not token:
-            match = re.search(r'"(?:ss|sid|token)"\s*:\s*"([a-f0-9]{32})"', text, re.IGNORECASE)
+            match = re.search(
+                r'"(?:ss|sid|token)"\s*:\s*"([a-f0-9]{32})"', text, re.IGNORECASE
+            )
             if match:
                 token = match.group(1)
 
@@ -91,7 +104,12 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         all_domains = re.findall(r"(iptv-[a-z0-9-]+\.idc\.md)", text, re.IGNORECASE)
         stream_domains = [d for d in all_domains if not d.startswith("iptvn.")]
         if stream_domains:
-            domain = stream_domains
+            domain = stream_domains[0]
+            _LOGGER.warning(
+                "Найден стриминговый домен в API: %s (все найденные: %s)",
+                domain,
+                set(all_domains),
+            )
 
         return token, domain
 
@@ -100,12 +118,21 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         test_url = f"https://{domain}/hls/2/live1.m3u8?ss={token}"
         try:
             async with session.get(test_url, timeout=10) as resp:
-                if resp.status == 200:
-                    body = await resp.text()
-                    if "#EXTM3U" in body and ("#EXTINF" in body or ".ts" in body or "live" in body):
-                        return True
-        except Exception:
-            pass
+                body = await resp.text()
+                if (
+                    resp.status == 200
+                    and "#EXTM3U" in body
+                    and ("#EXTINF" in body or ".ts" in body or "live" in body)
+                ):
+                    return True
+                _LOGGER.warning(
+                    "Детали отказа стрима %s: HTTP статус = %s, тело ответа = %s",
+                    test_url,
+                    resp.status,
+                    body[:250],
+                )
+        except Exception as err:
+            _LOGGER.warning("Ошибка соединения со стримом %s: %s", test_url, err)
         return False
 
     async def _async_update_data():
@@ -113,8 +140,12 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             current_token = state["token"]
             current_domain = state["domain"]
 
-            if current_token and await _keep_session_alive(current_domain, current_token):
-                _LOGGER.debug("Сессия IDC активна, токен %s*** работает", current_token[:6])
+            if current_token and await _keep_session_alive(
+                current_domain, current_token
+            ):
+                _LOGGER.debug(
+                    "Сессия IDC активна, токен %s*** работает", current_token[:6]
+                )
                 return state
 
             _LOGGER.info("Запрашиваю новую сессию IDC IPTV...")
@@ -125,7 +156,8 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             is_valid = await _keep_session_alive(new_domain, new_token)
             if not is_valid:
                 _LOGGER.warning(
-                    "Слот устройства все еще занят другим клиентом. Повторю попытку в следующем цикле."
+                    "Слот устройства занят или стрим отклонил токен %s***. Повторю попытку в следующем цикле.",
+                    new_token[:6],
                 )
                 return state
 
@@ -173,7 +205,7 @@ def _update_playlist_file(
     if not os.path.exists(template_path):
         default_template = (
             "#EXTM3U\n"
-            '#EXTINF:-1 tvg-id="2" tvg-logo="https://idc.md" group-title="Общий",ТСВ\n'
+            '#EXTINF:-1 tvg-id="2" tvg-logo="https://iptvn.idc.md/img/ico/png/2_512.png" group-title="Общий",ТСВ\n'
             f"https://{new_domain}/hls/2/live1.m3u8?ss={new_token}\n"
         )
         os.makedirs(os.path.dirname(template_path), exist_ok=True)
