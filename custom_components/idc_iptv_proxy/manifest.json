@@ -1,12 +1,12 @@
 {
-  "domain": "huawei_wap_tracker",
-  "name": "Huawei WAP Control",
+  "domain": "idc_iptv_proxy",
+  "name": "IDC IPTV Proxy",
   "codeowners": ["@bieskholodov"],
   "config_flow": true,
-  "dependencies": [],
   "documentation": "https://github.com/bieskholodov/Huawei-HS8545M",
-  "iot_class": "local_polling",
-  "issue_tracker": "https://github.com/bieskholodov/Huawei-HS8545M/issues",
-  "version": "3.0.7"
+  "iot_class": "cloud_polling",
+  "requirements": ["aiohttp"],
+  "version": "1.0.0"
 }
+
 
