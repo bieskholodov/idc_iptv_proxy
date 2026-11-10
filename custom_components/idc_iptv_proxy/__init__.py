@@ -166,7 +166,6 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         """Продлеваем сессию на портале и проверяем доступность HLS-потока (канал 2 - ТСВ)."""
         headers = {"Cookie": f"{sid_name}={token}"}
 
-        # 1. Если найден рабочий эндпоинт API — дергаем его для продления сессии на портале
         if state["keepalive_endpoint"]:
             try:
                 async with session.get(
@@ -183,7 +182,6 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             except Exception as api_err:
                 _LOGGER.debug("Ошибка keep-alive запроса к API: %s", api_err)
 
-        # 2. Проверяем сам видеопоток
         test_url = f"https://{domain}/hls/2/live1.m3u8?ss={token}"
         try:
             async with session.get(test_url, headers=headers, timeout=10) as resp:
@@ -280,3 +278,4 @@ def _update_playlist_file(
 ) -> None:
     if not os.path.exists(template_path):
         default_template = (
+            "#EXTM3U\n"
