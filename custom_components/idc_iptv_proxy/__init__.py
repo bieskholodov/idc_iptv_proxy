@@ -2,7 +2,6 @@ from datetime import timedelta
 import logging
 import os
 import re
-import socket
 
 import aiohttp
 from homeassistant.config_entries import ConfigEntry
@@ -30,99 +29,27 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     host = entry.data.get(CONF_HOST, DEFAULT_HOST)
     login = entry.data[CONF_LOGIN]
     password = entry.data[CONF_PASSWORD]
-    interval = min(entry.data.get(CONF_INTERVAL, DEFAULT_INTERVAL), 30)
+    interval = entry.data.get(CONF_INTERVAL, DEFAULT_INTERVAL)
     template_path = entry.data.get(CONF_TEMPLATE_PATH, DEFAULT_TEMPLATE_PATH)
     output_path = entry.data.get(CONF_OUTPUT_PATH, DEFAULT_OUTPUT_PATH)
 
-    connector = aiohttp.TCPConnector(
-        resolver=aiohttp.ThreadedResolver(),
-        family=socket.AF_INET,
-        ssl=False,
-    )
+    # Выделенная сессия с cookie_jar, чтобы сервер IDC видел постоянный онлайн-клиент
     cookie_jar = aiohttp.CookieJar(unsafe=True)
     session = aiohttp.ClientSession(
-        connector=connector,
         cookie_jar=cookie_jar,
         headers={
             "User-Agent": "Mozilla/5.0 (SmartHub; SMART-TV; U; Linux/SmartTV) AppleWebKit/537.42",
-            "Referer": "https://iptv.idc.md/",
-            "Origin": "https://iptv.idc.md",
-            "X-Requested-With": "XMLHttpRequest",
+            "Referer": "https://web.iptv.idc.md/",
+            "Origin": "https://web.iptv.idc.md",
         },
     )
 
     state = {
         "token": None,
-        "sid_name": "SSID",
         "domain": "iptv-live.idc.md",
-        "keepalive_endpoint": None,
     }
 
-    async def _logout() -> None:
-        """Закрываем текущую сессию на сервере, чтобы освободить слот устройства."""
-        try:
-            logout_url = f"https://{host}/api/json/logout"
-            params = {"ss": state["token"]} if state["token"] else {}
-            headers = (
-                {"Cookie": f"{state['sid_name']}={state['token']}"}
-                if state["token"]
-                else {}
-            )
-            async with session.get(logout_url, params=params, headers=headers, timeout=5):
-                pass
-        except Exception:
-            pass
-        finally:
-            session.cookie_jar.clear()
-
-    async def _discover_api_and_domain(token: str, sid_name: str) -> tuple[str | None, str]:
-        """Находим рабочий метод API (для keep-alive) и актуальный стриминговый домен."""
-        headers = {"Cookie": f"{sid_name}={token}"}
-        candidates = [
-            "channel_list",
-            "tv_channel_list",
-            "channels",
-            "get_epg_current",
-            "account_info",
-        ]
-        found_endpoint = state["keepalive_endpoint"]
-        found_domain = state["domain"]
-
-        for func_name in candidates:
-            url = f"https://{host}/api/json/{func_name}"
-            try:
-                async with session.get(
-                    url,
-                    params={"ss": token},
-                    headers=headers,
-                    timeout=8,
-                ) as resp:
-                    if resp.status == 200:
-                        text = await resp.text()
-                        if '"code":14' not in text and "Unknown API function" not in text:
-                            found_endpoint = func_name
-                            domains = re.findall(
-                                r"(iptv-[a-z0-9-]+\.idc\.md)", text, re.IGNORECASE
-                            )
-                            stream_domains = [
-                                d for d in domains if not d.lower().startswith("iptvn.")
-                            ]
-                            if stream_domains:
-                                found_domain = stream_domains
-                            _LOGGER.info(
-                                "Найден рабочий метод API IDC: %s (домен стрима: %s)",
-                                found_endpoint,
-                                found_domain,
-                            )
-                            break
-            except Exception:
-                continue
-
-        return found_endpoint, found_domain
-
-    async def _login_and_get_token() -> tuple[str | None, str, str]:
-        await _logout()
-
+    async def _login_and_get_token() -> tuple[str | None, str]:
         url = f"https://{host}/api/json/login"
         params = {
             "login": login,
@@ -134,109 +61,61 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             text = await resp.text()
             data = await resp.json(content_type=None)
 
-        token = None
-        sid_name = "SSID"
-        if isinstance(data, dict):
-            sid_name = data.get("sid_name") or "SSID"
-            token = (
-                data.get("sid")
-                or data.get("ss")
-                or data.get("token")
-                or (
-                    data.get("settings", {}).get("ss")
-                    if isinstance(data.get("settings"), dict)
-                    else None
-                )
-            )
+        # Ищем 32-символьный hex-токен ss в JSON-ответе (независимо от вложенности)
+        token = (
+            data.get("ss")
+            or data.get("sid")
+            or data.get("token")
+            or (data.get("settings", {}).get("ss") if isinstance(data.get("settings"), dict) else None)
+        )
         if not token:
-            match = re.search(
-                r'"(?:sid|ss|token)"\s*:\s*"([a-f0-9]{32})"', text, re.IGNORECASE
-            )
+            match = re.search(r'"(?:ss|sid|token)"\s*:\s*"([a-f0-9]{32})"', text, re.IGNORECASE)
             if match:
                 token = match.group(1)
 
+        # Ищем актуальный стриминговый поддомен (например, iptv-live.idc.md, iptv-live4.idc.md, iptv-nlive1.idc.md)
         domain = state["domain"]
-        if token:
-            endpoint, domain = await _discover_api_and_domain(token, sid_name)
-            state["keepalive_endpoint"] = endpoint
+        domain_match = re.search(r"(iptv-[a-z0-9-]+\.idc\.md)", text, re.IGNORECASE)
+        if domain_match:
+            domain = domain_match.group(1)
 
-        return token, sid_name, domain
+        return token, domain
 
-    async def _keep_session_alive(domain: str, token: str, sid_name: str) -> bool:
-        """Продлеваем сессию на портале и проверяем доступность HLS-потока (канал 2 - ТСВ)."""
-        headers = {"Cookie": f"{sid_name}={token}"}
-
-        if state["keepalive_endpoint"]:
-            try:
-                async with session.get(
-                    f"https://{host}/api/json/{state['keepalive_endpoint']}",
-                    params={"ss": token},
-                    headers=headers,
-                    timeout=8,
-                ) as api_resp:
-                    if api_resp.status == 200:
-                        api_text = await api_resp.text()
-                        if "not authorized" in api_text.lower() or '"code":1' in api_text:
-                            _LOGGER.warning("Портал сообщил об окончании сессии: %s", api_text[:200])
-                            return False
-            except Exception as api_err:
-                _LOGGER.debug("Ошибка keep-alive запроса к API: %s", api_err)
-
-        test_url = f"https://{domain}/hls/2/live1.m3u8?ss={token}"
+    async def _check_stream_alive(domain: str, token: str) -> bool:
+        """Проверяем, что текущий токен и ссылка live1.m3u8 все еще живы (держим сессию)."""
+        test_url = f"https://{domain}/hls/1/live1.m3u8?ss={token}"
         try:
-            async with session.get(test_url, headers=headers, timeout=10) as resp:
-                body = await resp.text()
-                if (
-                    resp.status == 200
-                    and "#EXTM3U" in body
-                    and ("#EXTINF" in body or ".ts" in body or "live" in body)
-                ):
-                    return True
-                _LOGGER.warning(
-                    "Детали отказа стрима %s: HTTP статус = %s, тело ответа = %s",
-                    test_url,
-                    resp.status,
-                    body[:250],
-                )
-        except Exception as err:
-            _LOGGER.warning("Ошибка соединения со стримом %s: %s", test_url, err)
-
+            async with session.get(test_url, timeout=10) as resp:
+                if resp.status == 200:
+                    body = await resp.text()
+                    return "#EXTM3U" in body
+        except Exception:
+            pass
         return False
 
     async def _async_update_data():
         try:
             current_token = state["token"]
             current_domain = state["domain"]
-            current_sid_name = state["sid_name"]
 
-            if current_token and await _keep_session_alive(
-                current_domain, current_token, current_sid_name
-            ):
+            # 1. Если токен уже есть — пингуем поток, чтобы держать сессию активной
+            if current_token and await _check_stream_alive(current_domain, current_token):
                 _LOGGER.debug(
-                    "Сессия IDC активна, токен %s*** работает (%s)",
+                    "Сессия IDC IPTV активна (токен %s***, домен %s)",
                     current_token[:6],
                     current_domain,
                 )
                 return state
 
-            _LOGGER.info("Запрашиваю новую сессию IDC IPTV...")
-            new_token, new_sid_name, new_domain = await _login_and_get_token()
+            # 2. Если токена нет или сервер его сбросил — авторизуемся заново
+            new_token, new_domain = await _login_and_get_token()
             if not new_token:
-                raise UpdateFailed("API IDC не вернул токен сессии (sid)")
-
-            is_valid = await _keep_session_alive(new_domain, new_token, new_sid_name)
-            if not is_valid:
-                _LOGGER.warning(
-                    "Стрим %s отклонил токен %s***. Повторю попытку в следующем цикле.",
-                    new_domain,
-                    new_token[:6],
-                )
-                return state
+                raise UpdateFailed("API IDC не вернул токен сессии (ss)")
 
             state["token"] = new_token
-            state["sid_name"] = new_sid_name
             state["domain"] = new_domain
 
+            # 3. Перезаписываем рабочий плейлист с новым доменом и токеном
             await hass.async_add_executor_job(
                 _update_playlist_file,
                 template_path,
@@ -245,10 +124,9 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
                 new_token,
             )
             _LOGGER.info(
-                "Сессия IDC IPTV активна: токен %s***, домен %s. Плейлист %s обновлен.",
+                "Получен новый токен IDC IPTV (%s***), домен %s. Плейлист обновлен.",
                 new_token[:6],
                 new_domain,
-                output_path,
             )
             return state
 
@@ -268,7 +146,6 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     hass.data.setdefault(DOMAIN, {})[entry.entry_id] = {
         "coordinator": coordinator,
         "session": session,
-        "logout": _logout,
     }
     return True
 
@@ -276,6 +153,46 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 def _update_playlist_file(
     template_path: str, output_path: str, new_domain: str, new_token: str
 ) -> None:
+    # Если шаблон еще не создан, создаем базовый файл с каналами (включая /hls/1/live1.m3u8)
     if not os.path.exists(template_path):
+        _LOGGER.warning(
+            "Шаблон %s не найден, создаю базовый плейлист по умолчанию.", template_path
+        )
         default_template = (
             "#EXTM3U\n"
+            '#EXTINF:-1 tvg-id="1" tvg-logo="https://iptvn.idc.md/img/ico/png/1_512.png" group-title="Общий",Россия 1\n'
+            f"https://{new_domain}/hls/1/live1.m3u8?ss={new_token}\n"
+            '#EXTINF:-1 tvg-id="2" tvg-logo="https://iptvn.idc.md/img/ico/png/2_512.png" group-title="Общий",ТСВ\n'
+            f"https://{new_domain}/hls/2/live1.m3u8?ss={new_token}\n"
+        )
+        os.makedirs(os.path.dirname(template_path), exist_ok=True)
+        with open(template_path, "w", encoding="utf-8") as f:
+            f.write(default_template)
+
+    with open(template_path, "r", encoding="utf-8") as file:
+        lines = file.readlines()
+
+    updated_lines = []
+    for line in lines:
+        stripped = line.strip()
+        if stripped.startswith("http"):
+            # Подменяем домен (например, iptv-live.idc.md -> актуальный домен)
+            line = re.sub(r"^(https?://)[^/]+", rf"\g<1>{new_domain}", line)
+            # Подменяем токен ?ss=...
+            if "ss=" in line:
+                line = re.sub(r"([?&]ss=)[^&\s]+", rf"\g<1>{new_token}", line)
+            else:
+                sep = "&" if "?" in line else "?"
+                line = f"{stripped}{sep}ss={new_token}\n"
+        updated_lines.append(line)
+
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    with open(output_path, "w", encoding="utf-8") as file:
+        file.writelines(updated_lines)
+
+
+async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
+    entry_data = hass.data[DOMAIN].pop(entry.entry_id, None)
+    if entry_data and "session" in entry_data:
+        await entry_data["session"].close()
+    return True
