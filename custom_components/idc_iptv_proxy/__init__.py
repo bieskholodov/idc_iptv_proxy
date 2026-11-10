@@ -29,18 +29,19 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     host = entry.data.get(CONF_HOST, DEFAULT_HOST)
     login = entry.data[CONF_LOGIN]
     password = entry.data[CONF_PASSWORD]
-    interval = entry.data.get(CONF_INTERVAL, DEFAULT_INTERVAL)
+    # Рекомендуется интервал не более 25-30 секунд для удержания сессии
+    interval = min(entry.data.get(CONF_INTERVAL, 25), 30)
     template_path = entry.data.get(CONF_TEMPLATE_PATH, DEFAULT_TEMPLATE_PATH)
     output_path = entry.data.get(CONF_OUTPUT_PATH, DEFAULT_OUTPUT_PATH)
 
-    # Выделенная сессия с cookie_jar, чтобы сервер IDC видел постоянный онлайн-клиент
     cookie_jar = aiohttp.CookieJar(unsafe=True)
     session = aiohttp.ClientSession(
         cookie_jar=cookie_jar,
         headers={
             "User-Agent": "Mozilla/5.0 (SmartHub; SMART-TV; U; Linux/SmartTV) AppleWebKit/537.42",
-            "Referer": "https://web.iptv.idc.md/",
-            "Origin": "https://web.iptv.idc.md",
+            "Referer": "https://iptv.idc.md/",
+            "Origin": "https://iptv.idc.md",
+            "X-Requested-With": "XMLHttpRequest",
         },
     )
 
@@ -50,6 +51,8 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     }
 
     async def _login_and_get_token() -> tuple[str | None, str]:
+        # Очищаем старые куки перед новым входом, чтобы сервер выдал чистую сессию
+        session.cookie_jar.clear()
         url = f"https://{host}/api/json/login"
         params = {
             "login": login,
@@ -61,7 +64,6 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             text = await resp.text()
             data = await resp.json(content_type=None)
 
-        # Ищем 32-символьный hex-токен ss в JSON-ответе (независимо от вложенности)
         token = (
             data.get("ss")
             or data.get("sid")
@@ -73,7 +75,6 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             if match:
                 token = match.group(1)
 
-        # Ищем актуальный стриминговый поддомен (например, iptv-live.idc.md, iptv-live4.idc.md, iptv-nlive1.idc.md)
         domain = state["domain"]
         domain_match = re.search(r"(iptv-[a-z0-9-]+\.idc\.md)", text, re.IGNORECASE)
         if domain_match:
@@ -81,16 +82,33 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
         return token, domain
 
-    async def _check_stream_alive(domain: str, token: str) -> bool:
-        """Проверяем, что текущий токен и ссылка live1.m3u8 все еще живы (держим сессию)."""
+    async def _keep_session_alive(domain: str, token: str) -> bool:
+        """Продлеваем сессию на API-портале и проверяем валидность токена на стриме."""
+        # 1. Пингуем основной API-сервер с текущими куками и токеном (имитация активности плеера)
+        ping_urls = [
+            f"https://{host}/api/json/ping?ss={token}",
+            f"https://{host}/api/json/get_channels?ss={token}",
+        ]
+        for p_url in ping_urls:
+            try:
+                async with session.get(p_url, timeout=8) as p_resp:
+                    if p_resp.status == 200:
+                        break
+            except Exception:
+                continue
+
+        # 2. Проверяем, что сам видеопоток принимает этот токен и возвращает реальные чанки (.ts)
         test_url = f"https://{domain}/hls/1/live1.m3u8?ss={token}"
         try:
             async with session.get(test_url, timeout=10) as resp:
                 if resp.status == 200:
                     body = await resp.text()
-                    return "#EXTM3U" in body
+                    # Убеждаемся, что внутри именно список сегментов, а не заглушка об ошибке
+                    if "#EXTM3U" in body and ("#EXTINF" in body or ".ts" in body or "live" in body):
+                        return True
         except Exception:
             pass
+
         return False
 
     async def _async_update_data():
@@ -98,35 +116,33 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             current_token = state["token"]
             current_domain = state["domain"]
 
-            # 1. Если токен уже есть — пингуем поток, чтобы держать сессию активной
-            if current_token and await _check_stream_alive(current_domain, current_token):
-                _LOGGER.debug(
-                    "Сессия IDC IPTV активна (токен %s***, домен %s)",
-                    current_token[:6],
-                    current_domain,
-                )
+            if current_token and await _keep_session_alive(current_domain, current_token):
+                _LOGGER.debug("Сессия IDC активна, токен %s*** действителен", current_token[:6])
                 return state
 
-            # 2. Если токена нет или сервер его сбросил — авторизуемся заново
+            _LOGGER.info("Токен IDC истек или отсутствует. Выполняю повторную авторизацию...")
             new_token, new_domain = await _login_and_get_token()
             if not new_token:
                 raise UpdateFailed("API IDC не вернул токен сессии (ss)")
 
+            # Сразу проверяем, что новый токен реально открывает поток
+            is_valid = await _keep_session_alive(new_domain, new_token)
+            if not is_valid:
+                _LOGGER.warning(
+                    "Получен новый токен %s***, но поток %s вернул отказ. Проверьте лимит одновременных устройств.",
+                    new_token[:6],
+                    new_domain,
+                )
+
             state["token"] = new_token
             state["domain"] = new_domain
 
-            # 3. Перезаписываем рабочий плейлист с новым доменом и токеном
             await hass.async_add_executor_job(
                 _update_playlist_file,
                 template_path,
                 output_path,
                 new_domain,
                 new_token,
-            )
-            _LOGGER.info(
-                "Получен новый токен IDC IPTV (%s***), домен %s. Плейлист обновлен.",
-                new_token[:6],
-                new_domain,
             )
             return state
 
@@ -153,16 +169,12 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 def _update_playlist_file(
     template_path: str, output_path: str, new_domain: str, new_token: str
 ) -> None:
-    # Если шаблон еще не создан, создаем базовый файл с каналами (включая /hls/1/live1.m3u8)
     if not os.path.exists(template_path):
-        _LOGGER.warning(
-            "Шаблон %s не найден, создаю базовый плейлист по умолчанию.", template_path
-        )
         default_template = (
             "#EXTM3U\n"
-            '#EXTINF:-1 tvg-id="1" tvg-logo="https://iptvn.idc.md/img/ico/png/1_512.png" group-title="Общий",Россия 1\n'
+            '#EXTINF:-1 tvg-id="1" tvg-logo="https://idc.md" group-title="Общий",Первый\n'
             f"https://{new_domain}/hls/1/live1.m3u8?ss={new_token}\n"
-            '#EXTINF:-1 tvg-id="2" tvg-logo="https://iptvn.idc.md/img/ico/png/2_512.png" group-title="Общий",ТСВ\n'
+            '#EXTINF:-1 tvg-id="2" tvg-logo="https://idc.md" group-title="Общий",ТСВ\n'
             f"https://{new_domain}/hls/2/live1.m3u8?ss={new_token}\n"
         )
         os.makedirs(os.path.dirname(template_path), exist_ok=True)
@@ -176,9 +188,7 @@ def _update_playlist_file(
     for line in lines:
         stripped = line.strip()
         if stripped.startswith("http"):
-            # Подменяем домен (например, iptv-live.idc.md -> актуальный домен)
             line = re.sub(r"^(https?://)[^/]+", rf"\g<1>{new_domain}", line)
-            # Подменяем токен ?ss=...
             if "ss=" in line:
                 line = re.sub(r"([?&]ss=)[^&\s]+", rf"\g<1>{new_token}", line)
             else:
