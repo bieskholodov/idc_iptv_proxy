@@ -1,6 +1,7 @@
-
 from datetime import timedelta
 import logging
+import os
+import re
 
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
@@ -13,9 +14,11 @@ from .const import (
     CONF_LOGIN,
     CONF_PASSWORD,
     CONF_INTERVAL,
+    CONF_TEMPLATE_PATH,
     CONF_OUTPUT_PATH,
     DEFAULT_HOST,
     DEFAULT_INTERVAL,
+    DEFAULT_TEMPLATE_PATH,
     DEFAULT_OUTPUT_PATH,
 )
 
@@ -27,6 +30,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     login = entry.data[CONF_LOGIN]
     password = entry.data[CONF_PASSWORD]
     interval = entry.data.get(CONF_INTERVAL, DEFAULT_INTERVAL)
+    template_path = entry.data.get(CONF_TEMPLATE_PATH, DEFAULT_TEMPLATE_PATH)
     output_path = entry.data.get(CONF_OUTPUT_PATH, DEFAULT_OUTPUT_PATH)
 
     session = async_get_clientsession(hass)
@@ -46,17 +50,27 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         except Exception as err:
             raise UpdateFailed(f"Ошибка запроса к IDC API: {err}") from err
 
-        # Извлекаем токен сессии (проверим точное имя поля по вашему JSON)
+        # 1. Извлекаем актуальный токен сессии (проверьте точный ключ в JSON от IDC)
         token = data.get("ss") or data.get("sid") or data.get("token")
+        
+        # 2. Извлекаем актуальный стриминговый домен (например, iptv-live.idc.md или другой из settings)
+        # Если API возвращает полный URL или домен в другом поле, поправим ключ
+        stream_domain = (
+            data.get("stream_domain")
+            or data.get("streamer")
+            or data.get("hls_domain")
+            or "iptv-live.idc.md"
+        )
+        # Очищаем домен от https:// и слешей, если API вернул его в виде URL
+        stream_domain = re.sub(r"^https?://", "", str(stream_domain)).strip("/")
+
         if not token:
-            _LOGGER.warning("Токен не найден в ответе API: %s", list(data.keys()))
+            _LOGGER.warning("Токен не найден в ответе API. Доступные ключи: %s", list(data.keys()))
             return data
 
-        m3u_content = _build_m3u(data, token)
-
-        # Записываем файл в отдельном потоке, чтобы не блокировать цикл событий HA
-        await hass.async_add_executor_job(_write_file, output_path, m3u_content)
-        _LOGGER.debug("Плейлист IDC IPTV обновлен: %s", output_path)
+        await hass.async_add_executor_job(
+            _update_playlist_file, template_path, output_path, stream_domain, token
+        )
         return data
 
     coordinator = DataUpdateCoordinator(
@@ -73,19 +87,43 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     return True
 
 
-def _build_m3u(data: dict, token: str) -> str:
-    lines = ["#EXTM3U"]
-    # Пример для канала ТСВ из вашего шаблона
-    lines.append(
-        '#EXTINF:-1 tvg-id="2" tvg-logo="https://idc.md" group-title="Общий",ТСВ'
+def _update_playlist_file(
+    template_path: str, output_path: str, new_domain: str, new_token: str
+) -> None:
+    if not os.path.exists(template_path):
+        _LOGGER.error(
+            "Файл шаблона плейлиста не найден по пути: %s. Положите туда исходный .m3u файл.",
+            template_path,
+        )
+        return
+
+    with open(template_path, "r", encoding="utf-8") as file:
+        lines = file.readlines()
+
+    updated_lines = []
+    for line in lines:
+        stripped = line.strip()
+        # Меняем домен и токен только в строках со ссылками на потоки (не трогаем #EXTINF и логотипы)
+        if stripped.startswith("http"):
+            # Заменяем домен после https:// или http://
+            line = re.sub(r"^(https?://)[^/]+", rf"\g<1>{new_domain}", line)
+            # Заменяем значение параметра ss=...
+            if "ss=" in line:
+                line = re.sub(r"([?&]ss=)[^&\s]+", rf"\g<1>{new_token}", line)
+            else:
+                separator = "&" if "?" in line else "?"
+                line = f"{stripped}{separator}ss={new_token}\n"
+        updated_lines.append(line)
+
+    with open(output_path, "w", encoding="utf-8") as file:
+        file.writelines(updated_lines)
+
+    _LOGGER.debug(
+        "Плейлист обновлен: домен=%s, токен=%s*** -> %s",
+        new_domain,
+        new_token[:6],
+        output_path,
     )
-    lines.append(f"https://idc.md{token}")
-    return "\n".join(lines) + "\n"
-
-
-def _write_file(path: str, content: str) -> None:
-    with open(path, "w", encoding="utf-8") as file:
-        file.write(content)
 
 
 async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
