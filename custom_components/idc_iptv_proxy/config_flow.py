@@ -8,9 +8,11 @@ from .const import (
     CONF_LOGIN,
     CONF_PASSWORD,
     CONF_INTERVAL,
+    CONF_TEMPLATE_PATH,
     CONF_OUTPUT_PATH,
     DEFAULT_HOST,
     DEFAULT_INTERVAL,
+    DEFAULT_TEMPLATE_PATH,
     DEFAULT_OUTPUT_PATH,
 )
 
@@ -33,7 +35,6 @@ class IdcIptvConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 async with session.get(url, params=params, timeout=15) as resp:
                     if resp.status == 200:
                         data = await resp.json(content_type=None)
-                        # Проверяем, что API вернул валидный ответ (при необходимости уточним ключ ошибки)
                         if isinstance(data, dict):
                             return self.async_create_entry(
                                 title=f"IDC IPTV ({user_input[CONF_LOGIN]})",
@@ -53,6 +54,7 @@ class IdcIptvConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 vol.Optional(CONF_INTERVAL, default=DEFAULT_INTERVAL): vol.All(
                     vol.Coerce(int), vol.Range(min=15, max=3600)
                 ),
+                vol.Optional(CONF_TEMPLATE_PATH, default=DEFAULT_TEMPLATE_PATH): str,
                 vol.Optional(CONF_OUTPUT_PATH, default=DEFAULT_OUTPUT_PATH): str,
             }
         )
