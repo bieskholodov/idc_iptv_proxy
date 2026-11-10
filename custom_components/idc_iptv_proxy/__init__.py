@@ -34,7 +34,6 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     template_path = entry.data.get(CONF_TEMPLATE_PATH, DEFAULT_TEMPLATE_PATH)
     output_path = entry.data.get(CONF_OUTPUT_PATH, DEFAULT_OUTPUT_PATH)
 
-    # Используем ThreadedResolver и только IPv4 (AF_INET), чтобы избежать таймаутов aiodns в HAOS
     connector = aiohttp.TCPConnector(
         resolver=aiohttp.ThreadedResolver(),
         family=socket.AF_INET,
@@ -56,6 +55,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         "token": None,
         "sid_name": "SSID",
         "domain": "iptv-live.idc.md",
+        "keepalive_endpoint": None,
     }
 
     async def _logout() -> None:
@@ -75,30 +75,50 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         finally:
             session.cookie_jar.clear()
 
-    async def _fetch_stream_domain(token: str, sid_name: str) -> str:
-        """Запрашиваем список каналов для удержания сессии и определения актуального домена стрима."""
-        channels_url = f"https://{host}/api/json/get_channels"
+    async def _discover_api_and_domain(token: str, sid_name: str) -> tuple[str | None, str]:
+        """Находим рабочий метод API (для keep-alive) и актуальный стриминговый домен."""
         headers = {"Cookie": f"{sid_name}={token}"}
-        try:
-            async with session.get(
-                channels_url,
-                params={"ss": token},
-                headers=headers,
-                timeout=10,
-            ) as resp:
-                if resp.status == 200:
-                    text = await resp.text()
-                    domains = re.findall(
-                        r"(iptv-[a-z0-9-]+\.idc\.md)", text, re.IGNORECASE
-                    )
-                    stream_domains = [
-                        d for d in domains if not d.lower().startswith("iptvn.")
-                    ]
-                    if stream_domains:
-                        return stream_domains[0]
-        except Exception as err:
-            _LOGGER.debug("Не удалось получить список каналов для поиска домена: %s", err)
-        return state["domain"]
+        candidates = [
+            "channel_list",
+            "tv_channel_list",
+            "channels",
+            "get_epg_current",
+            "account_info",
+        ]
+        found_endpoint = state["keepalive_endpoint"]
+        found_domain = state["domain"]
+
+        for func_name in candidates:
+            url = f"https://{host}/api/json/{func_name}"
+            try:
+                async with session.get(
+                    url,
+                    params={"ss": token},
+                    headers=headers,
+                    timeout=8,
+                ) as resp:
+                    if resp.status == 200:
+                        text = await resp.text()
+                        if '"code":14' not in text and "Unknown API function" not in text:
+                            found_endpoint = func_name
+                            domains = re.findall(
+                                r"(iptv-[a-z0-9-]+\.idc\.md)", text, re.IGNORECASE
+                            )
+                            stream_domains = [
+                                d for d in domains if not d.lower().startswith("iptvn.")
+                            ]
+                            if stream_domains:
+                                found_domain = stream_domains
+                            _LOGGER.info(
+                                "Найден рабочий метод API IDC: %s (домен стрима: %s)",
+                                found_endpoint,
+                                found_domain,
+                            )
+                            break
+            except Exception:
+                continue
+
+        return found_endpoint, found_domain
 
     async def _login_and_get_token() -> tuple[str | None, str, str]:
         await _logout()
@@ -137,31 +157,33 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
         domain = state["domain"]
         if token:
-            domain = await _fetch_stream_domain(token, sid_name)
+            endpoint, domain = await _discover_api_and_domain(token, sid_name)
+            state["keepalive_endpoint"] = endpoint
 
         return token, sid_name, domain
 
     async def _keep_session_alive(domain: str, token: str, sid_name: str) -> bool:
-        """Продлеваем сессию на портале API и проверяем доступность HLS-потока."""
+        """Продлеваем сессию на портале и проверяем доступность HLS-потока (канал 2 - ТСВ)."""
         headers = {"Cookie": f"{sid_name}={token}"}
 
-        # 1. Пингуем API портала, чтобы сессия не закрывалась по неактивности
-        try:
-            async with session.get(
-                f"https://{host}/api/json/get_channels",
-                params={"ss": token},
-                headers=headers,
-                timeout=8,
-            ) as api_resp:
-                if api_resp.status == 200:
-                    api_text = await api_resp.text()
-                    if '"error"' in api_text.lower() or "auth" in api_text.lower():
-                        _LOGGER.warning("API портала сообщил об истечении сессии: %s", api_text[:200])
-                        return False
-        except Exception as api_err:
-            _LOGGER.debug("Ошибка пинга API портала: %s", api_err)
+        # 1. Если найден рабочий эндпоинт API — дергаем его для продления сессии на портале
+        if state["keepalive_endpoint"]:
+            try:
+                async with session.get(
+                    f"https://{host}/api/json/{state['keepalive_endpoint']}",
+                    params={"ss": token},
+                    headers=headers,
+                    timeout=8,
+                ) as api_resp:
+                    if api_resp.status == 200:
+                        api_text = await api_resp.text()
+                        if "not authorized" in api_text.lower() or '"code":1' in api_text:
+                            _LOGGER.warning("Портал сообщил об окончании сессии: %s", api_text[:200])
+                            return False
+            except Exception as api_err:
+                _LOGGER.debug("Ошибка keep-alive запроса к API: %s", api_err)
 
-        # 2. Проверяем доступность потока (канал 2 - ТСВ)
+        # 2. Проверяем сам видеопоток
         test_url = f"https://{domain}/hls/2/live1.m3u8?ss={token}"
         try:
             async with session.get(test_url, headers=headers, timeout=10) as resp:
@@ -207,7 +229,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             is_valid = await _keep_session_alive(new_domain, new_token, new_sid_name)
             if not is_valid:
                 _LOGGER.warning(
-                    "Стрим %s отклонил токен %s*** или недоступен. Повторю попытку в следующем цикле.",
+                    "Стрим %s отклонил токен %s***. Повторю попытку в следующем цикле.",
                     new_domain,
                     new_token[:6],
                 )
@@ -258,24 +280,3 @@ def _update_playlist_file(
 ) -> None:
     if not os.path.exists(template_path):
         default_template = (
-            "#EXTM3U\n"
-            '#EXTINF:-1 tvg-id="2" tvg-logo="https://idc.md" group-title="Общий",ТСВ\n'
-            f"https://{new_domain}/hls/2/live1.m3u8?ss={new_token}\n"
-        )
-        os.makedirs(os.path.dirname(template_path), exist_ok=True)
-        with open(template_path, "w", encoding="utf-8") as f:
-            f.write(default_template)
-
-    with open(template_path, "r", encoding="utf-8") as file:
-        lines = file.readlines()
-
-    updated_lines = []
-    for line in lines:
-        stripped = line.strip()
-        if stripped.startswith("http"):
-            line = re.sub(r"^(https?://)[^/]+", rf"\g<1>{new_domain}", line)
-            if "ss=" in line:
-                line = re.sub(r"([?&]ss=)[^&\s]+", rf"\g<1>{new_token}", line)
-            else:
-                sep = "&" if "?" in line else "?"
-                line = f"{stripped}{sep}ss={new_token}\n"
