@@ -2,7 +2,6 @@ from datetime import timedelta
 import logging
 import os
 import re
-from urllib.parse import urljoin
 
 import aiohttp
 from homeassistant.config_entries import ConfigEntry
@@ -18,7 +17,6 @@ from .const import (
     CONF_TEMPLATE_PATH,
     CONF_OUTPUT_PATH,
     DEFAULT_HOST,
-    DEFAULT_INTERVAL,
     DEFAULT_TEMPLATE_PATH,
     DEFAULT_OUTPUT_PATH,
 )
@@ -30,7 +28,8 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     host = entry.data.get(CONF_HOST, DEFAULT_HOST)
     login = entry.data[CONF_LOGIN]
     password = entry.data[CONF_PASSWORD]
-    interval = min(entry.data.get(CONF_INTERVAL, DEFAULT_INTERVAL), 20)
+    # Жестко ставим 5 секунд, как у плеера на паузе в браузере
+    interval = min(entry.data.get(CONF_INTERVAL, 5), 8)
     template_path = entry.data.get(CONF_TEMPLATE_PATH, DEFAULT_TEMPLATE_PATH)
     output_path = entry.data.get(CONF_OUTPUT_PATH, DEFAULT_OUTPUT_PATH)
 
@@ -39,14 +38,14 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         cookie_jar=cookie_jar,
         headers={
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
-            "Referer": "https://iptv.idc.md/",
-            "Origin": "https://iptv.idc.md",
+            "Referer": "https://web.iptv.idc.md/",
+            "Origin": "https://web.iptv.idc.md",
         },
     )
 
     state = {
         "token": None,
-        "domain": "iptv-live.idc.md",
+        "domain": "iptv-nlive1.idc.md",
     }
 
     async def _login_and_get_token() -> tuple[str | None, str]:
@@ -62,13 +61,13 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             data = await resp.json(content_type=None)
 
         token = (
-            data.get("sid")
-            or data.get("ss")
+            data.get("ss")
+            or data.get("sid")
             or data.get("token")
             or (data.get("settings", {}).get("ss") if isinstance(data.get("settings"), dict) else None)
         )
         if not token:
-            match = re.search(r'"(?:sid|ss|token)"\s*:\s*"([a-f0-9]{32})"', text, re.IGNORECASE)
+            match = re.search(r'"(?:ss|sid|token)"\s*:\s*"([a-f0-9]{32})"', text, re.IGNORECASE)
             if match:
                 token = match.group(1)
 
@@ -76,36 +75,18 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         domains = re.findall(r"(iptv-[a-z0-9-]+\.idc\.md)", text, re.IGNORECASE)
         stream_domains = [d for d in domains if not d.lower().startswith("iptvn.")]
         if stream_domains:
-            domain = stream_domains[0]
+            domain = stream_domains
 
         return token, domain
 
-    async def _check_stream_alive(domain: str, token: str) -> bool:
-        """Качаем live1.m3u8 и 1 КБ последнего .ts сегмента, чтобы сервер держал сессию онлайн."""
+    async def _ping_m3u8(domain: str, token: str) -> bool:
+        """Каждые 5 секунд читаем только manifest live1.m3u8, как плеер на паузе."""
         test_url = f"https://{domain}/hls/2/live1.m3u8?ss={token}"
-        headers = {"Cookie": f"SSID={token}"}
         try:
-            async with session.get(test_url, headers=headers, timeout=10) as resp:
-                if resp.status != 200:
-                    return False
-                body = await resp.text()
-                if "#EXTM3U" not in body:
-                    return False
-
-                ts_lines = [
-                    line.strip()
-                    for line in body.splitlines()
-                    if line.strip() and not line.startswith("#")
-                ]
-                if not ts_lines:
-                    return False
-
-                ts_url = urljoin(test_url, ts_lines[-1])
-                ts_headers = {**headers, "Range": "bytes=0-1023"}
-                async with session.get(ts_url, headers=ts_headers, timeout=10) as ts_resp:
-                    if ts_resp.status in (200, 206):
-                        await ts_resp.read()
-                        return True
+            async with session.get(test_url, timeout=5) as resp:
+                if resp.status == 200:
+                    body = await resp.text()
+                    return "#EXTM3U" in body
         except Exception:
             pass
         return False
@@ -115,23 +96,18 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             current_token = state["token"]
             current_domain = state["domain"]
 
-            if current_token and await _check_stream_alive(current_domain, current_token):
-                _LOGGER.debug(
-                    "Сессия IDC IPTV активна (токен %s***, домен %s)",
-                    current_token[:6],
-                    current_domain,
-                )
+            if current_token and await _ping_m3u8(current_domain, current_token):
                 return state
 
             new_token, new_domain = await _login_and_get_token()
             if not new_token:
-                raise UpdateFailed("API IDC не вернул токен сессии (sid)")
+                raise UpdateFailed("API IDC не вернул токен сессии")
 
             state["token"] = new_token
             state["domain"] = new_domain
 
-            # Сразу дергаем первый сегмент с новым токеном, чтобы активировать сессию на стриме
-            await _check_stream_alive(new_domain, new_token)
+            # Мгновенно "цепляем" поток первым запросом к m3u8
+            await _ping_m3u8(new_domain, new_token)
 
             await hass.async_add_executor_job(
                 _update_playlist_file,
