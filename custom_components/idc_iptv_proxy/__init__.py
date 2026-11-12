@@ -43,13 +43,12 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     )
 
     state = {
-        "ssid": None,
         "ss": None,
-        "domain": "iptv-live.idc.md",
+        "domain": "iptv-nlive1.idc.md",
     }
 
-    async def _login_and_get_tokens() -> tuple[str | None, str | None, str]:
-        # 1. Авторизация (как в твоем исходном рабочем коде)
+    async def _get_real_stream_token() -> tuple[str | None, str]:
+        # 1. Авторизация и получение SSID (как в твоем рабочем коде)
         login_url = f"https://{host}/api/json/login"
         async with session.get(
             login_url,
@@ -70,72 +69,63 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             if m:
                 ssid = m.group(1)
 
-        ss_token = (
-            login_data.get("ss")
-            or (
-                login_data.get("settings", {}).get("ss")
-                if isinstance(login_data.get("settings"), dict)
-                else None
-            )
-            or ssid
-        )
+        if not ssid:
+            raise UpdateFailed("API login не вернул SSID")
 
-        domain = state["domain"]
-        domains = re.findall(r"(iptv-[a-z0-9-]+\.idc\.md)", login_text, re.I)
-        stream_domains = [d for d in domains if not d.lower().startswith("iptvn.")]
-        if stream_domains:
-            domain = stream_domains
-
-        # 2. Пробуем запросить HLS-ссылку через get_url с параметром type=hls (игнорируем http/ts://)
-        if ssid:
+        # 2. Запрашиваем get_url именно с веб-портала (web.iptv.idc.md / iptvn.idc.md), чтобы получить HLS ticket
+        hls_ticket_url = None
+        for web_host in ("web.iptv.idc.md", "iptvn.idc.md", host):
             try:
                 async with session.get(
-                    f"https://{host}/api/json/get_url",
-                    params={"SSID": ssid, "cid": "2", "type": "hls"},
+                    f"https://{web_host}/api/json/get_url",
+                    params={"SSID": ssid, "cid": "1"},
+                    headers={
+                        "Referer": f"https://{web_host}/",
+                        "Origin": f"https://{web_host}",
+                    },
                     timeout=10,
                 ) as resp:
                     if resp.status == 200:
                         url_text = await resp.text()
                         m_http = re.search(r'"url"\s*:\s*"(https?://[^"]+)"', url_text)
                         if m_http:
-                            hls_url = m_http.group(1).replace("\\/", "/")
-                            m_dom = re.search(r"https?://([^/]+)", hls_url)
-                            if m_dom:
-                                domain = m_dom.group(1)
-
-                            m_ss = re.search(r"[?&]ss=([a-f0-9]{32})", hls_url, re.I)
-                            if m_ss:
-                                ss_token = m_ss.group(1)
-                            elif "ticket=" in hls_url:
-                                async with session.get(hls_url, timeout=10) as m3u8_resp:
-                                    if m3u8_resp.status == 200:
-                                        body = await m3u8_resp.text()
-                                        m_ss2 = re.search(
-                                            r"[?&]ss=([a-f0-9]{32})",
-                                            f"{m3u8_resp.url}\n{body}",
-                                            re.I,
-                                        )
-                                        if m_ss2:
-                                            ss_token = m_ss2.group(1)
-            except Exception as err:
-                _LOGGER.debug("Доп. запрос get_url пропущен: %s", err)
-
-        return ssid, ss_token, domain
-
-    async def _ping_session(domain: str, ss_token: str, ssid: str | None) -> bool:
-        """Каждые 5 секунд читаем live1.m3u8?ss=... (как плеер на паузе) и дергаем epg_current."""
-        if ssid:
-            try:
-                async with session.get(
-                    f"https://{host}/api/json/epg_current",
-                    params={"SSID": ssid, "cids": "1,2"},
-                    timeout=5,
-                ) as epg_resp:
-                    await epg_resp.text()
+                            hls_ticket_url = m_http.group(1).replace("\\/", "/")
+                            break
             except Exception:
-                pass
+                continue
 
-        test_url = f"https://{domain}/hls/2/live1.m3u8?ss={ss_token}"
+        if not hls_ticket_url:
+            raise UpdateFailed("Не удалось получить HLS-ссылку (ticket) от веб-портала")
+
+        domain = state["domain"]
+        m_dom = re.search(r"https?://([^/]+)", hls_ticket_url)
+        if m_dom:
+            domain = m_dom.group(1)
+
+        # Если вдруг сразу пришел ss=
+        m_ss = re.search(r"[?&]ss=([a-f0-9]{32})", hls_ticket_url, re.I)
+        if m_ss:
+            return m_ss.group(1), domain
+
+        # 3. Запрашиваем index.m3u8?ticket=..., чтобы сервер активировал сессию и отдал живой live1.m3u8?ss=...
+        async with session.get(hls_ticket_url, timeout=15) as m3u8_resp:
+            m3u8_resp.raise_for_status()
+            final_url = str(m3u8_resp.url)
+            m3u8_body = await m3u8_resp.text()
+
+        m_ss = re.search(
+            r"[?&]ss=([a-f0-9]{32})",
+            f"{final_url}\n{m3u8_body}",
+            re.I,
+        )
+        if not m_ss:
+            raise UpdateFailed("Не удалось извлечь токен ss= из index.m3u8")
+
+        return m_ss.group(1), domain
+
+    async def _ping_m3u8(domain: str, ss_token: str) -> bool:
+        """Каждые 5 секунд читаем live1.m3u8?ss=..., как вкладка плеера на паузе."""
+        test_url = f"https://{domain}/hls/1/live1.m3u8?ss={ss_token}"
         try:
             async with session.get(test_url, timeout=5) as resp:
                 if resp.status == 200:
@@ -148,21 +138,17 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     async def _async_update_data():
         try:
             current_ss = state["ss"]
-            current_ssid = state["ssid"]
             current_domain = state["domain"]
 
-            if current_ss and await _ping_session(current_domain, current_ss, current_ssid):
+            if current_ss and await _ping_m3u8(current_domain, current_ss):
                 return state
 
-            new_ssid, new_ss, new_domain = await _login_and_get_tokens()
-            if not new_ss:
-                raise UpdateFailed("API IDC не вернул токен сессии")
+            new_ss, new_domain = await _get_real_stream_token()
 
-            state["ssid"] = new_ssid
             state["ss"] = new_ss
             state["domain"] = new_domain
 
-            await _ping_session(new_domain, new_ss, new_ssid)
+            await _ping_m3u8(new_domain, new_ss)
 
             await hass.async_add_executor_job(
                 _update_playlist_file,
@@ -172,7 +158,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
                 new_ss,
             )
             _LOGGER.info(
-                "Получен токен IDC IPTV (ss=%s***), домен %s. Плейлист обновлен.",
+                "Активирован реальный токен потока IDC IPTV (ss=%s***), домен %s. Плейлист обновлен.",
                 new_ss[:6],
                 new_domain,
             )
@@ -209,7 +195,7 @@ def _update_playlist_file(
             "#EXTM3U\n"
             '#EXTINF:-1 tvg-id="1" tvg-logo="https://idc.md" group-title="Общий",Россия 1\n'
             f"https://{new_domain}/hls/1/live1.m3u8?ss={new_token}\n"
-            '#EXTINF:-1 tvg-id="2" tvg-logo="https://iptvn.idc.md/img/ico/png/2_512.png" group-title="Общий",ТСВ\n'
+            '#EXTINF:-1 tvg-id="2" tvg-logo="https://idc.md" group-title="Общий",ТСВ\n'
             f"https://{new_domain}/hls/2/live1.m3u8?ss={new_token}\n"
         )
         template_dir = os.path.dirname(template_path)
