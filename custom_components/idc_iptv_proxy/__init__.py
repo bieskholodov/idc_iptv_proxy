@@ -16,16 +16,16 @@ from .const import (
     CONF_INTERVAL,
     CONF_TEMPLATE_PATH,
     CONF_OUTPUT_PATH,
-    DEFAULT_HOST,
     DEFAULT_TEMPLATE_PATH,
     DEFAULT_OUTPUT_PATH,
 )
 
 _LOGGER = logging.getLogger(__name__)
 
+API_HOST = "iptvn.idc.md"
+
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
-    host = entry.data.get(CONF_HOST, DEFAULT_HOST)
     login = entry.data[CONF_LOGIN]
     password = entry.data[CONF_PASSWORD]
     interval = min(entry.data.get(CONF_INTERVAL, 5), 8)
@@ -37,8 +37,8 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         cookie_jar=cookie_jar,
         headers={
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
-            "Referer": "https://iptv.idc.md/",
-            "Origin": "https://iptv.idc.md",
+            "Referer": "https://web.iptv.idc.md/",
+            "Origin": "https://web.iptv.idc.md",
         },
     )
 
@@ -48,8 +48,8 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     }
 
     async def _get_real_stream_token() -> tuple[str | None, str]:
-        # 1. Авторизация и получение SSID (как в твоем рабочем коде)
-        login_url = f"https://{host}/api/json/login"
+        # 1. Авторизуемся именно на iptvn.idc.md, чтобы получить валидный SSID для веб-портала
+        login_url = f"https://{API_HOST}/api/json/login"
         async with session.get(
             login_url,
             params={"login": login, "pass": password, "settings": "all"},
@@ -58,6 +58,9 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             resp.raise_for_status()
             login_text = await resp.text()
             login_data = await resp.json(content_type=None)
+
+        if isinstance(login_data, dict) and "error" in login_data:
+            raise UpdateFailed(f"Ошибка входа на {API_HOST}: {login_data['error']}")
 
         ssid = (
             login_data.get("sid")
@@ -70,44 +73,42 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
                 ssid = m.group(1)
 
         if not ssid:
-            raise UpdateFailed("API login не вернул SSID")
+            raise UpdateFailed(f"API {API_HOST}/login не вернул SSID")
 
-        # 2. Запрашиваем get_url именно с веб-портала (web.iptv.idc.md / iptvn.idc.md), чтобы получить HLS ticket
-        hls_ticket_url = None
-        for web_host in ("web.iptv.idc.md", "iptvn.idc.md", host):
-            try:
-                async with session.get(
-                    f"https://{web_host}/api/json/get_url",
-                    params={"SSID": ssid, "cid": "1"},
-                    headers={
-                        "Referer": f"https://{web_host}/",
-                        "Origin": f"https://{web_host}",
-                    },
-                    timeout=10,
-                ) as resp:
-                    if resp.status == 200:
-                        url_text = await resp.text()
-                        m_http = re.search(r'"url"\s*:\s*"(https?://[^"]+)"', url_text)
-                        if m_http:
-                            hls_ticket_url = m_http.group(1).replace("\\/", "/")
-                            break
-            except Exception:
-                continue
+        # 2. Запрашиваем get_url на iptvn.idc.md с этим SSID
+        get_url_api = f"https://{API_HOST}/api/json/get_url"
+        async with session.get(
+            get_url_api,
+            params={"SSID": ssid, "cid": "1"},
+            timeout=15,
+        ) as resp:
+            resp.raise_for_status()
+            url_text = await resp.text()
+            url_data = await resp.json(content_type=None)
+
+        if isinstance(url_data, dict) and "error" in url_data:
+            raise UpdateFailed(f"Ошибка get_url на {API_HOST}: {url_data['error']}")
+
+        hls_ticket_url = url_data.get("url") if isinstance(url_data, dict) else None
+        if not hls_ticket_url:
+            m_url = re.search(r'"url"\s*:\s*"(https?://[^"]+)"', url_text)
+            if m_url:
+                hls_ticket_url = m_url.group(1).replace("\\/", "/")
 
         if not hls_ticket_url:
-            raise UpdateFailed("Не удалось получить HLS-ссылку (ticket) от веб-портала")
+            raise UpdateFailed(f"get_url не вернул ссылку: {url_text[:200]}")
 
         domain = state["domain"]
         m_dom = re.search(r"https?://([^/]+)", hls_ticket_url)
         if m_dom:
             domain = m_dom.group(1)
 
-        # Если вдруг сразу пришел ss=
+        # Если сразу пришел ss=
         m_ss = re.search(r"[?&]ss=([a-f0-9]{32})", hls_ticket_url, re.I)
         if m_ss:
             return m_ss.group(1), domain
 
-        # 3. Запрашиваем index.m3u8?ticket=..., чтобы сервер активировал сессию и отдал живой live1.m3u8?ss=...
+        # 3. Обмениваем ticket=... на активный поток с настоящим ss=
         async with session.get(hls_ticket_url, timeout=15) as m3u8_resp:
             m3u8_resp.raise_for_status()
             final_url = str(m3u8_resp.url)
@@ -193,9 +194,9 @@ def _update_playlist_file(
         )
         default_template = (
             "#EXTM3U\n"
-            '#EXTINF:-1 tvg-id="1" tvg-logo="https://idc.md" group-title="Общий",Россия 1\n'
+            '#EXTINF:-1 tvg-id="1" tvg-logo="https://iptvn.idc.md/img/ico/png/1_512.png" group-title="Общий",Россия 1\n'
             f"https://{new_domain}/hls/1/live1.m3u8?ss={new_token}\n"
-            '#EXTINF:-1 tvg-id="2" tvg-logo="https://idc.md" group-title="Общий",ТСВ\n'
+            '#EXTINF:-1 tvg-id="2" tvg-logo="https://iptvn.idc.md/img/ico/png/2_512.png" group-title="Общий",ТСВ\n'
             f"https://{new_domain}/hls/2/live1.m3u8?ss={new_token}\n"
         )
         template_dir = os.path.dirname(template_path)
