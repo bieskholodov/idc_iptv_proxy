@@ -10,7 +10,6 @@ from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, Upda
 
 from .const import (
     DOMAIN,
-    CONF_HOST,
     CONF_LOGIN,
     CONF_PASSWORD,
     CONF_INTERVAL,
@@ -37,8 +36,8 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         cookie_jar=cookie_jar,
         headers={
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
-            "Referer": "https://web.iptv.idc.md/",
-            "Origin": "https://web.iptv.idc.md",
+            "Referer": "https://iptv.idc.md/",
+            "Origin": "https://iptv.idc.md",
         },
     )
 
@@ -48,11 +47,11 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     }
 
     async def _get_real_stream_token() -> tuple[str | None, str]:
-        # 1. Авторизуемся именно на iptvn.idc.md, чтобы получить валидный SSID для веб-портала
         login_url = f"https://{API_HOST}/api/json/login"
-        async with session.get(
+        async with session.post(
             login_url,
-            params={"login": login, "pass": password, "settings": "all"},
+            params={"settings": "all"},
+            data={"login": login, "pass": password},
             timeout=15,
         ) as resp:
             resp.raise_for_status()
@@ -60,7 +59,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             login_data = await resp.json(content_type=None)
 
         if isinstance(login_data, dict) and "error" in login_data:
-            raise UpdateFailed(f"Ошибка входа на {API_HOST}: {login_data['error']}")
+            raise UpdateFailed(f"Ошибка входа: {login_data['error']}")
 
         ssid = (
             login_data.get("sid")
@@ -73,13 +72,21 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
                 ssid = m.group(1)
 
         if not ssid:
-            raise UpdateFailed(f"API {API_HOST}/login не вернул SSID")
+            raise UpdateFailed(f"API login не вернул SSID: {login_text[:200]}")
 
-        # 2. Запрашиваем get_url на iptvn.idc.md с этим SSID
-        get_url_api = f"https://{API_HOST}/api/json/get_url"
+        try:
+            async with session.get(
+                f"https://{API_HOST}/api/json/channel_list",
+                params={"SSID": ssid, "icon": "png"},
+                timeout=10,
+            ) as ch_resp:
+                await ch_resp.text()
+        except Exception:
+            pass
+
         async with session.get(
-            get_url_api,
-            params={"SSID": ssid, "cid": "1"},
+            f"https://{API_HOST}/api/json/get_url",
+            params={"SSID": ssid, "cid": "2"},
             timeout=15,
         ) as resp:
             resp.raise_for_status()
@@ -87,7 +94,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             url_data = await resp.json(content_type=None)
 
         if isinstance(url_data, dict) and "error" in url_data:
-            raise UpdateFailed(f"Ошибка get_url на {API_HOST}: {url_data['error']}")
+            raise UpdateFailed(f"Ошибка get_url: {url_data['error']}")
 
         hls_ticket_url = url_data.get("url") if isinstance(url_data, dict) else None
         if not hls_ticket_url:
@@ -96,19 +103,17 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
                 hls_ticket_url = m_url.group(1).replace("\\/", "/")
 
         if not hls_ticket_url:
-            raise UpdateFailed(f"get_url не вернул ссылку: {url_text[:200]}")
+            raise UpdateFailed(f"get_url не вернул HLS-ссылку: {url_text[:200]}")
 
         domain = state["domain"]
         m_dom = re.search(r"https?://([^/]+)", hls_ticket_url)
         if m_dom:
             domain = m_dom.group(1)
 
-        # Если сразу пришел ss=
         m_ss = re.search(r"[?&]ss=([a-f0-9]{32})", hls_ticket_url, re.I)
         if m_ss:
             return m_ss.group(1), domain
 
-        # 3. Обмениваем ticket=... на активный поток с настоящим ss=
         async with session.get(hls_ticket_url, timeout=15) as m3u8_resp:
             m3u8_resp.raise_for_status()
             final_url = str(m3u8_resp.url)
@@ -126,7 +131,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
     async def _ping_m3u8(domain: str, ss_token: str) -> bool:
         """Каждые 5 секунд читаем live1.m3u8?ss=..., как вкладка плеера на паузе."""
-        test_url = f"https://{domain}/hls/1/live1.m3u8?ss={ss_token}"
+        test_url = f"https://{domain}/hls/2/live1.m3u8?ss={ss_token}"
         try:
             async with session.get(test_url, timeout=5) as resp:
                 if resp.status == 200:
