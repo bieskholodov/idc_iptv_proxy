@@ -28,7 +28,6 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     host = entry.data.get(CONF_HOST, DEFAULT_HOST)
     login = entry.data[CONF_LOGIN]
     password = entry.data[CONF_PASSWORD]
-    # Жестко ставим 5 секунд, как у плеера на паузе в браузере
     interval = min(entry.data.get(CONF_INTERVAL, 5), 8)
     template_path = entry.data.get(CONF_TEMPLATE_PATH, DEFAULT_TEMPLATE_PATH)
     output_path = entry.data.get(CONF_OUTPUT_PATH, DEFAULT_OUTPUT_PATH)
@@ -38,50 +37,85 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         cookie_jar=cookie_jar,
         headers={
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
-            "Referer": "https://web.iptv.idc.md/",
-            "Origin": "https://web.iptv.idc.md",
+            "Referer": "https://iptv.idc.md/",
+            "Origin": "https://iptv.idc.md",
         },
     )
 
     state = {
-        "token": None,
+        "ss": None,
         "domain": "iptv-nlive1.idc.md",
     }
 
-    async def _login_and_get_token() -> tuple[str | None, str]:
-        url = f"https://{host}/api/json/login"
-        params = {
-            "login": login,
-            "pass": password,
-            "settings": "all",
-        }
-        async with session.get(url, params=params, timeout=15) as resp:
+    async def _get_real_stream_token() -> tuple[str | None, str]:
+        login_url = f"https://{host}/api/json/login"
+        async with session.get(
+            login_url,
+            params={"login": login, "pass": password, "settings": "all"},
+            timeout=15,
+        ) as resp:
             resp.raise_for_status()
-            text = await resp.text()
-            data = await resp.json(content_type=None)
+            login_text = await resp.text()
+            login_data = await resp.json(content_type=None)
 
-        token = (
-            data.get("ss")
-            or data.get("sid")
-            or data.get("token")
-            or (data.get("settings", {}).get("ss") if isinstance(data.get("settings"), dict) else None)
+        ssid = (
+            login_data.get("sid")
+            or login_data.get("SSID")
+            or login_data.get("token")
         )
-        if not token:
-            match = re.search(r'"(?:ss|sid|token)"\s*:\s*"([a-f0-9]{32})"', text, re.IGNORECASE)
-            if match:
-                token = match.group(1)
+        if not ssid:
+            m = re.search(r'"(?:sid|SSID|token)"\s*:\s*"([a-f0-9]{32})"', login_text, re.I)
+            if m:
+                ssid = m.group(1)
+
+        if not ssid:
+            raise UpdateFailed("API login не вернул SSID")
+
+        get_url_api = f"https://{host}/api/json/get_url"
+        async with session.get(
+            get_url_api,
+            params={"SSID": ssid, "cid": "2"},
+            timeout=15,
+        ) as resp:
+            resp.raise_for_status()
+            url_text = await resp.text()
+            url_data = await resp.json(content_type=None)
+
+        stream_url = url_data.get("url") if isinstance(url_data, dict) else None
+        if not stream_url:
+            m_url = re.search(r'"url"\s*:\s*"(https?://[^"]+)"', url_text)
+            if m_url:
+                stream_url = m_url.group(1).replace("\\/", "/")
+
+        if not stream_url:
+            raise UpdateFailed(f"get_url не вернул ссылку на поток: {url_text[:200]}")
 
         domain = state["domain"]
-        domains = re.findall(r"(iptv-[a-z0-9-]+\.idc\.md)", text, re.IGNORECASE)
-        stream_domains = [d for d in domains if not d.lower().startswith("iptvn.")]
-        if stream_domains:
-            domain = stream_domains
+        m_dom = re.search(r"https?://([^/]+)", stream_url)
+        if m_dom:
+            domain = m_dom.group(1)
 
-        return token, domain
+        m_ss = re.search(r"[?&]ss=([a-f0-9]{32})", stream_url, re.I)
+        if m_ss:
+            return m_ss.group(1), domain
 
-    async def _ping_m3u8(domain: str, token: str) -> bool:
-        """Каждые 5 секунд читаем только manifest live1.m3u8, как плеер на паузе."""
-        test_url = f"https://{domain}/hls/2/live1.m3u8?ss={token}"
+        async with session.get(stream_url, timeout=15) as m3u8_resp:
+            m3u8_resp.raise_for_status()
+            final_url = str(m3u8_resp.url)
+            m3u8_body = await m3u8_resp.text()
+
+        m_ss = re.search(r"[?&]ss=([a-f0-9]{32})", final_url, re.I)
+        if not m_ss:
+            m_ss = re.search(r"[?&]ss=([a-f0-9]{32})", m3u8_body, re.I)
+
+        if not m_ss:
+            raise UpdateFailed("Не удалось извлечь токен ss= после обмена ticket")
+
+        return m_ss.group(1), domain
+
+    async def _ping_m3u8(domain: str, ss_token: str) -> bool:
+        """Каждые 5 секунд читаем live1.m3u8?ss=..., как вкладка плеера на паузе."""
+        test_url = f"https://{domain}/hls/2/live1.m3u8?ss={ss_token}"
         try:
             async with session.get(test_url, timeout=5) as resp:
                 if resp.status == 200:
@@ -93,32 +127,29 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
     async def _async_update_data():
         try:
-            current_token = state["token"]
+            current_ss = state["ss"]
             current_domain = state["domain"]
 
-            if current_token and await _ping_m3u8(current_domain, current_token):
+            if current_ss and await _ping_m3u8(current_domain, current_ss):
                 return state
 
-            new_token, new_domain = await _login_and_get_token()
-            if not new_token:
-                raise UpdateFailed("API IDC не вернул токен сессии")
+            new_ss, new_domain = await _get_real_stream_token()
 
-            state["token"] = new_token
+            state["ss"] = new_ss
             state["domain"] = new_domain
 
-            # Мгновенно "цепляем" поток первым запросом к m3u8
-            await _ping_m3u8(new_domain, new_token)
+            await _ping_m3u8(new_domain, new_ss)
 
             await hass.async_add_executor_job(
                 _update_playlist_file,
                 template_path,
                 output_path,
                 new_domain,
-                new_token,
+                new_ss,
             )
             _LOGGER.info(
-                "Получен новый токен IDC IPTV (%s***), домен %s. Плейлист обновлен.",
-                new_token[:6],
+                "Активирован реальный токен потока IDC IPTV (ss=%s***), домен %s. Плейлист обновлен.",
+                new_ss[:6],
                 new_domain,
             )
             return state
