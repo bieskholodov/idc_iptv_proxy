@@ -76,7 +76,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         domains = re.findall(r"(iptv-[a-z0-9-]+\.idc\.md)", text, re.IGNORECASE)
         stream_domains = [d for d in domains if not d.lower().startswith("iptvn.")]
         if stream_domains:
-            domain = stream_domains
+            domain = stream_domains[0]
 
         return token, domain
 
@@ -181,7 +181,9 @@ def _update_playlist_file(
             '#EXTINF:-1 tvg-id="2" tvg-logo="https://iptvn.idc.md/img/ico/png/2_512.png" group-title="Общий",ТСВ\n'
             f"https://{new_domain}/hls/2/live1.m3u8?ss={new_token}\n"
         )
-        os.makedirs(os.path.dirname(template_path), exist_ok=True)
+        template_dir = os.path.dirname(template_path)
+        if template_dir:
+            os.makedirs(template_dir, exist_ok=True)
         with open(template_path, "w", encoding="utf-8") as f:
             f.write(default_template)
 
@@ -200,7 +202,9 @@ def _update_playlist_file(
                 line = f"{stripped}{sep}ss={new_token}\n"
         updated_lines.append(line)
 
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    output_dir = os.path.dirname(output_path)
+    if output_dir:
+        os.makedirs(output_dir, exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as file:
         file.writelines(updated_lines)
 
