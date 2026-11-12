@@ -2,6 +2,7 @@ from datetime import timedelta
 import logging
 import os
 import re
+from urllib.parse import urljoin
 
 import aiohttp
 from homeassistant.config_entries import ConfigEntry
@@ -10,24 +11,26 @@ from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, Upda
 
 from .const import (
     DOMAIN,
+    CONF_HOST,
     CONF_LOGIN,
     CONF_PASSWORD,
     CONF_INTERVAL,
     CONF_TEMPLATE_PATH,
     CONF_OUTPUT_PATH,
+    DEFAULT_HOST,
+    DEFAULT_INTERVAL,
     DEFAULT_TEMPLATE_PATH,
     DEFAULT_OUTPUT_PATH,
 )
 
 _LOGGER = logging.getLogger(__name__)
 
-API_HOST = "iptvn.idc.md"
-
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
+    host = entry.data.get(CONF_HOST, DEFAULT_HOST)
     login = entry.data[CONF_LOGIN]
     password = entry.data[CONF_PASSWORD]
-    interval = min(entry.data.get(CONF_INTERVAL, 5), 8)
+    interval = min(entry.data.get(CONF_INTERVAL, DEFAULT_INTERVAL), 5)
     template_path = entry.data.get(CONF_TEMPLATE_PATH, DEFAULT_TEMPLATE_PATH)
     output_path = entry.data.get(CONF_OUTPUT_PATH, DEFAULT_OUTPUT_PATH)
 
@@ -42,130 +45,102 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     )
 
     state = {
-        "ss": None,
-        "domain": "iptv-nlive1.idc.md",
+        "token": None,
+        "domain": "iptv-live.idc.md",
     }
 
-    async def _get_real_stream_token() -> tuple[str | None, str]:
-        login_url = f"https://{API_HOST}/api/json/login"
-        async with session.post(
-            login_url,
-            params={"settings": "all"},
-            data={"login": login, "pass": password},
-            timeout=15,
-        ) as resp:
+    async def _login_and_get_token() -> tuple[str | None, str]:
+        url = f"https://{host}/api/json/login"
+        params = {
+            "login": login,
+            "pass": password,
+            "settings": "all",
+        }
+        async with session.get(url, params=params, timeout=15) as resp:
             resp.raise_for_status()
-            login_text = await resp.text()
-            login_data = await resp.json(content_type=None)
+            text = await resp.text()
+            data = await resp.json(content_type=None)
 
-        if isinstance(login_data, dict) and "error" in login_data:
-            raise UpdateFailed(f"Ошибка входа: {login_data['error']}")
-
-        ssid = (
-            login_data.get("sid")
-            or login_data.get("SSID")
-            or login_data.get("token")
+        token = (
+            data.get("sid")
+            or data.get("ss")
+            or data.get("token")
+            or (data.get("settings", {}).get("ss") if isinstance(data.get("settings"), dict) else None)
         )
-        if not ssid:
-            m = re.search(r'"(?:sid|SSID|token)"\s*:\s*"([a-f0-9]{32})"', login_text, re.I)
-            if m:
-                ssid = m.group(1)
-
-        if not ssid:
-            raise UpdateFailed(f"API login не вернул SSID: {login_text[:200]}")
-
-        try:
-            async with session.get(
-                f"https://{API_HOST}/api/json/channel_list",
-                params={"SSID": ssid, "icon": "png"},
-                timeout=10,
-            ) as ch_resp:
-                await ch_resp.text()
-        except Exception:
-            pass
-
-        async with session.get(
-            f"https://{API_HOST}/api/json/get_url",
-            params={"SSID": ssid, "cid": "2"},
-            timeout=15,
-        ) as resp:
-            resp.raise_for_status()
-            url_text = await resp.text()
-            url_data = await resp.json(content_type=None)
-
-        if isinstance(url_data, dict) and "error" in url_data:
-            raise UpdateFailed(f"Ошибка get_url: {url_data['error']}")
-
-        hls_ticket_url = url_data.get("url") if isinstance(url_data, dict) else None
-        if not hls_ticket_url:
-            m_url = re.search(r'"url"\s*:\s*"(https?://[^"]+)"', url_text)
-            if m_url:
-                hls_ticket_url = m_url.group(1).replace("\\/", "/")
-
-        if not hls_ticket_url:
-            raise UpdateFailed(f"get_url не вернул HLS-ссылку: {url_text[:200]}")
+        if not token:
+            match = re.search(r'"(?:sid|ss|token)"\s*:\s*"([a-f0-9]{32})"', text, re.IGNORECASE)
+            if match:
+                token = match.group(1)
 
         domain = state["domain"]
-        m_dom = re.search(r"https?://([^/]+)", hls_ticket_url)
-        if m_dom:
-            domain = m_dom.group(1)
+        domains = re.findall(r"(iptv-[a-z0-9-]+\.idc\.md)", text, re.IGNORECASE)
+        stream_domains = [d for d in domains if not d.lower().startswith("iptvn.")]
+        if stream_domains:
+            domain = stream_domains[0]
 
-        m_ss = re.search(r"[?&]ss=([a-f0-9]{32})", hls_ticket_url, re.I)
-        if m_ss:
-            return m_ss.group(1), domain
+        return token, domain
 
-        async with session.get(hls_ticket_url, timeout=15) as m3u8_resp:
-            m3u8_resp.raise_for_status()
-            final_url = str(m3u8_resp.url)
-            m3u8_body = await m3u8_resp.text()
-
-        m_ss = re.search(
-            r"[?&]ss=([a-f0-9]{32})",
-            f"{final_url}\n{m3u8_body}",
-            re.I,
-        )
-        if not m_ss:
-            raise UpdateFailed("Не удалось извлечь токен ss= из index.m3u8")
-
-        return m_ss.group(1), domain
-
-    async def _ping_m3u8(domain: str, ss_token: str) -> bool:
-        """Каждые 5 секунд читаем live1.m3u8?ss=..., как вкладка плеера на паузе."""
-        test_url = f"https://{domain}/hls/2/live1.m3u8?ss={ss_token}"
+    async def _check_stream_alive(domain: str, token: str) -> bool:
+        """Качаем live1.m3u8 и последний .ts сегмент целиком, чтобы сервер держал сессию онлайн."""
+        test_url = f"https://{domain}/hls/2/live1.m3u8?ss={token}"
+        headers = {"Cookie": f"SSID={token}"}
         try:
-            async with session.get(test_url, timeout=5) as resp:
-                if resp.status == 200:
-                    body = await resp.text()
-                    return "#EXTM3U" in body
+            async with session.get(test_url, headers=headers, timeout=10) as resp:
+                if resp.status != 200:
+                    return False
+                body = await resp.text()
+                if "#EXTM3U" not in body:
+                    return False
+
+                ts_lines = [
+                    line.strip()
+                    for line in body.splitlines()
+                    if line.strip() and not line.startswith("#")
+                ]
+                if not ts_lines:
+                    return False
+
+                ts_url = urljoin(test_url, ts_lines[-1])
+                async with session.get(ts_url, headers=headers, timeout=10) as ts_resp:
+                    if ts_resp.status == 200:
+                        await ts_resp.read()
+                        return True
         except Exception:
             pass
         return False
 
     async def _async_update_data():
         try:
-            current_ss = state["ss"]
+            current_token = state["token"]
             current_domain = state["domain"]
 
-            if current_ss and await _ping_m3u8(current_domain, current_ss):
+            if current_token and await _check_stream_alive(current_domain, current_token):
+                _LOGGER.debug(
+                    "Сессия IDC IPTV активна (токен %s***, домен %s)",
+                    current_token[:6],
+                    current_domain,
+                )
                 return state
 
-            new_ss, new_domain = await _get_real_stream_token()
+            new_token, new_domain = await _login_and_get_token()
+            if not new_token:
+                raise UpdateFailed("API IDC не вернул токен сессии (sid)")
 
-            state["ss"] = new_ss
+            state["token"] = new_token
             state["domain"] = new_domain
 
-            await _ping_m3u8(new_domain, new_ss)
+            await _check_stream_alive(new_domain, new_token)
 
             await hass.async_add_executor_job(
                 _update_playlist_file,
                 template_path,
                 output_path,
                 new_domain,
-                new_ss,
+                new_token,
             )
             _LOGGER.info(
-                "Активирован реальный токен потока IDC IPTV (ss=%s***), домен %s. Плейлист обновлен.",
-                new_ss[:6],
+                "Получен новый токен IDC IPTV (%s***), домен %s. Плейлист обновлен.",
+                new_token[:6],
                 new_domain,
             )
             return state
