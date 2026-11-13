@@ -1,62 +1,63 @@
-# IDC IPTV for Home Assistant
+# IDC IPTV Proxy for Home Assistant
 
-A custom Home Assistant integration for **IDC (Interdnestrcom) IPTV** that automates session authentication, refreshes dynamic HLS stream tokens (`ss`), keeps the streaming session alive, and dynamically updates a local M3U playlist file.
+A custom Home Assistant integration (`idc_iptv_proxy`) that automatically authenticates with the IDC IPTV API, retrieves a live stream session token (`ss`), keeps the session active via periodic heartbeats, and dynamically updates a local M3U playlist file.
 
-## Key Features
+## Features
 
-* **Automatic Authentication & Token Refresh:** Logs into the IDC IPTV API, retrieves a session ID (`SSID`), exchanges stream tickets (`ticket`) for live stream tokens (`ss`), and updates them before expiration.
-* **Session Keep-Alive:** Periodically pings the active HLS stream (`live1.m3u8`) at a configurable interval (every 5–8 seconds) to prevent the provider from dropping the session.
-* **Dynamic M3U Playlist Generation:** Reads a user-defined M3U template, replaces stream domains and `ss` tokens across all channel URLs, and writes a ready-to-use playlist file.
-* **Auto-Template Creation:** Automatically generates a starter M3U playlist template (including channels like Russia 1 and TSV) if no template file is found at the configured path.
+- **Automatic Authentication:** Logs into the IDC IPTV portal API (`iptvn.idc.md` by default) and exchanges session tickets for a live HLS stream token (`ss`).
+- **Session Keep-Alive:** Pings the stream endpoint at regular intervals to prevent token expiration.
+- **Dynamic M3U Generation:** Updates stream domains and authentication tokens inside a customizable M3U template file.
+- **Auto-Template Creation:** Automatically generates a starter template with basic channels (Russia 1, TSV) if no template file exists yet.
 
 ## Installation
 
 ### Manual Installation
-1. Copy the `idc_iptv` folder into your Home Assistant `custom_components` directory:
+1. Copy the `idc_iptv_proxy` folder into your Home Assistant `config/custom_components/` directory.
+   Your file structure should look like this:
    ```text
-   <config_dir>/custom_components/idc_iptv/
+   config/
+   └── custom_components/
+       └── idc_iptv_proxy/
+           ├── __init__.py
+           ├── config_flow.py
+           ├── const.py
+           └── manifest.json
    ```
 2. Restart Home Assistant.
-3. Go to **Settings** -> **Devices & Services** -> **Add Integration**, search for **IDC IPTV**, and complete the setup flow.
+3. Go to **Settings** → **Devices & Services** → **Add Integration**.
+4. Search for **IDC IPTV Proxy** and complete the configuration form.
 
-## Configuration
+## Configuration Parameters
 
-During setup, configure the following parameters:
+| Parameter | Key | Default Value | Description |
+| :--- | :--- | :--- | :--- |
+| **API Host** | `host` | `iptvn.idc.md` | IDC IPTV portal API domain. |
+| **Login** | `login` | *(Required)* | Your IDC IPTV account username. |
+| **Password** | `password` | *(Required)* | Your IDC IPTV account password. |
+| **Update Interval** | `interval` | `60` | Check interval in seconds (capped at `8` seconds internally to keep the stream alive). |
+| **Template Path** | `template_path` | `/share/idc_template.m3u` | Path to the base M3U template file. |
+| **Output Path** | `output_path` | `/share/idc_tv.m3u` | Path where the ready-to-use M3U playlist with active tokens is saved. |
 
-| Parameter | Description | Default / Example |
-| :--- | :--- | :--- |
-| **Host** | IDC IPTV API server domain | `iptv.idc.md` |
-| **Login** | Your IDC IPTV account username | Required |
-| **Password** | Your IDC IPTV account password | Required |
-| **Interval** | Keep-alive check interval in seconds (capped at 8s) | `5` |
-| **Template Path** | Path to the source M3U template file | `/config/idc_template.m3u` |
-| **Output Path** | Path where the updated M3U playlist will be saved | `/config/www/idc_playlist.m3u` |
+## Adding Electronic Program Guide (EPG)
 
-> **Tip:** Saving the output playlist inside `/config/www/` makes it accessible over HTTP inside your local network at `http://<YOUR_HA_IP>:8123/local/idc_playlist.m3u`.
-
-## Playlist Template & EPG Setup
-
-You can customize the template file at `Template Path` with your preferred channels. The integration automatically updates the domain and `?ss=` parameter for every HTTP/HTTPS stream URL in the file.
-
-To enable the Electronic Program Guide (EPG), include the `url-tvg` attribute in the `#EXTM3U` header and add `tvg-name` tags for accurate channel matching:
+To enable TV guide data in your IPTV player, add the `url-tvg` attribute to the `#EXTM3U` header in your `/share/idc_template.m3u` file and ensure `tvg-name` matches the channel title:
 
 ```m3u
 #EXTM3U url-tvg="http://epg.one/epg2.xml.gz"
-#EXTINF:-1 tvg-id="1" tvg-name="Россия 1" tvg-logo="https://iptvn.idc.md/img/ico/png/1_512.png" group-title="General",Россия 1
+#EXTINF:-1 tvg-id="1" tvg-name="Россия 1" tvg-logo="https://iptvn.idc.md/img/ico/png/1_512.png" group-title="Общий",Россия 1
 https://iptv-live.idc.md/hls/1/live1.m3u8?ss=TOKEN_PLACEHOLDER
-#EXTINF:-1 tvg-id="2" tvg-name="ТСВ" tvg-logo="https://iptvn.idc.md/img/ico/png/2_512.png" group-title="General",ТСВ
+#EXTINF:-1 tvg-id="2" tvg-name="ТСВ" tvg-logo="https://iptvn.idc.md/img/ico/png/2_512.png" group-title="Общий",ТСВ
 https://iptv-live.idc.md/hls/2/live1.m3u8?ss=TOKEN_PLACEHOLDER
 ```
 
+> **Tip:** If you want to serve the generated playlist over HTTP to local network devices (Smart TVs, phones, media boxes), set the **Output Path** to `/config/www/idc_tv.m3u`. It will then be accessible at `http://<YOUR_HA_IP>:8123/local/idc_tv.m3u`.
+
 ## Usage in IPTV Players
 
-1. Open your IPTV client (e.g., **TiviMate**, **Televizo**, **OTT Navigator**, or **VLC**).
-2. Add a new M3U playlist using the local Home Assistant URL:
-   ```text
-   http://<YOUR_HA_IP>:8123/local/idc_playlist.m3u
-   ```
-3. If your player does not automatically detect the `url-tvg` header, manually add an XMLTV EPG source (such as `http://epg.one/epg2.xml.gz`) in the player settings and adjust the time shift if necessary.
+1. Open your preferred IPTV client (Televizo, OTT Navigator, TiviMate, VLC, etc.).
+2. Add a new playlist using the local path (`/share/idc_tv.m3u`) or your Home Assistant HTTP URL (`http://<YOUR_HA_IP>:8123/local/idc_tv.m3u`).
+3. If the TV guide timing is off by an hour, adjust the **EPG Time Shift** setting in your player (e.g., `-1` hour for UTC+2).
 
 ## Disclaimer
 
-This project is an unofficial integration intended for personal use by active IDC IPTV subscribers within the provider's network.
+This project is an unofficial integration created for personal convenience and is not affiliated with or endorsed by IDC.
