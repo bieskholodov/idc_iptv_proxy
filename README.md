@@ -53,7 +53,7 @@ https://iptv-live.idc.md/hls/2/live1.m3u8?ss=TOKEN_PLACEHOLDER
 1. Open your IPTV client (e.g., **TiviMate**, **Televizo**, **OTT Navigator**, or **VLC**).
 2. Add a new M3U playlist using the local Home Assistant URL:
    ```text
-   http://<YOUR_HA_IP>:8123/local/idc_playlist.m3u
+   http://<YOUR_HA_IP>:8123/share/idc_tv.m3u
    ```
 3. If your player does not automatically detect the `url-tvg` header, manually add an XMLTV EPG source (such as `http://epg.one/epg2.xml.gz`) in the player settings and adjust the time shift if necessary.
 
