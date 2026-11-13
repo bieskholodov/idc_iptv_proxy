@@ -1,0 +1,655 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="1" tvg-logo="https://iptvn.idc.md/img/ico/png/1_512.png",Россия 1
+https://iptv-live.idc.md/hls/1/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="2" tvg-logo="https://iptvn.idc.md/img/ico/png/2_512.png",ТСВ
+https://iptv-live.idc.md/hls/2/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="3" tvg-logo="https://iptvn.idc.md/img/ico/png/3_512.png",Первый
+https://iptv-live.idc.md/hls/3/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="4" tvg-logo="https://iptvn.idc.md/img/ico/png/4_512.png",Перший
+https://iptv-live.idc.md/hls/4/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="5" tvg-logo="https://iptvn.idc.md/img/ico/png/5_512.png",Discovery
+https://iptv-live.idc.md/hls/5/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="6" tvg-logo="https://iptvn.idc.md/img/ico/png/6_512.png",Пятница
+https://iptv-live.idc.md/hls/6/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="7" tvg-logo="https://iptvn.idc.md/img/ico/png/7_512.png",Animal Planet
+https://iptv-live.idc.md/hls/7/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="8" tvg-logo="https://iptvn.idc.md/img/ico/png/8_512.png",МАТЧ! ФУТБОЛ 1
+https://iptv-live.idc.md/hls/8/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="9" tvg-logo="https://iptvn.idc.md/img/ico/png/9_512.png",IDC Canal 9
+https://iptv-live.idc.md/hls/9/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="10" tvg-logo="https://iptvn.idc.md/img/ico/png/10_512.png",ТВЦ
+https://iptv-live.idc.md/hls/10/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="11" tvg-logo="https://iptvn.idc.md/img/ico/png/11_512.png",НТВ
+https://iptv-live.idc.md/hls/11/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="12" tvg-logo="https://iptvn.idc.md/img/ico/png/12_512.png",РЕН ТВ
+https://iptv-live.idc.md/hls/12/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="13" tvg-logo="https://iptvn.idc.md/img/ico/png/13_512.png",IDC Canal 13
+https://iptv-live.idc.md/hls/13/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="14" tvg-logo="https://iptvn.idc.md/img/ico/png/14_512.png",РОДНОЕ КИНО
+https://iptv-live.idc.md/hls/14/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="15" tvg-logo="https://iptvn.idc.md/img/ico/png/15_512.png",Детский Мир
+https://iptv-live.idc.md/hls/15/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="16" tvg-logo="https://iptvn.idc.md/img/ico/png/16_512.png",ТНТ
+https://iptv-live.idc.md/hls/16/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="17" tvg-logo="https://iptvn.idc.md/img/ico/png/17_512.png",IDC Canal 17
+https://iptv-live.idc.md/hls/17/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="18" tvg-logo="https://iptvn.idc.md/img/ico/png/18_512.png",IDC Canal 18
+https://iptv-live.idc.md/hls/18/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="19" tvg-logo="https://iptvn.idc.md/img/ico/png/19_512.png",IDC Canal 19
+https://iptv-live.idc.md/hls/19/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="20" tvg-logo="https://iptvn.idc.md/img/ico/png/20_512.png",СТС
+https://iptv-live.idc.md/hls/20/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="21" tvg-logo="https://iptvn.idc.md/img/ico/png/21_512.png",IDC Canal 21
+https://iptv-live.idc.md/hls/21/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="22" tvg-logo="https://iptvn.idc.md/img/ico/png/22_512.png",IDC Canal 22
+https://iptv-live.idc.md/hls/22/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="23" tvg-logo="https://iptvn.idc.md/img/ico/png/23_512.png",IDC Canal 23
+https://iptv-live.idc.md/hls/23/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="24" tvg-logo="https://iptvn.idc.md/img/ico/png/24_512.png",IDC Canal 24
+https://iptv-live.idc.md/hls/24/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="25" tvg-logo="https://iptvn.idc.md/img/ico/png/25_512.png",IDC Canal 25
+https://iptv-live.idc.md/hls/25/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="26" tvg-logo="https://iptvn.idc.md/img/ico/png/26_512.png",IDC Canal 26
+https://iptv-live.idc.md/hls/26/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="27" tvg-logo="https://iptvn.idc.md/img/ico/png/27_512.png",IDC Canal 27
+https://iptv-live.idc.md/hls/27/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="28" tvg-logo="https://iptvn.idc.md/img/ico/png/28_512.png",Союз
+https://iptv-live.idc.md/hls/28/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="29" tvg-logo="https://iptvn.idc.md/img/ico/png/29_512.png",IDC Canal 29
+https://iptv-live.idc.md/hls/29/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="30" tvg-logo="https://iptvn.idc.md/img/ico/png/30_512.png",IDC Canal 30
+https://iptv-live.idc.md/hls/30/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="31" tvg-logo="https://iptvn.idc.md/img/ico/png/31_512.png",IDC Canal 31
+https://iptv-live.idc.md/hls/31/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="32" tvg-logo="https://iptvn.idc.md/img/ico/png/32_512.png",IDC Canal 32
+https://iptv-live.idc.md/hls/32/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="34" tvg-logo="https://iptvn.idc.md/img/ico/png/34_512.png",IDC Canal 34
+https://iptv-live.idc.md/hls/34/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="35" tvg-logo="https://iptvn.idc.md/img/ico/png/35_512.png",IDC Canal 35
+https://iptv-live.idc.md/hls/35/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="36" tvg-logo="https://iptvn.idc.md/img/ico/png/36_512.png",IDC Canal 36
+https://iptv-live.idc.md/hls/36/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="37" tvg-logo="https://iptvn.idc.md/img/ico/png/37_512.png",IDC Canal 37
+https://iptv-live.idc.md/hls/37/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="38" tvg-logo="https://iptvn.idc.md/img/ico/png/38_512.png",IDC Canal 38
+https://iptv-live.idc.md/hls/38/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="39" tvg-logo="https://iptvn.idc.md/img/ico/png/39_512.png",IDC Canal 39
+https://iptv-live.idc.md/hls/39/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="42" tvg-logo="https://iptvn.idc.md/img/ico/png/42_512.png",IDC Canal 42
+https://iptv-live.idc.md/hls/42/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="43" tvg-logo="https://iptvn.idc.md/img/ico/png/43_512.png",IDC Canal 43
+https://iptv-live.idc.md/hls/43/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="49" tvg-logo="https://iptvn.idc.md/img/ico/png/49_512.png",IDC Canal 49
+https://iptv-live.idc.md/hls/49/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="56" tvg-logo="https://iptvn.idc.md/img/ico/png/56_512.png",IDC Canal 56
+https://iptv-live.idc.md/hls/56/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="58" tvg-logo="https://iptvn.idc.md/img/ico/png/58_512.png",IDC Canal 58
+https://iptv-live.idc.md/hls/58/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="60" tvg-logo="https://iptvn.idc.md/img/ico/png/60_512.png",IDC Canal 60
+https://iptv-live.idc.md/hls/60/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="62" tvg-logo="https://iptvn.idc.md/img/ico/png/62_512.png",IDC Canal 62
+https://iptv-live.idc.md/hls/62/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="63" tvg-logo="https://iptvn.idc.md/img/ico/png/63_512.png",Диалоги о рыбалке
+https://iptv-live.idc.md/hls/63/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="64" tvg-logo="https://iptvn.idc.md/img/ico/png/64_512.png",Тирасполь - ул.Юности
+https://iptv-live.idc.md/hls/64/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="65" tvg-logo="https://iptvn.idc.md/img/ico/png/65_512.png",Бендеры - Центр
+https://iptv-live.idc.md/hls/65/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="66" tvg-logo="https://iptvn.idc.md/img/ico/png/66_512.png",Победа
+https://iptv-live.idc.md/hls/66/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="67" tvg-logo="https://iptvn.idc.md/img/ico/png/67_512.png",Тирасполь - Площадь Суворова
+https://iptv-live.idc.md/hls/67/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="68" tvg-logo="https://iptvn.idc.md/img/ico/png/68_512.png",ТРОФЕЙ
+https://iptv-live.idc.md/hls/68/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="69" tvg-logo="https://iptvn.idc.md/img/ico/png/69_512.png",IDC Canal 69
+https://iptv-live.idc.md/hls/69/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="70" tvg-logo="https://iptvn.idc.md/img/ico/png/70_512.png",IDC Canal 70
+https://iptv-live.idc.md/hls/70/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="72" tvg-logo="https://iptvn.idc.md/img/ico/png/72_512.png",IDC Canal 72
+https://iptv-live.idc.md/hls/72/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="73" tvg-logo="https://iptvn.idc.md/img/ico/png/73_512.png",IDC Canal 73
+https://iptv-live.idc.md/hls/73/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="74" tvg-logo="https://iptvn.idc.md/img/ico/png/74_512.png",IDC Canal 74
+https://iptv-live.idc.md/hls/74/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="75" tvg-logo="https://iptvn.idc.md/img/ico/png/75_512.png",IDC Canal 75
+https://iptv-live.idc.md/hls/75/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="76" tvg-logo="https://iptvn.idc.md/img/ico/png/76_512.png",IDC Canal 76
+https://iptv-live.idc.md/hls/76/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="77" tvg-logo="https://iptvn.idc.md/img/ico/png/77_512.png",Lions Arena 1
+https://iptv-live.idc.md/hls/77/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="78" tvg-logo="https://iptvn.idc.md/img/ico/png/78_512.png",Lions Arena 2
+https://iptv-live.idc.md/hls/78/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="79" tvg-logo="https://iptvn.idc.md/img/ico/png/79_512.png",Москва Доверие
+https://iptv-live.idc.md/hls/79/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="81" tvg-logo="https://iptvn.idc.md/img/ico/png/81_512.png",IDC Canal 81
+https://iptv-live.idc.md/hls/81/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="83" tvg-logo="https://iptvn.idc.md/img/ico/png/83_512.png",IDC Canal 83
+https://iptv-live.idc.md/hls/83/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="84" tvg-logo="https://iptvn.idc.md/img/ico/png/84_512.png",IDC Canal 84
+https://iptv-live.idc.md/hls/84/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="85" tvg-logo="https://iptvn.idc.md/img/ico/png/85_512.png",IDC Canal 85
+https://iptv-live.idc.md/hls/85/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="86" tvg-logo="https://iptvn.idc.md/img/ico/png/86_512.png",IDC Canal 86
+https://iptv-live.idc.md/hls/86/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="87" tvg-logo="https://iptvn.idc.md/img/ico/png/87_512.png",IDC Canal 87
+https://iptv-live.idc.md/hls/87/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="88" tvg-logo="https://iptvn.idc.md/img/ico/png/88_512.png",IDC Canal 88
+https://iptv-live.idc.md/hls/88/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="89" tvg-logo="https://iptvn.idc.md/img/ico/png/89_512.png",IDC Canal 89
+https://iptv-live.idc.md/hls/89/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="90" tvg-logo="https://iptvn.idc.md/img/ico/png/90_512.png",IDC Canal 90
+https://iptv-live.idc.md/hls/90/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="91" tvg-logo="https://iptvn.idc.md/img/ico/png/91_512.png",IDC Canal 91
+https://iptv-live.idc.md/hls/91/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="92" tvg-logo="https://iptvn.idc.md/img/ico/png/92_512.png",IDC Canal 92
+https://iptv-live.idc.md/hls/92/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="93" tvg-logo="https://iptvn.idc.md/img/ico/png/93_512.png",IDC Canal 93
+https://iptv-live.idc.md/hls/93/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="94" tvg-logo="https://iptvn.idc.md/img/ico/png/94_512.png",IDC Canal 94
+https://iptv-live.idc.md/hls/94/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="95" tvg-logo="https://iptvn.idc.md/img/ico/png/95_512.png",Космический
+https://iptv-live.idc.md/hls/95/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="96" tvg-logo="https://iptvn.idc.md/img/ico/png/96_512.png",IDC Canal 96
+https://iptv-live.idc.md/hls/96/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="97" tvg-logo="https://iptvn.idc.md/img/ico/png/97_512.png",IDC Canal 97
+https://iptv-live.idc.md/hls/97/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="98" tvg-logo="https://iptvn.idc.md/img/ico/png/98_512.png",IDC Canal 98
+https://iptv-live.idc.md/hls/98/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="99" tvg-logo="https://iptvn.idc.md/img/ico/png/99_512.png",IDC Canal 99
+https://iptv-live.idc.md/hls/99/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="100" tvg-logo="https://iptvn.idc.md/img/ico/png/100_512.png",Первый ПМР
+https://iptv-live.idc.md/hls/100/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="101" tvg-logo="https://iptvn.idc.md/img/ico/png/101_512.png",IDC Canal 101
+https://iptv-live.idc.md/hls/101/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="102" tvg-logo="https://iptvn.idc.md/img/ico/png/102_512.png",IDC Canal 102
+https://iptv-live.idc.md/hls/102/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="103" tvg-logo="https://iptvn.idc.md/img/ico/png/103_512.png",Звезда
+https://iptv-live.idc.md/hls/103/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="104" tvg-logo="https://iptvn.idc.md/img/ico/png/104_512.png",IDC Canal 104
+https://iptv-live.idc.md/hls/104/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="105" tvg-logo="https://iptvn.idc.md/img/ico/png/105_512.png",IDC Canal 105
+https://iptv-live.idc.md/hls/105/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="107" tvg-logo="https://iptvn.idc.md/img/ico/png/107_512.png",IDC Canal 107
+https://iptv-live.idc.md/hls/107/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="108" tvg-logo="https://iptvn.idc.md/img/ico/png/108_512.png",IDC Canal 108
+https://iptv-live.idc.md/hls/108/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="109" tvg-logo="https://iptvn.idc.md/img/ico/png/109_512.png",Тирасполь - Зеленый рынок
+https://iptv-live.idc.md/hls/109/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="111" tvg-logo="https://iptvn.idc.md/img/ico/png/111_512.png",IDC Canal 111
+https://iptv-live.idc.md/hls/111/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="112" tvg-logo="https://iptvn.idc.md/img/ico/png/112_512.png",IDC Canal 112
+https://iptv-live.idc.md/hls/112/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="113" tvg-logo="https://iptvn.idc.md/img/ico/png/113_512.png",IDC Canal 113
+https://iptv-live.idc.md/hls/113/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="114" tvg-logo="https://iptvn.idc.md/img/ico/png/114_512.png",IDC Canal 114
+https://iptv-live.idc.md/hls/114/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="115" tvg-logo="https://iptvn.idc.md/img/ico/png/115_512.png",IDC Canal 115
+https://iptv-live.idc.md/hls/115/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="116" tvg-logo="https://iptvn.idc.md/img/ico/png/116_512.png",IDC Canal 116
+https://iptv-live.idc.md/hls/116/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="117" tvg-logo="https://iptvn.idc.md/img/ico/png/117_512.png",IDC Canal 117
+https://iptv-live.idc.md/hls/117/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="120" tvg-logo="https://iptvn.idc.md/img/ico/png/120_512.png",Телеканал ТЕАТР
+https://iptv-live.idc.md/hls/120/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="121" tvg-logo="https://iptvn.idc.md/img/ico/png/121_512.png",IDC Canal 121
+https://iptv-live.idc.md/hls/121/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="122" tvg-logo="https://iptvn.idc.md/img/ico/png/122_512.png",IDC Canal 122
+https://iptv-live.idc.md/hls/122/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="123" tvg-logo="https://iptvn.idc.md/img/ico/png/123_512.png",IDC Canal 123
+https://iptv-live.idc.md/hls/123/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="124" tvg-logo="https://iptvn.idc.md/img/ico/png/124_512.png",IDC Canal 124
+https://iptv-live.idc.md/hls/124/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="125" tvg-logo="https://iptvn.idc.md/img/ico/png/125_512.png",IDC Canal 125
+https://iptv-live.idc.md/hls/125/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="126" tvg-logo="https://iptvn.idc.md/img/ico/png/126_512.png",IDC Canal 126
+https://iptv-live.idc.md/hls/126/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="127" tvg-logo="https://iptvn.idc.md/img/ico/png/127_512.png",IDC Canal 127
+https://iptv-live.idc.md/hls/127/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="128" tvg-logo="https://iptvn.idc.md/img/ico/png/128_512.png",IDC Canal 128
+https://iptv-live.idc.md/hls/128/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="129" tvg-logo="https://iptvn.idc.md/img/ico/png/129_512.png",IDC Canal 129
+https://iptv-live.idc.md/hls/129/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="130" tvg-logo="https://iptvn.idc.md/img/ico/png/130_512.png",IDC Canal 130
+https://iptv-live.idc.md/hls/130/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="132" tvg-logo="https://iptvn.idc.md/img/ico/png/132_512.png",IDC Canal 132
+https://iptv-live.idc.md/hls/132/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="133" tvg-logo="https://iptvn.idc.md/img/ico/png/133_512.png",МИР
+https://iptv-live.idc.md/hls/133/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="134" tvg-logo="https://iptvn.idc.md/img/ico/png/134_512.png",IDC Canal 134
+https://iptv-live.idc.md/hls/134/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="135" tvg-logo="https://iptvn.idc.md/img/ico/png/135_512.png",IDC Canal 135
+https://iptv-live.idc.md/hls/135/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="136" tvg-logo="https://iptvn.idc.md/img/ico/png/136_512.png",IDC Canal 136
+https://iptv-live.idc.md/hls/136/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="137" tvg-logo="https://iptvn.idc.md/img/ico/png/137_512.png",IDC Canal 137
+https://iptv-live.idc.md/hls/137/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="138" tvg-logo="https://iptvn.idc.md/img/ico/png/138_512.png",IDC Canal 138
+https://iptv-live.idc.md/hls/138/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="139" tvg-logo="https://iptvn.idc.md/img/ico/png/139_512.png",IDC Canal 139
+https://iptv-live.idc.md/hls/139/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="141" tvg-logo="https://iptvn.idc.md/img/ico/png/141_512.png",IDC Canal 141
+https://iptv-live.idc.md/hls/141/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="142" tvg-logo="https://iptvn.idc.md/img/ico/png/142_512.png",IDC Canal 142
+https://iptv-live.idc.md/hls/142/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="143" tvg-logo="https://iptvn.idc.md/img/ico/png/143_512.png",IDC Canal 143
+https://iptv-live.idc.md/hls/143/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="144" tvg-logo="https://iptvn.idc.md/img/ico/png/144_512.png",IDC Canal 144
+https://iptv-live.idc.md/hls/144/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="145" tvg-logo="https://iptvn.idc.md/img/ico/png/145_512.png",IDC Canal 145
+https://iptv-live.idc.md/hls/145/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="146" tvg-logo="https://iptvn.idc.md/img/ico/png/146_512.png",IDC Canal 146
+https://iptv-live.idc.md/hls/146/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="147" tvg-logo="https://iptvn.idc.md/img/ico/png/147_512.png",IDC Canal 147
+https://iptv-live.idc.md/hls/147/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="148" tvg-logo="https://iptvn.idc.md/img/ico/png/148_512.png",IDC Canal 148
+https://iptv-live.idc.md/hls/148/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="149" tvg-logo="https://iptvn.idc.md/img/ico/png/149_512.png",IDC Canal 149
+https://iptv-live.idc.md/hls/149/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="150" tvg-logo="https://iptvn.idc.md/img/ico/png/150_512.png",IDC Canal 150
+https://iptv-live.idc.md/hls/150/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="151" tvg-logo="https://iptvn.idc.md/img/ico/png/151_512.png",IDC Canal 151
+https://iptv-live.idc.md/hls/151/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="152" tvg-logo="https://iptvn.idc.md/img/ico/png/152_512.png",IDC Canal 152
+https://iptv-live.idc.md/hls/152/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="153" tvg-logo="https://iptvn.idc.md/img/ico/png/153_512.png",IDC Canal 153
+https://iptv-live.idc.md/hls/153/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="154" tvg-logo="https://iptvn.idc.md/img/ico/png/154_512.png",IDC Canal 154
+https://iptv-live.idc.md/hls/154/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="155" tvg-logo="https://iptvn.idc.md/img/ico/png/155_512.png",IDC Canal 155
+https://iptv-live.idc.md/hls/155/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="156" tvg-logo="https://iptvn.idc.md/img/ico/png/156_512.png",Мосфильм. Золотая коллекция
+https://iptv-live.idc.md/hls/156/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="157" tvg-logo="https://iptvn.idc.md/img/ico/png/157_512.png",IDC Canal 157
+https://iptv-live.idc.md/hls/157/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="158" tvg-logo="https://iptvn.idc.md/img/ico/png/158_512.png",Петербург — 5 канал
+https://iptv-live.idc.md/hls/158/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="159" tvg-logo="https://iptvn.idc.md/img/ico/png/159_512.png",Поехали!
+https://iptv-live.idc.md/hls/159/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="160" tvg-logo="https://iptvn.idc.md/img/ico/png/160_512.png",IDC Canal 160
+https://iptv-live.idc.md/hls/160/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="161" tvg-logo="https://iptvn.idc.md/img/ico/png/161_512.png",IDC Canal 161
+https://iptv-live.idc.md/hls/161/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="162" tvg-logo="https://iptvn.idc.md/img/ico/png/162_512.png",IDC Canal 162
+https://iptv-live.idc.md/hls/162/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="163" tvg-logo="https://iptvn.idc.md/img/ico/png/163_512.png",IDC Canal 163
+https://iptv-live.idc.md/hls/163/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="164" tvg-logo="https://iptvn.idc.md/img/ico/png/164_512.png",IDC Canal 164
+https://iptv-live.idc.md/hls/164/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="165" tvg-logo="https://iptvn.idc.md/img/ico/png/165_512.png",IDC Canal 165
+https://iptv-live.idc.md/hls/165/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="166" tvg-logo="https://iptvn.idc.md/img/ico/png/166_512.png",IDC Canal 166
+https://iptv-live.idc.md/hls/166/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="167" tvg-logo="https://iptvn.idc.md/img/ico/png/167_512.png",IDC Canal 167
+https://iptv-live.idc.md/hls/167/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="168" tvg-logo="https://iptvn.idc.md/img/ico/png/168_512.png",IDC Canal 168
+https://iptv-live.idc.md/hls/168/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="169" tvg-logo="https://iptvn.idc.md/img/ico/png/169_512.png",IDC Canal 169
+https://iptv-live.idc.md/hls/169/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="170" tvg-logo="https://iptvn.idc.md/img/ico/png/170_512.png",IDC Canal 170
+https://iptv-live.idc.md/hls/170/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="171" tvg-logo="https://iptvn.idc.md/img/ico/png/171_512.png",IDC Canal 171
+https://iptv-live.idc.md/hls/171/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="172" tvg-logo="https://iptvn.idc.md/img/ico/png/172_512.png",IDC Canal 172
+https://iptv-live.idc.md/hls/172/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="173" tvg-logo="https://iptvn.idc.md/img/ico/png/173_512.png",IDC Canal 173
+https://iptv-live.idc.md/hls/173/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="174" tvg-logo="https://iptvn.idc.md/img/ico/png/174_512.png",IDC Canal 174
+https://iptv-live.idc.md/hls/174/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="175" tvg-logo="https://iptvn.idc.md/img/ico/png/175_512.png",IDC Canal 175
+https://iptv-live.idc.md/hls/175/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="176" tvg-logo="https://iptvn.idc.md/img/ico/png/176_512.png",IDC Canal 176
+https://iptv-live.idc.md/hls/176/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="177" tvg-logo="https://iptvn.idc.md/img/ico/png/177_512.png",IDC Canal 177
+https://iptv-live.idc.md/hls/177/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="178" tvg-logo="https://iptvn.idc.md/img/ico/png/178_512.png",IDC Canal 178
+https://iptv-live.idc.md/hls/178/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="179" tvg-logo="https://iptvn.idc.md/img/ico/png/179_512.png",IDC Canal 179
+https://iptv-live.idc.md/hls/179/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="180" tvg-logo="https://iptvn.idc.md/img/ico/png/180_512.png",IDC Canal 180
+https://iptv-live.idc.md/hls/180/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="181" tvg-logo="https://iptvn.idc.md/img/ico/png/181_512.png",IDC Canal 181
+https://iptv-live.idc.md/hls/181/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="182" tvg-logo="https://iptvn.idc.md/img/ico/png/182_512.png",IDC Canal 182
+https://iptv-live.idc.md/hls/182/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="183" tvg-logo="https://iptvn.idc.md/img/ico/png/183_512.png",IDC Canal 183
+https://iptv-live.idc.md/hls/183/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="184" tvg-logo="https://iptvn.idc.md/img/ico/png/184_512.png",Музыка Первого
+https://iptv-live.idc.md/hls/184/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="185" tvg-logo="https://iptvn.idc.md/img/ico/png/185_512.png",IDC Canal 185
+https://iptv-live.idc.md/hls/185/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="186" tvg-logo="https://iptvn.idc.md/img/ico/png/186_512.png",IDC Canal 186
+https://iptv-live.idc.md/hls/186/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="187" tvg-logo="https://iptvn.idc.md/img/ico/png/187_512.png",IDC Canal 187
+https://iptv-live.idc.md/hls/187/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="188" tvg-logo="https://iptvn.idc.md/img/ico/png/188_512.png",IDC Canal 188
+https://iptv-live.idc.md/hls/188/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="189" tvg-logo="https://iptvn.idc.md/img/ico/png/189_512.png",IDC Canal 189
+https://iptv-live.idc.md/hls/189/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="190" tvg-logo="https://iptvn.idc.md/img/ico/png/190_512.png",IDC Canal 190
+https://iptv-live.idc.md/hls/190/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="191" tvg-logo="https://iptvn.idc.md/img/ico/png/191_512.png",IDC Canal 191
+https://iptv-live.idc.md/hls/191/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="192" tvg-logo="https://iptvn.idc.md/img/ico/png/192_512.png",IDC Canal 192
+https://iptv-live.idc.md/hls/192/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="193" tvg-logo="https://iptvn.idc.md/img/ico/png/193_512.png",IDC Canal 193
+https://iptv-live.idc.md/hls/193/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="194" tvg-logo="https://iptvn.idc.md/img/ico/png/194_512.png",IDC Canal 194
+https://iptv-live.idc.md/hls/194/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="195" tvg-logo="https://iptvn.idc.md/img/ico/png/195_512.png",IDC Canal 195
+https://iptv-live.idc.md/hls/195/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="196" tvg-logo="https://iptvn.idc.md/img/ico/png/196_512.png",IDC Canal 196
+https://iptv-live.idc.md/hls/196/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="197" tvg-logo="https://iptvn.idc.md/img/ico/png/197_512.png",IDC Canal 197
+https://iptv-live.idc.md/hls/197/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="198" tvg-logo="https://iptvn.idc.md/img/ico/png/198_512.png",IDC Canal 198
+https://iptv-live.idc.md/hls/198/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="199" tvg-logo="https://iptvn.idc.md/img/ico/png/199_512.png",IDC Canal 199
+https://iptv-live.idc.md/hls/199/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="200" tvg-logo="https://iptvn.idc.md/img/ico/png/200_512.png",IDC Canal 200
+https://iptv-live.idc.md/hls/200/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="201" tvg-logo="https://iptvn.idc.md/img/ico/png/201_512.png",IDC Canal 201
+https://iptv-live.idc.md/hls/201/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="202" tvg-logo="https://iptvn.idc.md/img/ico/png/202_512.png",IDC Canal 202
+https://iptv-live.idc.md/hls/202/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="203" tvg-logo="https://iptvn.idc.md/img/ico/png/203_512.png",IDC Canal 203
+https://iptv-live.idc.md/hls/203/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="204" tvg-logo="https://iptvn.idc.md/img/ico/png/204_512.png",IDC Canal 204
+https://iptv-live.idc.md/hls/204/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="205" tvg-logo="https://iptvn.idc.md/img/ico/png/205_512.png",IDC Canal 205
+https://iptv-live.idc.md/hls/205/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="206" tvg-logo="https://iptvn.idc.md/img/ico/png/206_512.png",IDC Canal 206
+https://iptv-live.idc.md/hls/206/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="207" tvg-logo="https://iptvn.idc.md/img/ico/png/207_512.png",IDC Canal 207
+https://iptv-live.idc.md/hls/207/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="208" tvg-logo="https://iptvn.idc.md/img/ico/png/208_512.png",IDC Canal 208
+https://iptv-live.idc.md/hls/208/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="209" tvg-logo="https://iptvn.idc.md/img/ico/png/209_512.png",IDC Canal 209
+https://iptv-live.idc.md/hls/209/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="210" tvg-logo="https://iptvn.idc.md/img/ico/png/210_512.png",HISTORY
+https://iptv-live.idc.md/hls/210/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="211" tvg-logo="https://iptvn.idc.md/img/ico/png/211_512.png",IDC Canal 211
+https://iptv-live.idc.md/hls/211/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="212" tvg-logo="https://iptvn.idc.md/img/ico/png/212_512.png",Калейдоскоп ТВ
+https://iptv-live.idc.md/hls/212/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="213" tvg-logo="https://iptvn.idc.md/img/ico/png/213_512.png",IDC Canal 213
+https://iptv-live.idc.md/hls/213/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="215" tvg-logo="https://iptvn.idc.md/img/ico/png/215_512.png",IDC Canal 215
+https://iptv-live.idc.md/hls/215/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="216" tvg-logo="https://iptvn.idc.md/img/ico/png/216_512.png",IDC Canal 216
+https://iptv-live.idc.md/hls/216/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="218" tvg-logo="https://iptvn.idc.md/img/ico/png/218_512.png",IDC Canal 218
+https://iptv-live.idc.md/hls/218/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="219" tvg-logo="https://iptvn.idc.md/img/ico/png/219_512.png",IDC Canal 219
+https://iptv-live.idc.md/hls/219/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="220" tvg-logo="https://iptvn.idc.md/img/ico/png/220_512.png",IDC Canal 220
+https://iptv-live.idc.md/hls/220/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="221" tvg-logo="https://iptvn.idc.md/img/ico/png/221_512.png",IDC Canal 221
+https://iptv-live.idc.md/hls/221/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="222" tvg-logo="https://iptvn.idc.md/img/ico/png/222_512.png",IDC Canal 222
+https://iptv-live.idc.md/hls/222/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="223" tvg-logo="https://iptvn.idc.md/img/ico/png/223_512.png",IDC Canal 223
+https://iptv-live.idc.md/hls/223/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="224" tvg-logo="https://iptvn.idc.md/img/ico/png/224_512.png",IDC Canal 224
+https://iptv-live.idc.md/hls/224/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="225" tvg-logo="https://iptvn.idc.md/img/ico/png/225_512.png",РОССИЯ К
+https://iptv-live.idc.md/hls/225/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="227" tvg-logo="https://iptvn.idc.md/img/ico/png/227_512.png",IDC Canal 227
+https://iptv-live.idc.md/hls/227/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="228" tvg-logo="https://iptvn.idc.md/img/ico/png/228_512.png",IDC Canal 228
+https://iptv-live.idc.md/hls/228/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="230" tvg-logo="https://iptvn.idc.md/img/ico/png/230_512.png",IDC Canal 230
+https://iptv-live.idc.md/hls/230/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="231" tvg-logo="https://iptvn.idc.md/img/ico/png/231_512.png",IDC Canal 231
+https://iptv-live.idc.md/hls/231/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="232" tvg-logo="https://iptvn.idc.md/img/ico/png/232_512.png",IDC Canal 232
+https://iptv-live.idc.md/hls/232/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="233" tvg-logo="https://iptvn.idc.md/img/ico/png/233_512.png",IDC Canal 233
+https://iptv-live.idc.md/hls/233/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="235" tvg-logo="https://iptvn.idc.md/img/ico/png/235_512.png",IDC Canal 235
+https://iptv-live.idc.md/hls/235/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="237" tvg-logo="https://iptvn.idc.md/img/ico/png/237_512.png",IDC Canal 237
+https://iptv-live.idc.md/hls/237/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="238" tvg-logo="https://iptvn.idc.md/img/ico/png/238_512.png",IDC Canal 238
+https://iptv-live.idc.md/hls/238/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="239" tvg-logo="https://iptvn.idc.md/img/ico/png/239_512.png",IDC Canal 239
+https://iptv-live.idc.md/hls/239/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="240" tvg-logo="https://iptvn.idc.md/img/ico/png/240_512.png",IDC Canal 240
+https://iptv-live.idc.md/hls/240/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="241" tvg-logo="https://iptvn.idc.md/img/ico/png/241_512.png",IDC Canal 241
+https://iptv-live.idc.md/hls/241/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="242" tvg-logo="https://iptvn.idc.md/img/ico/png/242_512.png",IDC Canal 242
+https://iptv-live.idc.md/hls/242/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="243" tvg-logo="https://iptvn.idc.md/img/ico/png/243_512.png",IDC Canal 243
+https://iptv-live.idc.md/hls/243/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="245" tvg-logo="https://iptvn.idc.md/img/ico/png/245_512.png",IDC Canal 245
+https://iptv-live.idc.md/hls/245/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="246" tvg-logo="https://iptvn.idc.md/img/ico/png/246_512.png",IDC Canal 246
+https://iptv-live.idc.md/hls/246/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="247" tvg-logo="https://iptvn.idc.md/img/ico/png/247_512.png",Рыбница - Храм
+https://iptv-live.idc.md/hls/247/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="249" tvg-logo="https://iptvn.idc.md/img/ico/png/249_512.png",IDC Canal 249
+https://iptv-live.idc.md/hls/249/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="252" tvg-logo="https://iptvn.idc.md/img/ico/png/252_512.png",IDC Canal 252
+https://iptv-live.idc.md/hls/252/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="253" tvg-logo="https://iptvn.idc.md/img/ico/png/253_512.png",Тайна
+https://iptv-live.idc.md/hls/253/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="254" tvg-logo="https://iptvn.idc.md/img/ico/png/254_512.png",IDC Canal 254
+https://iptv-live.idc.md/hls/254/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="257" tvg-logo="https://iptvn.idc.md/img/ico/png/257_512.png",IDC Canal 257
+https://iptv-live.idc.md/hls/257/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="260" tvg-logo="https://iptvn.idc.md/img/ico/png/260_512.png",IDC Canal 260
+https://iptv-live.idc.md/hls/260/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="261" tvg-logo="https://iptvn.idc.md/img/ico/png/261_512.png",IDC Canal 261
+https://iptv-live.idc.md/hls/261/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="265" tvg-logo="https://iptvn.idc.md/img/ico/png/265_512.png",IDC-Реклама
+https://iptv-live.idc.md/hls/265/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="266" tvg-logo="https://iptvn.idc.md/img/ico/png/266_512.png",IDC Canal 266
+https://iptv-live.idc.md/hls/266/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="267" tvg-logo="https://iptvn.idc.md/img/ico/png/267_512.png",IDC Canal 267
+https://iptv-live.idc.md/hls/267/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="269" tvg-logo="https://iptvn.idc.md/img/ico/png/269_512.png",IDC Canal 269
+https://iptv-live.idc.md/hls/269/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="270" tvg-logo="https://iptvn.idc.md/img/ico/png/270_512.png",IDC Canal 270
+https://iptv-live.idc.md/hls/270/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="272" tvg-logo="https://iptvn.idc.md/img/ico/png/272_512.png",IDC Canal 272
+https://iptv-live.idc.md/hls/272/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="273" tvg-logo="https://iptvn.idc.md/img/ico/png/273_512.png",Первомайск
+https://iptv-live.idc.md/hls/273/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="274" tvg-logo="https://iptvn.idc.md/img/ico/png/274_512.png",IDC Canal 274
+https://iptv-live.idc.md/hls/274/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="276" tvg-logo="https://iptvn.idc.md/img/ico/png/276_512.png",IDC Canal 276
+https://iptv-live.idc.md/hls/276/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="277" tvg-logo="https://iptvn.idc.md/img/ico/png/277_512.png",IDC Canal 277
+https://iptv-live.idc.md/hls/277/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="278" tvg-logo="https://iptvn.idc.md/img/ico/png/278_512.png",IDC Canal 278
+https://iptv-live.idc.md/hls/278/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="279" tvg-logo="https://iptvn.idc.md/img/ico/png/279_512.png",IDC Canal 279
+https://iptv-live.idc.md/hls/279/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="284" tvg-logo="https://iptvn.idc.md/img/ico/png/284_512.png",IDC Canal 284
+https://iptv-live.idc.md/hls/284/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="286" tvg-logo="https://iptvn.idc.md/img/ico/png/286_512.png",IDC Canal 286
+https://iptv-live.idc.md/hls/286/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="291" tvg-logo="https://iptvn.idc.md/img/ico/png/291_512.png",IDC Canal 291
+https://iptv-live.idc.md/hls/291/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="292" tvg-logo="https://iptvn.idc.md/img/ico/png/292_512.png",IDC Canal 292
+https://iptv-live.idc.md/hls/292/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="295" tvg-logo="https://iptvn.idc.md/img/ico/png/295_512.png",IDC Canal 295
+https://iptv-live.idc.md/hls/295/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="298" tvg-logo="https://iptvn.idc.md/img/ico/png/298_512.png",Moldova 1
+https://iptv-live.idc.md/hls/298/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="300" tvg-logo="https://iptvn.idc.md/img/ico/png/300_512.png",IDC Canal 300
+https://iptv-live.idc.md/hls/300/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="375" tvg-logo="https://iptvn.idc.md/img/ico/png/375_512.png",IDC Canal 375
+https://iptv-live.idc.md/hls/375/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="376" tvg-logo="https://iptvn.idc.md/img/ico/png/376_512.png",IDC Canal 376
+https://iptv-live.idc.md/hls/376/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="379" tvg-logo="https://iptvn.idc.md/img/ico/png/379_512.png",IDC Canal 379
+https://iptv-live.idc.md/hls/379/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="394" tvg-logo="https://iptvn.idc.md/img/ico/png/394_512.png",IDC Canal 394
+https://iptv-live.idc.md/hls/394/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="401" tvg-logo="https://iptvn.idc.md/img/ico/png/401_512.png",IDC Canal 401
+https://iptv-live.idc.md/hls/401/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="404" tvg-logo="https://iptvn.idc.md/img/ico/png/404_512.png",IDC Canal 404
+https://iptv-live.idc.md/hls/404/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="407" tvg-logo="https://iptvn.idc.md/img/ico/png/407_512.png",МАТЧ! АРЕНА
+https://iptv-live.idc.md/hls/407/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="408" tvg-logo="https://iptvn.idc.md/img/ico/png/408_512.png",IDC Canal 408
+https://iptv-live.idc.md/hls/408/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="410" tvg-logo="https://iptvn.idc.md/img/ico/png/410_512.png",IDC Canal 410
+https://iptv-live.idc.md/hls/410/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="432" tvg-logo="https://iptvn.idc.md/img/ico/png/432_512.png",IDC Canal 432
+https://iptv-live.idc.md/hls/432/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="436" tvg-logo="https://iptvn.idc.md/img/ico/png/436_512.png",IDC Canal 436
+https://iptv-live.idc.md/hls/436/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="437" tvg-logo="https://iptvn.idc.md/img/ico/png/437_512.png",IDC Canal 437
+https://iptv-live.idc.md/hls/437/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="438" tvg-logo="https://iptvn.idc.md/img/ico/png/438_512.png",IDC Canal 438
+https://iptv-live.idc.md/hls/438/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="442" tvg-logo="https://iptvn.idc.md/img/ico/png/442_512.png",IDC Canal 442
+https://iptv-live.idc.md/hls/442/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="443" tvg-logo="https://iptvn.idc.md/img/ico/png/443_512.png",IDC Canal 443
+https://iptv-live.idc.md/hls/443/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="445" tvg-logo="https://iptvn.idc.md/img/ico/png/445_512.png",IDC Canal 445
+https://iptv-live.idc.md/hls/445/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="449" tvg-logo="https://iptvn.idc.md/img/ico/png/449_512.png",IDC Canal 449
+https://iptv-live.idc.md/hls/449/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="450" tvg-logo="https://iptvn.idc.md/img/ico/png/450_512.png",КИНОМИКС
+https://iptv-live.idc.md/hls/450/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="451" tvg-logo="https://iptvn.idc.md/img/ico/png/451_512.png",IDC Canal 451
+https://iptv-live.idc.md/hls/451/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="452" tvg-logo="https://iptvn.idc.md/img/ico/png/452_512.png",IDC Canal 452
+https://iptv-live.idc.md/hls/452/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="453" tvg-logo="https://iptvn.idc.md/img/ico/png/453_512.png",IDC Canal 453
+https://iptv-live.idc.md/hls/453/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="457" tvg-logo="https://iptvn.idc.md/img/ico/png/457_512.png",БТВ
+https://iptv-live.idc.md/hls/457/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="458" tvg-logo="https://iptvn.idc.md/img/ico/png/458_512.png",IDC Canal 458
+https://iptv-live.idc.md/hls/458/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="635" tvg-logo="https://iptvn.idc.md/img/ico/png/635_512.png",IDC Canal 635
+https://iptv-live.idc.md/hls/635/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="658" tvg-logo="https://iptvn.idc.md/img/ico/png/658_512.png",IDC Canal 658
+https://iptv-live.idc.md/hls/658/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="659" tvg-logo="https://iptvn.idc.md/img/ico/png/659_512.png",IDC Canal 659
+https://iptv-live.idc.md/hls/659/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="660" tvg-logo="https://iptvn.idc.md/img/ico/png/660_512.png",IDC Canal 660
+https://iptv-live.idc.md/hls/660/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="685" tvg-logo="https://iptvn.idc.md/img/ico/png/685_512.png",IDC Canal 685
+https://iptv-live.idc.md/hls/685/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="714" tvg-logo="https://iptvn.idc.md/img/ico/png/714_512.png",IDC Canal 714
+https://iptv-live.idc.md/hls/714/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="715" tvg-logo="https://iptvn.idc.md/img/ico/png/715_512.png",IDC Canal 715
+https://iptv-live.idc.md/hls/715/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="738" tvg-logo="https://iptvn.idc.md/img/ico/png/738_512.png",IDC Canal 738
+https://iptv-live.idc.md/hls/738/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="745" tvg-logo="https://iptvn.idc.md/img/ico/png/745_512.png",IDC Canal 745
+https://iptv-live.idc.md/hls/745/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="750" tvg-logo="https://iptvn.idc.md/img/ico/png/750_512.png",IDC Canal 750
+https://iptv-live.idc.md/hls/750/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="754" tvg-logo="https://iptvn.idc.md/img/ico/png/754_512.png",IDC Canal 754
+https://iptv-live.idc.md/hls/754/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="757" tvg-logo="https://iptvn.idc.md/img/ico/png/757_512.png",IDC Canal 757
+https://iptv-live.idc.md/hls/757/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="758" tvg-logo="https://iptvn.idc.md/img/ico/png/758_512.png",IDC Canal 758
+https://iptv-live.idc.md/hls/758/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="766" tvg-logo="https://iptvn.idc.md/img/ico/png/766_512.png",IDC Canal 766
+https://iptv-live.idc.md/hls/766/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="767" tvg-logo="https://iptvn.idc.md/img/ico/png/767_512.png",IDC Canal 767
+https://iptv-live.idc.md/hls/767/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="768" tvg-logo="https://iptvn.idc.md/img/ico/png/768_512.png",IDC Canal 768
+https://iptv-live.idc.md/hls/768/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="813" tvg-logo="https://iptvn.idc.md/img/ico/png/813_512.png",IDC Canal 813
+https://iptv-live.idc.md/hls/813/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="815" tvg-logo="https://iptvn.idc.md/img/ico/png/815_512.png",IDC Canal 815
+https://iptv-live.idc.md/hls/815/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="817" tvg-logo="https://iptvn.idc.md/img/ico/png/817_512.png",IDC Canal 817
+https://iptv-live.idc.md/hls/817/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="818" tvg-logo="https://iptvn.idc.md/img/ico/png/818_512.png",IDC Canal 818
+https://iptv-live.idc.md/hls/818/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="833" tvg-logo="https://iptvn.idc.md/img/ico/png/833_512.png",IDC Canal 833
+https://iptv-live.idc.md/hls/833/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="834" tvg-logo="https://iptvn.idc.md/img/ico/png/834_512.png",IDC Canal 834
+https://iptv-live.idc.md/hls/834/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="836" tvg-logo="https://iptvn.idc.md/img/ico/png/836_512.png",IDC Canal 836
+https://iptv-live.idc.md/hls/836/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="850" tvg-logo="https://iptvn.idc.md/img/ico/png/850_512.png",IDC Canal 850
+https://iptv-live.idc.md/hls/850/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="854" tvg-logo="https://iptvn.idc.md/img/ico/png/854_512.png",IDC Canal 854
+https://iptv-live.idc.md/hls/854/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="856" tvg-logo="https://iptvn.idc.md/img/ico/png/856_512.png",IDC Canal 856
+https://iptv-live.idc.md/hls/856/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="863" tvg-logo="https://iptvn.idc.md/img/ico/png/863_512.png",IDC Canal 863
+https://iptv-live.idc.md/hls/863/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="865" tvg-logo="https://iptvn.idc.md/img/ico/png/865_512.png",IDC Canal 865
+https://iptv-live.idc.md/hls/865/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="868" tvg-logo="https://iptvn.idc.md/img/ico/png/868_512.png",IDC Canal 868
+https://iptv-live.idc.md/hls/868/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="869" tvg-logo="https://iptvn.idc.md/img/ico/png/869_512.png",IDC Canal 869
+https://iptv-live.idc.md/hls/869/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="870" tvg-logo="https://iptvn.idc.md/img/ico/png/870_512.png",IDC Canal 870
+https://iptv-live.idc.md/hls/870/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="876" tvg-logo="https://iptvn.idc.md/img/ico/png/876_512.png",IDC Canal 876
+https://iptv-live.idc.md/hls/876/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="877" tvg-logo="https://iptvn.idc.md/img/ico/png/877_512.png",IDC Canal 877
+https://iptv-live.idc.md/hls/877/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="878" tvg-logo="https://iptvn.idc.md/img/ico/png/878_512.png",IDC Canal 878
+https://iptv-live.idc.md/hls/878/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="886" tvg-logo="https://iptvn.idc.md/img/ico/png/886_512.png",IDC Canal 886
+https://iptv-live.idc.md/hls/886/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="888" tvg-logo="https://iptvn.idc.md/img/ico/png/888_512.png",IDC Canal 888
+https://iptv-live.idc.md/hls/888/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="889" tvg-logo="https://iptvn.idc.md/img/ico/png/889_512.png",IDC Canal 889
+https://iptv-live.idc.md/hls/889/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="891" tvg-logo="https://iptvn.idc.md/img/ico/png/891_512.png",IDC Canal 891
+https://iptv-live.idc.md/hls/891/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="892" tvg-logo="https://iptvn.idc.md/img/ico/png/892_512.png",IDC Canal 892
+https://iptv-live.idc.md/hls/892/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="893" tvg-logo="https://iptvn.idc.md/img/ico/png/893_512.png",IDC Canal 893
+https://iptv-live.idc.md/hls/893/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="940" tvg-logo="https://iptvn.idc.md/img/ico/png/940_512.png",Моя Планета
+https://iptv-live.idc.md/hls/940/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="942" tvg-logo="https://iptvn.idc.md/img/ico/png/942_512.png",IDC Canal 942
+https://iptv-live.idc.md/hls/942/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="943" tvg-logo="https://iptvn.idc.md/img/ico/png/943_512.png",IDC Canal 943
+https://iptv-live.idc.md/hls/943/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="945" tvg-logo="https://iptvn.idc.md/img/ico/png/945_512.png",IDC Canal 945
+https://iptv-live.idc.md/hls/945/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="947" tvg-logo="https://iptvn.idc.md/img/ico/png/947_512.png",IDC Canal 947
+https://iptv-live.idc.md/hls/947/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="949" tvg-logo="https://iptvn.idc.md/img/ico/png/949_512.png",Любимое Кино
+https://iptv-live.idc.md/hls/949/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="953" tvg-logo="https://iptvn.idc.md/img/ico/png/953_512.png",IDC Canal 953
+https://iptv-live.idc.md/hls/953/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="954" tvg-logo="https://iptvn.idc.md/img/ico/png/954_512.png",IDC Canal 954
+https://iptv-live.idc.md/hls/954/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="955" tvg-logo="https://iptvn.idc.md/img/ico/png/955_512.png",IDC Canal 955
+https://iptv-live.idc.md/hls/955/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="957" tvg-logo="https://iptvn.idc.md/img/ico/png/957_512.png",IDC Canal 957
+https://iptv-live.idc.md/hls/957/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="963" tvg-logo="https://iptvn.idc.md/img/ico/png/963_512.png",IDC Canal 963
+https://iptv-live.idc.md/hls/963/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="966" tvg-logo="https://iptvn.idc.md/img/ico/png/966_512.png",IDC Canal 966
+https://iptv-live.idc.md/hls/966/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="968" tvg-logo="https://iptvn.idc.md/img/ico/png/968_512.png",IDC Canal 968
+https://iptv-live.idc.md/hls/968/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="969" tvg-logo="https://iptvn.idc.md/img/ico/png/969_512.png",IDC Canal 969
+https://iptv-live.idc.md/hls/969/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="984" tvg-logo="https://iptvn.idc.md/img/ico/png/984_512.png",IDC Canal 984
+https://iptv-live.idc.md/hls/984/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="985" tvg-logo="https://iptvn.idc.md/img/ico/png/985_512.png",IDC Canal 985
+https://iptv-live.idc.md/hls/985/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="986" tvg-logo="https://iptvn.idc.md/img/ico/png/986_512.png",IDC Canal 986
+https://iptv-live.idc.md/hls/986/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="990" tvg-logo="https://iptvn.idc.md/img/ico/png/990_512.png",IDC Canal 990
+https://iptv-live.idc.md/hls/990/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="991" tvg-logo="https://iptvn.idc.md/img/ico/png/991_512.png",IDC Canal 991
+https://iptv-live.idc.md/hls/991/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="993" tvg-logo="https://iptvn.idc.md/img/ico/png/993_512.png",В гостях у сказки
+https://iptv-live.idc.md/hls/993/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="994" tvg-logo="https://iptvn.idc.md/img/ico/png/994_512.png",IDC Canal 994
+https://iptv-live.idc.md/hls/994/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="999" tvg-logo="https://iptvn.idc.md/img/ico/png/999_512.png",IDC Canal 999
+https://iptv-live.idc.md/hls/999/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+#EXTINF:-1 tvg-id="1818" tvg-logo="https://iptvn.idc.md/img/ico/png/1818_512.png",IDC Canal 1818
+https://iptv-live.idc.md/hls/1818/live1.m3u8?ss=31db6a911595c2c4764fa521a9bcec74
+
+
