@@ -6,6 +6,7 @@ from urllib.parse import unquote, quote
 
 import aiohttp
 from homeassistant.config_entries import ConfigEntry
+from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
@@ -24,6 +25,8 @@ from .const import (
 
 _LOGGER = logging.getLogger(__name__)
 
+PLATFORMS: list[Platform] = [Platform.BINARY_SENSOR]
+
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     host = entry.data.get(CONF_HOST, DEFAULT_HOST)
@@ -38,8 +41,8 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         cookie_jar=cookie_jar,
         headers={
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
-            "Referer": "https://iptv.idc.md/",
-            "Origin": "https://iptv.idc.md",
+            "Referer": "https://idc.md",
+            "Origin": "https://idc.md",
         },
     )
 
@@ -49,7 +52,6 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     }
 
     async def _login_and_get_token() -> tuple[str | None, str]:
-        # 1. Твой оригинальный запрос авторизации (он всегда работал)
         login_url = f"https://{host}/api/json/login"
         params = {
             "login": login,
@@ -82,9 +84,8 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         domains = re.findall(r"(iptv-[a-z0-9-]+\.idc\.md)", login_text, re.IGNORECASE)
         stream_domains = [d for d in domains if not d.lower().startswith("iptvn.")]
         if stream_domains:
-            domain = stream_domains
+            domain = stream_domains[0]
 
-        # 2. Получаем ticket из get_url (даже если там http/ts://...)
         async with session.get(
             f"https://{host}/api/json/get_url",
             params={"SSID": ssid, "cid": "2"},
@@ -100,7 +101,6 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         raw_ticket = unquote(m_ticket.group(1))
         encoded_ticket = quote(raw_ticket, safe="")
 
-        # 3. Обмениваем ticket на живой ss= через https://<domain>/hls/2/index.m3u8?ticket=...
         index_url = f"https://{domain}/hls/2/index.m3u8?ticket={encoded_ticket}"
         async with session.get(index_url, timeout=15) as m3u8_resp:
             m3u8_resp.raise_for_status()
@@ -118,7 +118,6 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         return m_ss.group(1), domain
 
     async def _check_stream_alive(domain: str, ss_token: str) -> bool:
-        """Каждые 5 секунд читаем live1.m3u8?ss=..., чтобы сервер держал сессию онлайн."""
         test_url = f"https://{domain}/hls/2/live1.m3u8?ss={ss_token}"
         try:
             async with session.get(test_url, timeout=5) as resp:
@@ -161,6 +160,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             return state
 
         except Exception as err:
+            state["ss"] = None
             raise UpdateFailed(f"Ошибка поддержания сессии IDC IPTV: {err}") from err
 
     coordinator = DataUpdateCoordinator(
@@ -177,6 +177,8 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         "coordinator": coordinator,
         "session": session,
     }
+
+    await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
     return True
 
 
@@ -189,9 +191,9 @@ def _update_playlist_file(
         )
         default_template = (
             "#EXTM3U\n"
-            '#EXTINF:-1 tvg-id="1" tvg-logo="https://iptvn.idc.md/img/ico/png/1_512.png" group-title="Общий",Россия 1\n'
+            '#EXTINF:-1 tvg-id="1" tvg-logo="https://idc.md" group-title="Общий",Россия 1\n'
             f"https://{new_domain}/hls/1/live1.m3u8?ss={new_token}\n"
-            '#EXTINF:-1 tvg-id="2" tvg-logo="https://iptvn.idc.md/img/ico/png/2_512.png" group-title="Общий",ТСВ\n'
+            '#EXTINF:-1 tvg-id="2" tvg-logo="https://idc.md" group-title="Общий",ТСВ\n'
             f"https://{new_domain}/hls/2/live1.m3u8?ss={new_token}\n"
         )
         template_dir = os.path.dirname(template_path)
@@ -223,7 +225,9 @@ def _update_playlist_file(
 
 
 async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
-    entry_data = hass.data[DOMAIN].pop(entry.entry_id, None)
-    if entry_data and "session" in entry_data:
-        await entry_data["session"].close()
-    return True
+    unload_ok = await hass.config_entries.async_unload_platforms(entry, PLATFORMS)
+    if unload_ok:
+        entry_data = hass.data[DOMAIN].pop(entry.entry_id, None)
+        if entry_data and "session" in entry_data:
+            await entry_data["session"].close()
+    return unload_ok
