@@ -1,0 +1,718 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="1" tvg-logo="https://iptvn.idc.md/img/ico/png/1_512.png" group-title="Общий",Россия 1
+https://iptv-live.idc.md/hls/1/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="2" tvg-logo="https://iptvn.idc.md/img/ico/png/2_512.png" group-title="Общий",ТСВ
+https://iptv-live.idc.md/hls/2/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="3" tvg-logo="https://iptvn.idc.md/img/ico/png/3_512.png" group-title="Общий",Первый
+https://iptv-live.idc.md/hls/3/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="4" tvg-logo="https://iptvn.idc.md/img/ico/png/4_512.png" group-title="Общий",Перший
+https://iptv-live.idc.md/hls/4/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="5" tvg-logo="https://iptvn.idc.md/img/ico/png/5_512.png" group-title="Общий",Discovery
+https://iptv-live.idc.md/hls/5/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="6" tvg-logo="https://iptvn.idc.md/img/ico/png/6_512.png" group-title="Общий",Пятница
+https://iptv-live.idc.md/hls/6/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="7" tvg-logo="https://iptvn.idc.md/img/ico/png/7_512.png" group-title="Общий",Animal Planet
+https://iptv-live.idc.md/hls/7/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="8" tvg-logo="https://iptvn.idc.md/img/ico/png/8_512.png" group-title="Общий",МАТЧ! ФУТБОЛ 1
+https://iptv-live.idc.md/hls/8/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="9" tvg-logo="https://iptvn.idc.md/img/ico/png/9_512.png" group-title="Найденные в сети",ТСВ
+https://iptv-live.idc.md/hls/9/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="10" tvg-logo="https://iptvn.idc.md/img/ico/png/10_512.png" group-title="Общий",ТВЦ
+https://iptv-live.idc.md/hls/10/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="11" tvg-logo="https://iptvn.idc.md/img/ico/png/11_512.png" group-title="Общий",НТВ
+https://iptv-live.idc.md/hls/11/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="12" tvg-logo="https://iptvn.idc.md/img/ico/png/12_512.png" group-title="Общий",РЕН ТВ
+https://iptv-live.idc.md/hls/12/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="13" tvg-logo="https://iptvn.idc.md/img/ico/png/13_512.png" group-title="Найденные в сети",КИНОСВИДАНИЕ
+https://iptv-live.idc.md/hls/13/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="14" tvg-logo="https://iptvn.idc.md/img/ico/png/14_512.png" group-title="Общий",РОДНОЕ КИНО
+https://iptv-live.idc.md/hls/14/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="15" tvg-logo="https://iptvn.idc.md/img/ico/png/15_512.png" group-title="Общий",Детский Мир
+https://iptv-live.idc.md/hls/15/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="16" tvg-logo="https://iptvn.idc.md/img/ico/png/16_512.png" group-title="Общий",ТНТ
+https://iptv-live.idc.md/hls/16/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="17" tvg-logo="https://iptvn.idc.md/img/ico/png/17_512.png" group-title="Найденные в сети",EURO NEWS
+https://iptv-live.idc.md/hls/17/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="18" tvg-logo="https://iptvn.idc.md/img/ico/png/18_512.png" group-title="Найденные в сети",Анекдот ТВ
+https://iptv-live.idc.md/hls/18/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="19" tvg-logo="https://iptvn.idc.md/img/ico/png/19_512.png" group-title="Найденные в сети",SETANTA 1
+https://iptv-live.idc.md/hls/19/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="20" tvg-logo="https://iptvn.idc.md/img/ico/png/20_512.png" group-title="Общий",СТС
+https://iptv-live.idc.md/hls/20/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="21" tvg-logo="https://iptvn.idc.md/img/ico/png/21_512.png" group-title="Найденные в сети",Домашний
+https://iptv-live.idc.md/hls/21/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="22" tvg-logo="https://iptvn.idc.md/img/ico/png/22_512.png" group-title="Найденные в сети",Setanta Sports 2
+https://iptv-live.idc.md/hls/22/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="23" tvg-logo="https://iptvn.idc.md/img/ico/png/23_512.png" group-title="Найденные в сети",ТНТ Music
+https://iptv-live.idc.md/hls/23/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="24" tvg-logo="https://iptvn.idc.md/img/ico/png/24_512.png" group-title="Найденные в сети",Setanta Sports 3
+https://iptv-live.idc.md/hls/24/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="25" tvg-logo="https://iptvn.idc.md/img/ico/png/25_512.png" group-title="Найденные в сети",Мульт HD
+https://iptv-live.idc.md/hls/25/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="26" tvg-logo="https://iptvn.idc.md/img/ico/png/26_512.png" group-title="Найденные в сети",МУЗ-ТВ
+https://iptv-live.idc.md/hls/26/live1.m3u8?ss=e90486c3504f056a63e6ff0a57378459
+#EXTINF:-1 tvg-id="27" tvg-logo="https://iptvn.idc.md/img/ico/png/27_512.png" group-title="Найденные в сети",Bridge TV
+https://iptv-live.idc.md/hls/27/live1.m3u8?ss=e90486c3504f056a63e6ff0a57378459
+#EXTINF:-1 tvg-id="28" tvg-logo="https://iptvn.idc.md/img/ico/png/28_512.png" group-title="Общий",Союз
+https://iptv-live.idc.md/hls/28/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="29" tvg-logo="https://iptvn.idc.md/img/ico/png/29_512.png" group-title="Найденные в сети",RU.TV
+https://iptv-live.idc.md/hls/29/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="30" tvg-logo="https://iptvn.idc.md/img/ico/png/30_512.png" group-title="Найденные в сети",Ani
+https://iptv-live.idc.md/hls/30/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="31" tvg-logo="https://iptvn.idc.md/img/ico/png/31_512.png" group-title="Найденные в сети",Сарафан
+https://iptv-live.idc.md/hls/31/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="32" tvg-logo="https://iptvn.idc.md/img/ico/png/32_512.png" group-title="Найденные в сети",Суббота!
+https://iptv-live.idc.md/hls/32/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="34" tvg-logo="https://iptvn.idc.md/img/ico/png/34_512.png" group-title="Найденные в сети",IDC Canal 34
+https://iptv-live.idc.md/hls/34/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="35" tvg-logo="https://iptvn.idc.md/img/ico/png/35_512.png" group-title="Найденные в сети",IDC Canal 35
+https://iptv-live.idc.md/hls/35/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="36" tvg-logo="https://iptvn.idc.md/img/ico/png/36_512.png" group-title="Найденные в сети",IDC Canal 36
+https://iptv-live.idc.md/hls/36/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="37" tvg-logo="https://iptvn.idc.md/img/ico/png/37_512.png" group-title="Найденные в сети",IDC Canal 37
+https://iptv-live.idc.md/hls/37/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="38" tvg-logo="https://iptvn.idc.md/img/ico/png/38_512.png" group-title="Найденные в сети",IDC Canal 38
+https://iptv-live.idc.md/hls/38/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="39" tvg-logo="https://iptvn.idc.md/img/ico/png/39_512.png" group-title="Найденные в сети",IDC Canal 39
+https://iptv-live.idc.md/hls/39/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="40" tvg-logo="https://iptvn.idc.md/img/ico/png/40_512.png" group-title="Радио",LoveRadio
+https://iptv-live.idc.md/hls/40/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="41" tvg-logo="https://iptvn.idc.md/img/ico/png/41_512.png" group-title="Радио",City-FM
+https://iptv-live.idc.md/hls/41/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="42" tvg-logo="https://iptvn.idc.md/img/ico/png/42_512.png" group-title="Найденные в сети",Suspense
+https://iptv-live.idc.md/hls/42/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="43" tvg-logo="https://iptvn.idc.md/img/ico/png/43_512.png" group-title="Найденные в сети",Romance HD
+https://iptv-live.idc.md/hls/43/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="44" tvg-logo="https://iptvn.idc.md/img/ico/png/44_512.png" group-title="Радио",Радио 1
+https://iptv-live.idc.md/hls/44/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="45" tvg-logo="https://iptvn.idc.md/img/ico/png/45_512.png" group-title="Радио",Детское
+https://iptv-live.idc.md/hls/45/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="47" tvg-logo="https://iptvn.idc.md/img/ico/png/47_512.png" group-title="Радио",107.8
+https://iptv-live.idc.md/hls/47/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="48" tvg-logo="https://iptvn.idc.md/img/ico/png/48_512.png" group-title="Радио",Энергия
+https://iptv-live.idc.md/hls/48/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="49" tvg-logo="https://iptvn.idc.md/img/ico/png/49_512.png" group-title="Найденные в сети",IDC Canal 49
+https://iptv-live.idc.md/hls/49/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="50" tvg-logo="https://iptvn.idc.md/img/ico/png/50_512.png" group-title="Радио",Романтика
+https://iptv-live.idc.md/hls/50/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="51" tvg-logo="https://iptvn.idc.md/img/ico/png/51_512.png" group-title="Радио",Relax-FM
+https://iptv-live.idc.md/hls/51/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="52" tvg-logo="https://iptvn.idc.md/img/ico/png/52_512.png" group-title="Радио",АвтоРадио
+https://iptv-live.idc.md/hls/52/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="53" tvg-logo="https://iptvn.idc.md/img/ico/png/53_512.png" group-title="Радио",Дорожное
+https://iptv-live.idc.md/hls/53/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="54" tvg-logo="https://iptvn.idc.md/img/ico/png/54_512.png" group-title="Радио",Радио Ваня
+https://iptv-live.idc.md/hls/54/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="55" tvg-logo="https://iptvn.idc.md/img/ico/png/55_512.png" group-title="Радио",Рекорд
+https://iptv-live.idc.md/hls/55/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="56" tvg-logo="https://iptvn.idc.md/img/ico/png/56_512.png" group-title="Найденные в сети",IDC Canal 56
+https://iptv-live.idc.md/hls/56/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="57" tvg-logo="https://iptvn.idc.md/img/ico/png/57_512.png" group-title="Радио",Шансон
+https://iptv-live.idc.md/hls/57/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="58" tvg-logo="https://iptvn.idc.md/img/ico/png/58_512.png" group-title="Найденные в сети",IDC Canal 58
+https://iptv-live.idc.md/hls/58/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="59" tvg-logo="https://iptvn.idc.md/img/ico/png/59_512.png" group-title="Радио",Ретро FM
+https://iptv-live.idc.md/hls/59/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="60" tvg-logo="https://iptvn.idc.md/img/ico/png/60_512.png" group-title="Найденные в сети",IDC Canal 60
+https://iptv-live.idc.md/hls/60/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="61" tvg-logo="https://iptvn.idc.md/img/ico/png/61_512.png" group-title="Радио",Melodia FM Украина
+https://iptv-live.idc.md/hls/61/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="62" tvg-logo="https://iptvn.idc.md/img/ico/png/62_512.png" group-title="Найденные в сети",IDC Canal 62
+https://iptv-live.idc.md/hls/62/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="63" tvg-logo="https://iptvn.idc.md/img/ico/png/63_512.png" group-title="Хобби",Диалоги о рыбалке
+https://iptv-live.idc.md/hls/63/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="64" tvg-logo="https://iptvn.idc.md/img/ico/png/64_512.png" group-title="Панорамы городов",Тирасполь - ул.Юности
+https://iptv-live.idc.md/hls/64/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="65" tvg-logo="https://iptvn.idc.md/img/ico/png/65_512.png" group-title="Панорамы городов",Бендеры - Центр
+https://iptv-live.idc.md/hls/65/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="66" tvg-logo="https://iptvn.idc.md/img/ico/png/66_512.png" group-title="Общий",Победа
+https://iptv-live.idc.md/hls/66/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="67" tvg-logo="https://iptvn.idc.md/img/ico/png/67_512.png" group-title="Панорамы городов",Тирасполь - Площадь Суворова
+https://iptv-live.idc.md/hls/67/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="68" tvg-logo="https://iptvn.idc.md/img/ico/png/68_512.png" group-title="Хобби",ТРОФЕЙ
+https://iptv-live.idc.md/hls/68/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="69" tvg-logo="https://iptvn.idc.md/img/ico/png/69_512.png" group-title="Найденные в сети",IDC Детский Premium
+https://iptv-live.idc.md/hls/69/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="70" tvg-logo="https://iptvn.idc.md/img/ico/png/70_512.png" group-title="Найденные в сети",СуперГерои
+https://iptv-live.idc.md/hls/70/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="72" tvg-logo="https://iptvn.idc.md/img/ico/png/72_512.png" group-title="Найденные в сети",Setanta Sports 2
+https://iptv-live.idc.md/hls/72/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="73" tvg-logo="https://iptvn.idc.md/img/ico/png/73_512.png" group-title="Найденные в сети",ТВ-3
+https://iptv-live.idc.md/hls/73/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="74" tvg-logo="https://iptvn.idc.md/img/ico/png/74_512.png" group-title="Найденные в сети",ТВ-3
+https://iptv-live.idc.md/hls/74/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="75" tvg-logo="https://iptvn.idc.md/img/ico/png/75_512.png" group-title="Найденные в сети",СПАС
+https://iptv-live.idc.md/hls/75/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="76" tvg-logo="https://iptvn.idc.md/img/ico/png/76_512.png" group-title="Найденные в сети",IDC Ultra HD 2
+https://iptv-live.idc.md/hls/76/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="77" tvg-logo="https://iptvn.idc.md/img/ico/png/77_512.png" group-title="Новые каналы",Lions Arena 1
+https://iptv-live.idc.md/hls/77/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="78" tvg-logo="https://iptvn.idc.md/img/ico/png/78_512.png" group-title="Новые каналы",Lions Arena 2
+https://iptv-live.idc.md/hls/78/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="79" tvg-logo="https://iptvn.idc.md/img/ico/png/79_512.png" group-title="Общий",Москва Доверие
+https://iptv-live.idc.md/hls/79/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="81" tvg-logo="https://iptvn.idc.md/img/ico/png/81_512.png" group-title="Найденные в сети",IDC Canal 81
+https://iptv-live.idc.md/hls/81/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="82" tvg-logo="https://iptvn.idc.md/img/ico/png/82_512.png" group-title="Радио",Серебряный Дождь
+https://iptv-live.idc.md/hls/82/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="83" tvg-logo="https://iptvn.idc.md/img/ico/png/83_512.png" group-title="Найденные в сети",Че!
+https://iptv-live.idc.md/hls/83/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="84" tvg-logo="https://iptvn.idc.md/img/ico/png/84_512.png" group-title="Найденные в сети",Россия 24
+https://iptv-live.idc.md/hls/84/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="85" tvg-logo="https://iptvn.idc.md/img/ico/png/85_512.png" group-title="Найденные в сети",РБК
+https://iptv-live.idc.md/hls/85/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="86" tvg-logo="https://iptvn.idc.md/img/ico/png/86_512.png" group-title="Найденные в сети",Kino Living
+https://iptv-live.idc.md/hls/86/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="87" tvg-logo="https://iptvn.idc.md/img/ico/png/87_512.png" group-title="Найденные в сети",HD REX
+https://iptv-live.idc.md/hls/87/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="88" tvg-logo="https://iptvn.idc.md/img/ico/png/88_512.png" group-title="Найденные в сети",.red
+https://iptv-live.idc.md/hls/88/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="89" tvg-logo="https://iptvn.idc.md/img/ico/png/89_512.png" group-title="Найденные в сети",Т24
+https://iptv-live.idc.md/hls/89/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="90" tvg-logo="https://iptvn.idc.md/img/ico/png/90_512.png" group-title="Найденные в сети",Премиальное HD
+https://iptv-live.idc.md/hls/90/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="91" tvg-logo="https://iptvn.idc.md/img/ico/png/91_512.png" group-title="Найденные в сети",Русский иллюзион
+https://iptv-live.idc.md/hls/91/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="92" tvg-logo="https://iptvn.idc.md/img/ico/png/92_512.png" group-title="Найденные в сети",Иллюзион+
+https://iptv-live.idc.md/hls/92/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="93" tvg-logo="https://iptvn.idc.md/img/ico/png/93_512.png" group-title="Найденные в сети",Zooпарк
+https://iptv-live.idc.md/hls/93/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="94" tvg-logo="https://iptvn.idc.md/img/ico/png/94_512.png" group-title="Найденные в сети",Приключения HD
+https://iptv-live.idc.md/hls/94/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="95" tvg-logo="https://iptvn.idc.md/img/ico/png/95_512.png" group-title="Найденные в сети",Первый Космический
+https://iptv-live.idc.md/hls/95/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="96" tvg-logo="https://iptvn.idc.md/img/ico/png/96_512.png" group-title="Найденные в сети",Охотник и рыболов HD
+https://iptv-live.idc.md/hls/96/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="97" tvg-logo="https://iptvn.idc.md/img/ico/png/97_512.png" group-title="Найденные в сети",Остросюжетное HD
+https://iptv-live.idc.md/hls/97/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="98" tvg-logo="https://iptvn.idc.md/img/ico/png/98_512.png" group-title="Найденные в сети",Наше HD
+https://iptv-live.idc.md/hls/98/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="99" tvg-logo="https://iptvn.idc.md/img/ico/png/99_512.png" group-title="Найденные в сети",Душевное
+https://iptv-live.idc.md/hls/99/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="100" tvg-logo="https://iptvn.idc.md/img/ico/png/100_512.png" group-title="Общий",Первый ПМР
+https://iptv-live.idc.md/hls/100/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="101" tvg-logo="https://iptvn.idc.md/img/ico/png/101_512.png" group-title="Найденные в сети",Big Planet
+https://iptv-live.idc.md/hls/101/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="102" tvg-logo="https://iptvn.idc.md/img/ico/png/102_512.png" group-title="Найденные в сети",Setanta Sports 1
+https://iptv-live.idc.md/hls/102/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="103" tvg-logo="https://iptvn.idc.md/img/ico/png/103_512.png" group-title="Общий",Звезда
+https://iptv-live.idc.md/hls/103/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="104" tvg-logo="https://iptvn.idc.md/img/ico/png/104_512.png" group-title="Найденные в сети",Music Box
+https://iptv-live.idc.md/hls/104/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="105" tvg-logo="https://iptvn.idc.md/img/ico/png/105_512.png" group-title="Найденные в сети",Women's Magazine
+https://iptv-live.idc.md/hls/105/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="107" tvg-logo="https://iptvn.idc.md/img/ico/png/107_512.png" group-title="Найденные в сети",Fashion TV
+https://iptv-live.idc.md/hls/107/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="108" tvg-logo="https://iptvn.idc.md/img/ico/png/108_512.png" group-title="Найденные в сети",Киносемья
+https://iptv-live.idc.md/hls/108/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="109" tvg-logo="https://iptvn.idc.md/img/ico/png/109_512.png" group-title="Панорамы городов",Тирасполь - Зеленый рынок
+https://iptv-live.idc.md/hls/109/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="111" tvg-logo="https://iptvn.idc.md/img/ico/png/111_512.png" group-title="Найденные в сети",Наука
+https://iptv-live.idc.md/hls/111/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="112" tvg-logo="https://iptvn.idc.md/img/ico/png/112_512.png" group-title="Найденные в сети",Кинопремьера
+https://iptv-live.idc.md/hls/112/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="113" tvg-logo="https://iptvn.idc.md/img/ico/png/113_512.png" group-title="Найденные в сети",В гостях у сказки
+https://iptv-live.idc.md/hls/113/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="114" tvg-logo="https://iptvn.idc.md/img/ico/png/114_512.png" group-title="Найденные в сети",Точка РФ
+https://iptv-live.idc.md/hls/114/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="115" tvg-logo="https://iptvn.idc.md/img/ico/png/115_512.png" group-title="Найденные в сети",РЕН ТВ HD
+https://iptv-live.idc.md/hls/115/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="116" tvg-logo="https://iptvn.idc.md/img/ico/png/116_512.png" group-title="Найденные в сети",IDC Кино HD 3
+https://iptv-live.idc.md/hls/116/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="117" tvg-logo="https://iptvn.idc.md/img/ico/png/117_512.png" group-title="Найденные в сети",СТС Kids HD
+https://iptv-live.idc.md/hls/117/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="118" tvg-logo="https://iptvn.idc.md/img/ico/png/118_512.png" group-title="Радио",INTER-FM 107.7
+https://iptv-live.idc.md/hls/118/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="119" tvg-logo="https://iptvn.idc.md/img/ico/png/119_512.png" group-title="Радио",Шансон Тирасполь
+https://iptv-live.idc.md/hls/119/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="120" tvg-logo="https://iptvn.idc.md/img/ico/png/120_512.png" group-title="Развлекательный",Телеканал ТЕАТР
+https://iptv-live.idc.md/hls/120/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="121" tvg-logo="https://iptvn.idc.md/img/ico/png/121_512.png" group-title="Найденные в сети",IDC Ultra HD 1
+https://iptv-live.idc.md/hls/121/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="122" tvg-logo="https://iptvn.idc.md/img/ico/png/122_512.png" group-title="Найденные в сети",Киномикс
+https://iptv-live.idc.md/hls/122/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="123" tvg-logo="https://iptvn.idc.md/img/ico/png/123_512.png" group-title="Найденные в сети",ТВЦ HD
+https://iptv-live.idc.md/hls/123/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="124" tvg-logo="https://iptvn.idc.md/img/ico/png/124_512.png" group-title="Найденные в сети",Galaxy
+https://iptv-live.idc.md/hls/124/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="125" tvg-logo="https://iptvn.idc.md/img/ico/png/125_512.png" group-title="Найденные в сети",Киноужас
+https://iptv-live.idc.md/hls/125/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="126" tvg-logo="https://iptvn.idc.md/img/ico/png/126_512.png" group-title="Найденные в сети",Киноужас
+https://iptv-live.idc.md/hls/126/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="127" tvg-logo="https://iptvn.idc.md/img/ico/png/127_512.png" group-title="Найденные в сети",Победа
+https://iptv-live.idc.md/hls/127/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="128" tvg-logo="https://iptvn.idc.md/img/ico/png/128_512.png" group-title="Найденные в сети",Брянская Губерния
+https://iptv-live.idc.md/hls/128/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="129" tvg-logo="https://iptvn.idc.md/img/ico/png/129_512.png" group-title="Найденные в сети",Москва 24
+https://iptv-live.idc.md/hls/129/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="130" tvg-logo="https://iptvn.idc.md/img/ico/png/130_512.png" group-title="Найденные в сети",360°
+https://iptv-live.idc.md/hls/130/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="131" tvg-logo="https://iptvn.idc.md/img/ico/png/131_512.png" group-title="Радио",Дорожное радио Тирасполь
+https://iptv-live.idc.md/hls/131/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="132" tvg-logo="https://iptvn.idc.md/img/ico/png/132_512.png" group-title="Найденные в сети",СТС Love
+https://iptv-live.idc.md/hls/132/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="133" tvg-logo="https://iptvn.idc.md/img/ico/png/133_512.png" group-title="Общий",МИР
+https://iptv-live.idc.md/hls/133/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="134" tvg-logo="https://iptvn.idc.md/img/ico/png/134_512.png" group-title="Найденные в сети",Eurosport 1
+https://iptv-live.idc.md/hls/134/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="135" tvg-logo="https://iptvn.idc.md/img/ico/png/135_512.png" group-title="Найденные в сети",Авто Плюс
+https://iptv-live.idc.md/hls/135/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="136" tvg-logo="https://iptvn.idc.md/img/ico/png/136_512.png" group-title="Найденные в сети",Матч! HD
+https://iptv-live.idc.md/hls/136/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="137" tvg-logo="https://iptvn.idc.md/img/ico/png/137_512.png" group-title="Найденные в сети",Эспресо TV
+https://iptv-live.idc.md/hls/137/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="138" tvg-logo="https://iptvn.idc.md/img/ico/png/138_512.png" group-title="Найденные в сети",CNN
+https://iptv-live.idc.md/hls/138/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="139" tvg-logo="https://iptvn.idc.md/img/ico/png/139_512.png" group-title="Найденные в сети",Мужское кино
+https://iptv-live.idc.md/hls/139/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="141" tvg-logo="https://iptvn.idc.md/img/ico/png/141_512.png" group-title="Найденные в сети",Первый Космический
+https://iptv-live.idc.md/hls/141/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="142" tvg-logo="https://iptvn.idc.md/img/ico/png/142_512.png" group-title="Найденные в сети",Киносерия
+https://iptv-live.idc.md/hls/142/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="143" tvg-logo="https://iptvn.idc.md/img/ico/png/143_512.png" group-title="Найденные в сети",Extreme Sports Channel
+https://iptv-live.idc.md/hls/143/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="144" tvg-logo="https://iptvn.idc.md/img/ico/png/144_512.png" group-title="Найденные в сети",Deluxe Music
+https://iptv-live.idc.md/hls/144/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="145" tvg-logo="https://iptvn.idc.md/img/ico/png/145_512.png" group-title="Найденные в сети",Солнце
+https://iptv-live.idc.md/hls/145/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="146" tvg-logo="https://iptvn.idc.md/img/ico/png/146_512.png" group-title="Найденные в сети",TLC
+https://iptv-live.idc.md/hls/146/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="147" tvg-logo="https://iptvn.idc.md/img/ico/png/147_512.png" group-title="Найденные в сети",Кинокомедия
+https://iptv-live.idc.md/hls/147/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="148" tvg-logo="https://iptvn.idc.md/img/ico/png/148_512.png" group-title="Найденные в сети",Чижик
+https://iptv-live.idc.md/hls/148/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="149" tvg-logo="https://iptvn.idc.md/img/ico/png/149_512.png" group-title="Найденные в сети",Совершенно секретно
+https://iptv-live.idc.md/hls/149/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="150" tvg-logo="https://iptvn.idc.md/img/ico/png/150_512.png" group-title="Найденные в сети",9 Канал
+https://iptv-live.idc.md/hls/150/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="151" tvg-logo="https://iptvn.idc.md/img/ico/png/151_512.png" group-title="Найденные в сети",Кинохит
+https://iptv-live.idc.md/hls/151/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="152" tvg-logo="https://iptvn.idc.md/img/ico/png/152_512.png" group-title="Найденные в сети",Киносвидание
+https://iptv-live.idc.md/hls/152/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="153" tvg-logo="https://iptvn.idc.md/img/ico/png/153_512.png" group-title="Найденные в сети",RT
+https://iptv-live.idc.md/hls/153/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="154" tvg-logo="https://iptvn.idc.md/img/ico/png/154_512.png" group-title="Найденные в сети",Setanta Sports KZ
+https://iptv-live.idc.md/hls/154/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="155" tvg-logo="https://iptvn.idc.md/img/ico/png/155_512.png" group-title="Найденные в сети",BBC News
+https://iptv-live.idc.md/hls/155/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="156" tvg-logo="https://iptvn.idc.md/img/ico/png/156_512.png" group-title="Кино",Мосфильм. Золотая коллекция
+https://iptv-live.idc.md/hls/156/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="157" tvg-logo="https://iptvn.idc.md/img/ico/png/157_512.png" group-title="Найденные в сети",Наше новое кино
+https://iptv-live.idc.md/hls/157/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="158" tvg-logo="https://iptvn.idc.md/img/ico/png/158_512.png" group-title="Общий",Петербург — 5 канал
+https://iptv-live.idc.md/hls/158/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="159" tvg-logo="https://iptvn.idc.md/img/ico/png/159_512.png" group-title="Развлекательный",Поехали!
+https://iptv-live.idc.md/hls/159/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="160" tvg-logo="https://iptvn.idc.md/img/ico/png/160_512.png" group-title="Найденные в сети",Ретро
+https://iptv-live.idc.md/hls/160/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="161" tvg-logo="https://iptvn.idc.md/img/ico/png/161_512.png" group-title="Найденные в сети",Киносемья
+https://iptv-live.idc.md/hls/161/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="162" tvg-logo="https://iptvn.idc.md/img/ico/png/162_512.png" group-title="Найденные в сети",IDC Canal 162
+https://iptv-live.idc.md/hls/162/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="163" tvg-logo="https://iptvn.idc.md/img/ico/png/163_512.png" group-title="Найденные в сети",Кинохит
+https://iptv-live.idc.md/hls/163/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="164" tvg-logo="https://iptvn.idc.md/img/ico/png/164_512.png" group-title="Найденные в сети",IDC Canal 164
+https://iptv-live.idc.md/hls/164/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="165" tvg-logo="https://iptvn.idc.md/img/ico/png/165_512.png" group-title="Найденные в сети",Наше новое кино
+https://iptv-live.idc.md/hls/165/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="166" tvg-logo="https://iptvn.idc.md/img/ico/png/166_512.png" group-title="Найденные в сети",Киносерия
+https://iptv-live.idc.md/hls/166/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="167" tvg-logo="https://iptvn.idc.md/img/ico/png/167_512.png" group-title="Найденные в сети",Da Vinci
+https://iptv-live.idc.md/hls/167/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="168" tvg-logo="https://iptvn.idc.md/img/ico/png/168_512.png" group-title="Найденные в сети",Saga TV
+https://iptv-live.idc.md/hls/168/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="169" tvg-logo="https://iptvn.idc.md/img/ico/png/169_512.png" group-title="Найденные в сети",Матч! Боец
+https://iptv-live.idc.md/hls/169/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="170" tvg-logo="https://iptvn.idc.md/img/ico/png/170_512.png" group-title="Найденные в сети",Ля-минор
+https://iptv-live.idc.md/hls/170/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="171" tvg-logo="https://iptvn.idc.md/img/ico/png/171_512.png" group-title="Найденные в сети",HD REX
+https://iptv-live.idc.md/hls/171/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="172" tvg-logo="https://iptvn.idc.md/img/ico/png/172_512.png" group-title="Найденные в сети",Кинокомедия
+https://iptv-live.idc.md/hls/172/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="173" tvg-logo="https://iptvn.idc.md/img/ico/png/173_512.png" group-title="Найденные в сети",Hollywood
+https://iptv-live.idc.md/hls/173/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="174" tvg-logo="https://iptvn.idc.md/img/ico/png/174_512.png" group-title="Найденные в сети",Kino Living
+https://iptv-live.idc.md/hls/174/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="175" tvg-logo="https://iptvn.idc.md/img/ico/png/175_512.png" group-title="Найденные в сети",Индийское кино
+https://iptv-live.idc.md/hls/175/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="176" tvg-logo="https://iptvn.idc.md/img/ico/png/176_512.png" group-title="Найденные в сети",Bridge Deluxe
+https://iptv-live.idc.md/hls/176/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="177" tvg-logo="https://iptvn.idc.md/img/ico/png/177_512.png" group-title="Найденные в сети",В мире животных HD
+https://iptv-live.idc.md/hls/177/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="178" tvg-logo="https://iptvn.idc.md/img/ico/png/178_512.png" group-title="Найденные в сети",Матч! Футбол 2
+https://iptv-live.idc.md/hls/178/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="179" tvg-logo="https://iptvn.idc.md/img/ico/png/179_512.png" group-title="Найденные в сети",Матч Премьер
+https://iptv-live.idc.md/hls/179/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="180" tvg-logo="https://iptvn.idc.md/img/ico/png/180_512.png" group-title="Найденные в сети",Ностальгия
+https://iptv-live.idc.md/hls/180/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="181" tvg-logo="https://iptvn.idc.md/img/ico/png/181_512.png" group-title="Найденные в сети",Усадьба
+https://iptv-live.idc.md/hls/181/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="182" tvg-logo="https://iptvn.idc.md/img/ico/png/182_512.png" group-title="Найденные в сети",Время
+https://iptv-live.idc.md/hls/182/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="183" tvg-logo="https://iptvn.idc.md/img/ico/png/183_512.png" group-title="Найденные в сети",Телекафе
+https://iptv-live.idc.md/hls/183/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="184" tvg-logo="https://iptvn.idc.md/img/ico/png/184_512.png" group-title="Общий",Музыка Первого
+https://iptv-live.idc.md/hls/184/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="185" tvg-logo="https://iptvn.idc.md/img/ico/png/185_512.png" group-title="Найденные в сети",Eurosport 2
+https://iptv-live.idc.md/hls/185/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="186" tvg-logo="https://iptvn.idc.md/img/ico/png/186_512.png" group-title="Найденные в сети",Карусель
+https://iptv-live.idc.md/hls/186/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="187" tvg-logo="https://iptvn.idc.md/img/ico/png/187_512.png" group-title="Найденные в сети",365 дней ТВ
+https://iptv-live.idc.md/hls/187/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="188" tvg-logo="https://iptvn.idc.md/img/ico/png/188_512.png" group-title="Найденные в сети",Дорама
+https://iptv-live.idc.md/hls/188/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="189" tvg-logo="https://iptvn.idc.md/img/ico/png/189_512.png" group-title="Найденные в сети",Матч! Планета
+https://iptv-live.idc.md/hls/189/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="190" tvg-logo="https://iptvn.idc.md/img/ico/png/190_512.png" group-title="Найденные в сети",.black
+https://iptv-live.idc.md/hls/190/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="191" tvg-logo="https://iptvn.idc.md/img/ico/png/191_512.png" group-title="Найденные в сети",Доктор
+https://iptv-live.idc.md/hls/191/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="192" tvg-logo="https://iptvn.idc.md/img/ico/png/192_512.png" group-title="Найденные в сети",Travel+Adventure
+https://iptv-live.idc.md/hls/192/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="193" tvg-logo="https://iptvn.idc.md/img/ico/png/193_512.png" group-title="Найденные в сети",Дикий
+https://iptv-live.idc.md/hls/193/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="194" tvg-logo="https://iptvn.idc.md/img/ico/png/194_512.png" group-title="Найденные в сети",Trash
+https://iptv-live.idc.md/hls/194/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="195" tvg-logo="https://iptvn.idc.md/img/ico/png/195_512.png" group-title="Найденные в сети",2x2
+https://iptv-live.idc.md/hls/195/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="196" tvg-logo="https://iptvn.idc.md/img/ico/png/196_512.png" group-title="Найденные в сети",Women's Magazine
+https://iptv-live.idc.md/hls/196/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="197" tvg-logo="https://iptvn.idc.md/img/ico/png/197_512.png" group-title="Найденные в сети",Мама
+https://iptv-live.idc.md/hls/197/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="198" tvg-logo="https://iptvn.idc.md/img/ico/png/198_512.png" group-title="Найденные в сети",Amedia Hit
+https://iptv-live.idc.md/hls/198/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="199" tvg-logo="https://iptvn.idc.md/img/ico/png/199_512.png" group-title="Найденные в сети",Кухня ТВ
+https://iptv-live.idc.md/hls/199/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="200" tvg-logo="https://iptvn.idc.md/img/ico/png/200_512.png" group-title="Найденные в сети",ЖАРА
+https://iptv-live.idc.md/hls/200/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="201" tvg-logo="https://iptvn.idc.md/img/ico/png/201_512.png" group-title="Найденные в сети",Мужское кино
+https://iptv-live.idc.md/hls/201/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="202" tvg-logo="https://iptvn.idc.md/img/ico/png/202_512.png" group-title="Найденные в сети",Океан HD
+https://iptv-live.idc.md/hls/202/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="203" tvg-logo="https://iptvn.idc.md/img/ico/png/203_512.png" group-title="Найденные в сети",IDC Детский
+https://iptv-live.idc.md/hls/203/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="204" tvg-logo="https://iptvn.idc.md/img/ico/png/204_512.png" group-title="Найденные в сети",IDC Кино 1
+https://iptv-live.idc.md/hls/204/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="205" tvg-logo="https://iptvn.idc.md/img/ico/png/205_512.png" group-title="Найденные в сети",IDC Кино 2
+https://iptv-live.idc.md/hls/205/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="206" tvg-logo="https://iptvn.idc.md/img/ico/png/206_512.png" group-title="Найденные в сети",IDC Кино 3
+https://iptv-live.idc.md/hls/206/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="207" tvg-logo="https://iptvn.idc.md/img/ico/png/207_512.png" group-title="Найденные в сети",IDC Наше кино
+https://iptv-live.idc.md/hls/207/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="208" tvg-logo="https://iptvn.idc.md/img/ico/png/208_512.png" group-title="Найденные в сети",IDC Сериал
+https://iptv-live.idc.md/hls/208/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="209" tvg-logo="https://iptvn.idc.md/img/ico/png/209_512.png" group-title="Найденные в сети",Viasat Explore
+https://iptv-live.idc.md/hls/209/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="210" tvg-logo="https://iptvn.idc.md/img/ico/png/210_512.png" group-title="Найденные в сети",Viasat History
+https://iptv-live.idc.md/hls/210/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="211" tvg-logo="https://iptvn.idc.md/img/ico/png/211_512.png" group-title="Найденные в сети",Viasat Nature
+https://iptv-live.idc.md/hls/211/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="212" tvg-logo="https://iptvn.idc.md/img/ico/png/212_512.png" group-title="Общий",Калейдоскоп ТВ
+https://iptv-live.idc.md/hls/212/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="213" tvg-logo="https://iptvn.idc.md/img/ico/png/213_512.png" group-title="Найденные в сети",СТБ
+https://iptv-live.idc.md/hls/213/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="215" tvg-logo="https://iptvn.idc.md/img/ico/png/215_512.png" group-title="Найденные в сети",Amedia Premium
+https://iptv-live.idc.md/hls/215/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="216" tvg-logo="https://iptvn.idc.md/img/ico/png/216_512.png" group-title="Найденные в сети",ICTV
+https://iptv-live.idc.md/hls/216/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="218" tvg-logo="https://iptvn.idc.md/img/ico/png/218_512.png" group-title="Найденные в сети",Big Planet
+https://iptv-live.idc.md/hls/218/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="219" tvg-logo="https://iptvn.idc.md/img/ico/png/219_512.png" group-title="Найденные в сети",Кухня ТВ
+https://iptv-live.idc.md/hls/219/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="220" tvg-logo="https://iptvn.idc.md/img/ico/png/220_512.png" group-title="Найденные в сети",Новый канал
+https://iptv-live.idc.md/hls/220/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="221" tvg-logo="https://iptvn.idc.md/img/ico/png/221_512.png" group-title="Найденные в сети",360° HD
+https://iptv-live.idc.md/hls/221/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="222" tvg-logo="https://iptvn.idc.md/img/ico/png/222_512.png" group-title="Найденные в сети",1+1
+https://iptv-live.idc.md/hls/222/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="223" tvg-logo="https://iptvn.idc.md/img/ico/png/223_512.png" group-title="Найденные в сети",1+1
+https://iptv-live.idc.md/hls/223/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="224" tvg-logo="https://iptvn.idc.md/img/ico/png/224_512.png" group-title="Найденные в сети",2+2
+https://iptv-live.idc.md/hls/224/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="225" tvg-logo="https://iptvn.idc.md/img/ico/png/225_512.png" group-title="Общий",РОССИЯ К
+https://iptv-live.idc.md/hls/225/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="226" tvg-logo="https://iptvn.idc.md/img/ico/png/226_512.png" group-title="Радио",Радио России
+https://iptv-live.idc.md/hls/226/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="227" tvg-logo="https://iptvn.idc.md/img/ico/png/227_512.png" group-title="Найденные в сети",Мультиландия
+https://iptv-live.idc.md/hls/227/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="228" tvg-logo="https://iptvn.idc.md/img/ico/png/228_512.png" group-title="Найденные в сети",TV XXI
+https://iptv-live.idc.md/hls/228/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="230" tvg-logo="https://iptvn.idc.md/img/ico/png/230_512.png" group-title="Найденные в сети",Plan B HD
+https://iptv-live.idc.md/hls/230/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="231" tvg-logo="https://iptvn.idc.md/img/ico/png/231_512.png" group-title="Найденные в сети",.sci-fi
+https://iptv-live.idc.md/hls/231/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="232" tvg-logo="https://iptvn.idc.md/img/ico/png/232_512.png" group-title="Найденные в сети",IDC Canal 232
+https://iptv-live.idc.md/hls/232/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="233" tvg-logo="https://iptvn.idc.md/img/ico/png/233_512.png" group-title="Найденные в сети",Охота и рыбалка
+https://iptv-live.idc.md/hls/233/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="235" tvg-logo="https://iptvn.idc.md/img/ico/png/235_512.png" group-title="Найденные в сети",Investigation Discovery
+https://iptv-live.idc.md/hls/235/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="237" tvg-logo="https://iptvn.idc.md/img/ico/png/237_512.png" group-title="Найденные в сети",IDC Canal 237
+https://iptv-live.idc.md/hls/237/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="238" tvg-logo="https://iptvn.idc.md/img/ico/png/238_512.png" group-title="Найденные в сети",Investigation Discovery
+https://iptv-live.idc.md/hls/238/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="239" tvg-logo="https://iptvn.idc.md/img/ico/png/239_512.png" group-title="Найденные в сети",Телекафе
+https://iptv-live.idc.md/hls/239/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="240" tvg-logo="https://iptvn.idc.md/img/ico/png/240_512.png" group-title="Найденные в сети",РТР-Планета
+https://iptv-live.idc.md/hls/240/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="241" tvg-logo="https://iptvn.idc.md/img/ico/png/241_512.png" group-title="Найденные в сети",IDC Canal 241
+https://iptv-live.idc.md/hls/241/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="242" tvg-logo="https://iptvn.idc.md/img/ico/png/242_512.png" group-title="Найденные в сети",IDC Canal 242
+https://iptv-live.idc.md/hls/242/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="243" tvg-logo="https://iptvn.idc.md/img/ico/png/243_512.png" group-title="Найденные в сети",Первый канал
+https://iptv-live.idc.md/hls/243/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="245" tvg-logo="https://iptvn.idc.md/img/ico/png/245_512.png" group-title="Найденные в сети",Кто есть кто
+https://iptv-live.idc.md/hls/245/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="246" tvg-logo="https://iptvn.idc.md/img/ico/png/246_512.png" group-title="Найденные в сети",IDC Видеонаблюдение
+https://iptv-live.idc.md/hls/246/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="247" tvg-logo="https://iptvn.idc.md/img/ico/png/247_512.png" group-title="Панорамы городов",Рыбница - Храм
+https://iptv-live.idc.md/hls/247/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="249" tvg-logo="https://iptvn.idc.md/img/ico/png/249_512.png" group-title="Найденные в сети",IDC Canal 249
+https://iptv-live.idc.md/hls/249/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="250" tvg-logo="https://iptvn.idc.md/img/ico/png/250_512.png" group-title="Радио",Юмор-FM
+https://iptv-live.idc.md/hls/250/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="252" tvg-logo="https://iptvn.idc.md/img/ico/png/252_512.png" group-title="Найденные в сети",Мосфильм. Золотая коллекция HD
+https://iptv-live.idc.md/hls/252/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="253" tvg-logo="https://iptvn.idc.md/img/ico/png/253_512.png" group-title="Познавательный",Тайна
+https://iptv-live.idc.md/hls/253/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="254" tvg-logo="https://iptvn.idc.md/img/ico/png/254_512.png" group-title="Найденные в сети",Звезда Плюс
+https://iptv-live.idc.md/hls/254/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="257" tvg-logo="https://iptvn.idc.md/img/ico/png/257_512.png" group-title="Найденные в сети",Сапфир
+https://iptv-live.idc.md/hls/257/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="260" tvg-logo="https://iptvn.idc.md/img/ico/png/260_512.png" group-title="Найденные в сети",Lions Arena 1
+https://iptv-live.idc.md/hls/260/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="261" tvg-logo="https://iptvn.idc.md/img/ico/png/261_512.png" group-title="Найденные в сети",Lions Arena 2
+https://iptv-live.idc.md/hls/261/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="264" tvg-logo="https://iptvn.idc.md/img/ico/png/264_512.png" group-title="Радио",Радио Дача Тирасполь
+https://iptv-live.idc.md/hls/264/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="265" tvg-logo="https://iptvn.idc.md/img/ico/png/265_512.png" group-title="Новые каналы",IDC-Реклама
+https://iptv-live.idc.md/hls/265/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="266" tvg-logo="https://iptvn.idc.md/img/ico/png/266_512.png" group-title="Найденные в сети",AIVA
+https://iptv-live.idc.md/hls/266/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="267" tvg-logo="https://iptvn.idc.md/img/ico/png/267_512.png" group-title="Найденные в сети",TLC
+https://iptv-live.idc.md/hls/267/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="268" tvg-logo="https://iptvn.idc.md/img/ico/png/268_512.png" group-title="Радио",Радио Маяк
+https://iptv-live.idc.md/hls/268/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="269" tvg-logo="https://iptvn.idc.md/img/ico/png/269_512.png" group-title="Найденные в сети",Capital
+https://iptv-live.idc.md/hls/269/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="270" tvg-logo="https://iptvn.idc.md/img/ico/png/270_512.png" group-title="Найденные в сети",DLX Dance
+https://iptv-live.idc.md/hls/270/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="272" tvg-logo="https://iptvn.idc.md/img/ico/png/272_512.png" group-title="Найденные в сети",BRIDGE Русский хит
+https://iptv-live.idc.md/hls/272/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="273" tvg-logo="https://iptvn.idc.md/img/ico/png/273_512.png" group-title="Панорамы городов",Первомайск
+https://iptv-live.idc.md/hls/273/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="274" tvg-logo="https://iptvn.idc.md/img/ico/png/274_512.png" group-title="Найденные в сети",ТНТ4
+https://iptv-live.idc.md/hls/274/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="276" tvg-logo="https://iptvn.idc.md/img/ico/png/276_512.png" group-title="Найденные в сети",Rock TV
+https://iptv-live.idc.md/hls/276/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="277" tvg-logo="https://iptvn.idc.md/img/ico/png/277_512.png" group-title="Найденные в сети",Шансон ТВ
+https://iptv-live.idc.md/hls/277/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="278" tvg-logo="https://iptvn.idc.md/img/ico/png/278_512.png" group-title="Найденные в сети",BRIDGE Rock
+https://iptv-live.idc.md/hls/278/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="279" tvg-logo="https://iptvn.idc.md/img/ico/png/279_512.png" group-title="Найденные в сети",Eurosport 1 HD
+https://iptv-live.idc.md/hls/279/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="284" tvg-logo="https://iptvn.idc.md/img/ico/png/284_512.png" group-title="Найденные в сети",Любимое кино HD
+https://iptv-live.idc.md/hls/284/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="286" tvg-logo="https://iptvn.idc.md/img/ico/png/286_512.png" group-title="Найденные в сети",We Sport HD
+https://iptv-live.idc.md/hls/286/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="291" tvg-logo="https://iptvn.idc.md/img/ico/png/291_512.png" group-title="Найденные в сети",СТС HD
+https://iptv-live.idc.md/hls/291/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="292" tvg-logo="https://iptvn.idc.md/img/ico/png/292_512.png" group-title="Найденные в сети",ТВ-3
+https://iptv-live.idc.md/hls/292/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="295" tvg-logo="https://iptvn.idc.md/img/ico/png/295_512.png" group-title="Найденные в сети",СТС Kids
+https://iptv-live.idc.md/hls/295/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="298" tvg-logo="https://iptvn.idc.md/img/ico/png/298_512.png" group-title="Общий",Moldova 1
+https://iptv-live.idc.md/hls/298/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="300" tvg-logo="https://iptvn.idc.md/img/ico/png/300_512.png" group-title="Найденные в сети",Jurnal TV
+https://iptv-live.idc.md/hls/300/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="375" tvg-logo="https://iptvn.idc.md/img/ico/png/375_512.png" group-title="Найденные в сети",Уникум
+https://iptv-live.idc.md/hls/375/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="376" tvg-logo="https://iptvn.idc.md/img/ico/png/376_512.png" group-title="Найденные в сети",Еврокино
+https://iptv-live.idc.md/hls/376/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="379" tvg-logo="https://iptvn.idc.md/img/ico/png/379_512.png" group-title="Найденные в сети",НСТ
+https://iptv-live.idc.md/hls/379/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="394" tvg-logo="https://iptvn.idc.md/img/ico/png/394_512.png" group-title="Найденные в сети",ЖИВИ!
+https://iptv-live.idc.md/hls/394/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="401" tvg-logo="https://iptvn.idc.md/img/ico/png/401_512.png" group-title="Найденные в сети",Первый Приднестровский
+https://iptv-live.idc.md/hls/401/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="404" tvg-logo="https://iptvn.idc.md/img/ico/png/404_512.png" group-title="Найденные в сети",Беларусь 24
+https://iptv-live.idc.md/hls/404/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="407" tvg-logo="https://iptvn.idc.md/img/ico/png/407_512.png" group-title="Общий",МАТЧ! АРЕНА
+https://iptv-live.idc.md/hls/407/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="408" tvg-logo="https://iptvn.idc.md/img/ico/png/408_512.png" group-title="Найденные в сети",Армения 1
+https://iptv-live.idc.md/hls/408/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="410" tvg-logo="https://iptvn.idc.md/img/ico/png/410_512.png" group-title="Найденные в сети",.red
+https://iptv-live.idc.md/hls/410/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="411" tvg-logo="https://iptvn.idc.md/img/ico/png/411_512.png" group-title="Радио",Радио Дача
+https://iptv-live.idc.md/hls/411/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="414" tvg-logo="https://iptvn.idc.md/img/ico/png/414_512.png" group-title="Радио",Радио Спутник
+https://iptv-live.idc.md/hls/414/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="432" tvg-logo="https://iptvn.idc.md/img/ico/png/432_512.png" group-title="Найденные в сети",Кинопремьера
+https://iptv-live.idc.md/hls/432/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="436" tvg-logo="https://iptvn.idc.md/img/ico/png/436_512.png" group-title="Найденные в сети",Матч! Футбол 1 HD
+https://iptv-live.idc.md/hls/436/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="437" tvg-logo="https://iptvn.idc.md/img/ico/png/437_512.png" group-title="Найденные в сети",TiJi
+https://iptv-live.idc.md/hls/437/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="438" tvg-logo="https://iptvn.idc.md/img/ico/png/438_512.png" group-title="Найденные в сети",Gulli Girl
+https://iptv-live.idc.md/hls/438/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="442" tvg-logo="https://iptvn.idc.md/img/ico/png/442_512.png" group-title="Найденные в сети",IDC Кино HD 1
+https://iptv-live.idc.md/hls/442/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="443" tvg-logo="https://iptvn.idc.md/img/ico/png/443_512.png" group-title="Найденные в сети",Матч! Страна
+https://iptv-live.idc.md/hls/443/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="445" tvg-logo="https://iptvn.idc.md/img/ico/png/445_512.png" group-title="Найденные в сети",Домашние животные
+https://iptv-live.idc.md/hls/445/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="449" tvg-logo="https://iptvn.idc.md/img/ico/png/449_512.png" group-title="Найденные в сети",КХЛ
+https://iptv-live.idc.md/hls/449/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="450" tvg-logo="https://iptvn.idc.md/img/ico/png/450_512.png" group-title="Общий",КИНОМИКС
+https://iptv-live.idc.md/hls/450/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="451" tvg-logo="https://iptvn.idc.md/img/ico/png/451_512.png" group-title="Найденные в сети",Моя Планета
+https://iptv-live.idc.md/hls/451/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="452" tvg-logo="https://iptvn.idc.md/img/ico/png/452_512.png" group-title="Найденные в сети",Domashniy International
+https://iptv-live.idc.md/hls/452/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="453" tvg-logo="https://iptvn.idc.md/img/ico/png/453_512.png" group-title="Найденные в сети",RTVI
+https://iptv-live.idc.md/hls/453/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="457" tvg-logo="https://iptvn.idc.md/img/ico/png/457_512.png" group-title="Общий",БТВ
+https://iptv-live.idc.md/hls/457/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="458" tvg-logo="https://iptvn.idc.md/img/ico/png/458_512.png" group-title="Найденные в сети",Eurosport 2 HD
+https://iptv-live.idc.md/hls/458/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="626" tvg-logo="https://iptvn.idc.md/img/ico/png/626_512.png" group-title="Радио",Наше радио
+https://iptv-live.idc.md/hls/626/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="635" tvg-logo="https://iptvn.idc.md/img/ico/png/635_512.png" group-title="Найденные в сети",ТБН
+https://iptv-live.idc.md/hls/635/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="658" tvg-logo="https://iptvn.idc.md/img/ico/png/658_512.png" group-title="Найденные в сети",IDC Сериал HD
+https://iptv-live.idc.md/hls/658/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="659" tvg-logo="https://iptvn.idc.md/img/ico/png/659_512.png" group-title="Найденные в сети",IDC Детский HD
+https://iptv-live.idc.md/hls/659/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="660" tvg-logo="https://iptvn.idc.md/img/ico/png/660_512.png" group-title="Найденные в сети",IDC Кино HD 2
+https://iptv-live.idc.md/hls/660/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="685" tvg-logo="https://iptvn.idc.md/img/ico/png/685_512.png" group-title="Найденные в сети",Матч! Арена HD
+https://iptv-live.idc.md/hls/685/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="714" tvg-logo="https://iptvn.idc.md/img/ico/png/714_512.png" group-title="Найденные в сети",IDC Premium
+https://iptv-live.idc.md/hls/714/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="715" tvg-logo="https://iptvn.idc.md/img/ico/png/715_512.png" group-title="Найденные в сети",IDC Наше кино HD
+https://iptv-live.idc.md/hls/715/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="738" tvg-logo="https://iptvn.idc.md/img/ico/png/738_512.png" group-title="Найденные в сети",RTG TV
+https://iptv-live.idc.md/hls/738/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="745" tvg-logo="https://iptvn.idc.md/img/ico/png/745_512.png" group-title="Найденные в сети",Точка РФ
+https://iptv-live.idc.md/hls/745/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="750" tvg-logo="https://iptvn.idc.md/img/ico/png/750_512.png" group-title="Найденные в сети",ID Investigation Discovery
+https://iptv-live.idc.md/hls/750/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="754" tvg-logo="https://iptvn.idc.md/img/ico/png/754_512.png" group-title="Найденные в сети",Europa Plus TV
+https://iptv-live.idc.md/hls/754/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="757" tvg-logo="https://iptvn.idc.md/img/ico/png/757_512.png" group-title="Найденные в сети",ТНВ
+https://iptv-live.idc.md/hls/757/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="758" tvg-logo="https://iptvn.idc.md/img/ico/png/758_512.png" group-title="Найденные в сети",BRIDGE Classic
+https://iptv-live.idc.md/hls/758/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="766" tvg-logo="https://iptvn.idc.md/img/ico/png/766_512.png" group-title="Найденные в сети",Матч! Игра
+https://iptv-live.idc.md/hls/766/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="767" tvg-logo="https://iptvn.idc.md/img/ico/png/767_512.png" group-title="Найденные в сети",Ностальгия
+https://iptv-live.idc.md/hls/767/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="768" tvg-logo="https://iptvn.idc.md/img/ico/png/768_512.png" group-title="Найденные в сети",ИЗВЕСТИЯ
+https://iptv-live.idc.md/hls/768/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="813" tvg-logo="https://iptvn.idc.md/img/ico/png/813_512.png" group-title="Найденные в сети",Discovery Channel
+https://iptv-live.idc.md/hls/813/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="815" tvg-logo="https://iptvn.idc.md/img/ico/png/815_512.png" group-title="Найденные в сети",Чижик HD
+https://iptv-live.idc.md/hls/815/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="817" tvg-logo="https://iptvn.idc.md/img/ico/png/817_512.png" group-title="Найденные в сети",Матч! Игра HD
+https://iptv-live.idc.md/hls/817/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="818" tvg-logo="https://iptvn.idc.md/img/ico/png/818_512.png" group-title="Найденные в сети",Animal Planet
+https://iptv-live.idc.md/hls/818/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="833" tvg-logo="https://iptvn.idc.md/img/ico/png/833_512.png" group-title="Найденные в сети",Матч! Футбол 2 HD
+https://iptv-live.idc.md/hls/833/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="834" tvg-logo="https://iptvn.idc.md/img/ico/png/834_512.png" group-title="Найденные в сети",Інтер
+https://iptv-live.idc.md/hls/834/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="836" tvg-logo="https://iptvn.idc.md/img/ico/png/836_512.png" group-title="Найденные в сети",ТЕТ
+https://iptv-live.idc.md/hls/836/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="837" tvg-logo="https://iptvn.idc.md/img/ico/png/837_512.png" group-title="Радио",Swiss Jazz
+https://iptv-live.idc.md/hls/837/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="838" tvg-logo="https://iptvn.idc.md/img/ico/png/838_512.png" group-title="Радио",Swiss Classic
+https://iptv-live.idc.md/hls/838/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="850" tvg-logo="https://iptvn.idc.md/img/ico/png/850_512.png" group-title="Найденные в сети",Загородная жизнь
+https://iptv-live.idc.md/hls/850/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="854" tvg-logo="https://iptvn.idc.md/img/ico/png/854_512.png" group-title="Найденные в сети",Диалоги о рыбалке
+https://iptv-live.idc.md/hls/854/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="856" tvg-logo="https://iptvn.idc.md/img/ico/png/856_512.png" group-title="Найденные в сети",СК 2
+https://iptv-live.idc.md/hls/856/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="863" tvg-logo="https://iptvn.idc.md/img/ico/png/863_512.png" group-title="Найденные в сети",Ю
+https://iptv-live.idc.md/hls/863/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="865" tvg-logo="https://iptvn.idc.md/img/ico/png/865_512.png" group-title="Найденные в сети",IDC Инфо
+https://iptv-live.idc.md/hls/865/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="866" tvg-logo="https://iptvn.idc.md/img/ico/png/866_512.png" group-title="Радио",HitFM
+https://iptv-live.idc.md/hls/866/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="868" tvg-logo="https://iptvn.idc.md/img/ico/png/868_512.png" group-title="Найденные в сети",Первый канал HD
+https://iptv-live.idc.md/hls/868/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="869" tvg-logo="https://iptvn.idc.md/img/ico/png/869_512.png" group-title="Найденные в сети",Россия 1 HD
+https://iptv-live.idc.md/hls/869/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="870" tvg-logo="https://iptvn.idc.md/img/ico/png/870_512.png" group-title="Найденные в сети",Первый музыкальный
+https://iptv-live.idc.md/hls/870/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="876" tvg-logo="https://iptvn.idc.md/img/ico/png/876_512.png" group-title="Найденные в сети",Телепутешествия
+https://iptv-live.idc.md/hls/876/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="877" tvg-logo="https://iptvn.idc.md/img/ico/png/877_512.png" group-title="Найденные в сети",Еда
+https://iptv-live.idc.md/hls/877/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="878" tvg-logo="https://iptvn.idc.md/img/ico/png/878_512.png" group-title="Найденные в сети",Hollywood HD
+https://iptv-live.idc.md/hls/878/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="886" tvg-logo="https://iptvn.idc.md/img/ico/png/886_512.png" group-title="Найденные в сети",Матч! Премьер HD
+https://iptv-live.idc.md/hls/886/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="887" tvg-logo="https://iptvn.idc.md/img/ico/png/887_512.png" group-title="Радио",Frequence3
+https://iptv-live.idc.md/hls/887/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="888" tvg-logo="https://iptvn.idc.md/img/ico/png/888_512.png" group-title="Найденные в сети",СК 1
+https://iptv-live.idc.md/hls/888/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="889" tvg-logo="https://iptvn.idc.md/img/ico/png/889_512.png" group-title="Найденные в сети",МУЗ-ТВ
+https://iptv-live.idc.md/hls/889/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="891" tvg-logo="https://iptvn.idc.md/img/ico/png/891_512.png" group-title="Найденные в сети",Арсенал
+https://iptv-live.idc.md/hls/891/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="892" tvg-logo="https://iptvn.idc.md/img/ico/png/892_512.png" group-title="Найденные в сети",BRIDGE Hits
+https://iptv-live.idc.md/hls/892/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="893" tvg-logo="https://iptvn.idc.md/img/ico/png/893_512.png" group-title="Найденные в сети",Матч! Футбол 3
+https://iptv-live.idc.md/hls/893/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="940" tvg-logo="https://iptvn.idc.md/img/ico/png/940_512.png" group-title="Найденные в сети",Моя Планета HD
+https://iptv-live.idc.md/hls/940/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="942" tvg-logo="https://iptvn.idc.md/img/ico/png/942_512.png" group-title="Найденные в сети",История
+https://iptv-live.idc.md/hls/942/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="943" tvg-logo="https://iptvn.idc.md/img/ico/png/943_512.png" group-title="Найденные в сети",Первый Приднестровский HD
+https://iptv-live.idc.md/hls/943/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="945" tvg-logo="https://iptvn.idc.md/img/ico/png/945_512.png" group-title="Найденные в сети",Матч! Футбол 3 HD
+https://iptv-live.idc.md/hls/945/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="947" tvg-logo="https://iptvn.idc.md/img/ico/png/947_512.png" group-title="Найденные в сети",Мир сериала
+https://iptv-live.idc.md/hls/947/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="949" tvg-logo="https://iptvn.idc.md/img/ico/png/949_512.png" group-title="Общий",Любимое Кино
+https://iptv-live.idc.md/hls/949/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="953" tvg-logo="https://iptvn.idc.md/img/ico/png/953_512.png" group-title="Найденные в сети",Беларусь 5
+https://iptv-live.idc.md/hls/953/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="954" tvg-logo="https://iptvn.idc.md/img/ico/png/954_512.png" group-title="Найденные в сети",Русский бестселлер
+https://iptv-live.idc.md/hls/954/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="955" tvg-logo="https://iptvn.idc.md/img/ico/png/955_512.png" group-title="Найденные в сети",English Class
+https://iptv-live.idc.md/hls/955/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="957" tvg-logo="https://iptvn.idc.md/img/ico/png/957_512.png" group-title="Найденные в сети",Мульт
+https://iptv-live.idc.md/hls/957/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="963" tvg-logo="https://iptvn.idc.md/img/ico/png/963_512.png" group-title="Найденные в сети",Матч! HD
+https://iptv-live.idc.md/hls/963/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="966" tvg-logo="https://iptvn.idc.md/img/ico/png/966_512.png" group-title="Найденные в сети",НТВ HD
+https://iptv-live.idc.md/hls/966/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="968" tvg-logo="https://iptvn.idc.md/img/ico/png/968_512.png" group-title="Найденные в сети",Бобёр
+https://iptv-live.idc.md/hls/968/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="969" tvg-logo="https://iptvn.idc.md/img/ico/png/969_512.png" group-title="Найденные в сети",KHL Prime
+https://iptv-live.idc.md/hls/969/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="979" tvg-logo="https://iptvn.idc.md/img/ico/png/979_512.png" group-title="Найденные в сети",IDC Test HD
+https://iptv-live.idc.md/hls/979/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="984" tvg-logo="https://iptvn.idc.md/img/ico/png/984_512.png" group-title="Найденные в сети",Своё ТВ
+https://iptv-live.idc.md/hls/984/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="985" tvg-logo="https://iptvn.idc.md/img/ico/png/985_512.png" group-title="Найденные в сети",IDC Canal 985
+https://iptv-live.idc.md/hls/985/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="986" tvg-logo="https://iptvn.idc.md/img/ico/png/986_512.png" group-title="Найденные в сети",IDC Canal 986
+https://iptv-live.idc.md/hls/986/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="988" tvg-logo="https://iptvn.idc.md/img/ico/png/988_512.png" group-title="Радио",Радио 1 плюс (ПМР)
+https://iptv-live.idc.md/hls/988/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="990" tvg-logo="https://iptvn.idc.md/img/ico/png/990_512.png" group-title="Найденные в сети",КВН ТВ
+https://iptv-live.idc.md/hls/990/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="991" tvg-logo="https://iptvn.idc.md/img/ico/png/991_512.png" group-title="Найденные в сети",ТНТ HD
+https://iptv-live.idc.md/hls/991/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="993" tvg-logo="https://iptvn.idc.md/img/ico/png/993_512.png" group-title="Общий",В гостях у сказки
+https://iptv-live.idc.md/hls/993/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="994" tvg-logo="https://iptvn.idc.md/img/ico/png/994_512.png" group-title="Найденные в сети",О!
+https://iptv-live.idc.md/hls/994/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="999" tvg-logo="https://iptvn.idc.md/img/ico/png/999_512.png" group-title="Найденные в сети",Перец
+https://iptv-live.idc.md/hls/999/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+#EXTINF:-1 tvg-id="1122" tvg-logo="https://iptvn.idc.md/img/ico/png/1122_512.png" group-title="Найденные в сети",IDC Canal 1122
+https://iptv-live.idc.md/hls/1122/live1.m3u8?ss=ad1ffc89575ef3754acf3eb07452efe2
+
