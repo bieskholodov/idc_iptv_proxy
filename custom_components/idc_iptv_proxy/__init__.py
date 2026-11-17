@@ -30,15 +30,21 @@ PLATFORMS: list[Platform] = [Platform.BINARY_SENSOR]
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     host = entry.data.get(CONF_HOST, DEFAULT_HOST)
-    login = entry.data[CONF_LOGIN]
-    password = entry.data[CONF_PASSWORD]
-    interval = min(entry.data.get(CONF_INTERVAL, 5), 8)
+    login = entry.data.get(CONF_LOGIN)
+    password = entry.data.get(CONF_PASSWORD)
+    interval = entry.data.get(CONF_INTERVAL, 5)
     template_path = entry.data.get(CONF_TEMPLATE_PATH, DEFAULT_TEMPLATE_PATH)
     output_path = entry.data.get(CONF_OUTPUT_PATH, DEFAULT_OUTPUT_PATH)
 
-    cookie_jar = aiohttp.CookieJar(unsafe=True)
+    if not login or not password:
+        from homeassistant.exceptions import ConfigEntryError
+        raise ConfigEntryError("В конфигурации не заданы логин и пароль IDC")
+
+    # Интервал обновления в секундах, но не чаще 30 с, чтобы не долбить API при сбоях
+    interval = max(30, int(interval))
+
     session = aiohttp.ClientSession(
-        cookie_jar=cookie_jar,
+        cookie_jar=aiohttp.CookieJar(unsafe=True),
         headers={
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
             "Referer": "https://idc.md",
@@ -124,7 +130,8 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
                 if resp.status == 200:
                     body = await resp.text()
                     return "#EXTM3U" in body
-        except Exception:
+        except (TimeoutError, aiohttp.ClientError):
+            # сеть моргнула — это не признак протухшего токена
             pass
         return False
 
@@ -140,10 +147,13 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             if not new_ss:
                 raise UpdateFailed("API IDC не вернул токен потока (ss)")
 
+            if not await _check_stream_alive(new_domain, new_ss):
+                raise UpdateFailed(
+                    "Новый токен не прошёл проверку live1.m3u8 — возможно, лимит сессий или смена домена"
+                )
+
             state["ss"] = new_ss
             state["domain"] = new_domain
-
-            await _check_stream_alive(new_domain, new_ss)
 
             await hass.async_add_executor_job(
                 _update_playlist_file,
@@ -159,8 +169,13 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             )
             return state
 
+        except aiohttp.ClientResponseError as err:
+            # 401/403 — токен протух или сессия сброшена: сбрасываем и перелогиниваемся в следующий раз
+            if err.status in (401, 403):
+                state["ss"] = None
+            raise UpdateFailed(f"Ошибка HTTP {err.status} при работе с IDC: {err}") from err
         except Exception as err:
-            state["ss"] = None
+            # при сетевых сбоях токен не трогаем — возможно, просто сеть моргнула
             raise UpdateFailed(f"Ошибка поддержания сессии IDC IPTV: {err}") from err
 
     coordinator = DataUpdateCoordinator(
@@ -171,12 +186,17 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         update_interval=timedelta(seconds=interval),
     )
 
-    await coordinator.async_config_entry_first_refresh()
-
     hass.data.setdefault(DOMAIN, {})[entry.entry_id] = {
         "coordinator": coordinator,
         "session": session,
     }
+
+    try:
+        await coordinator.async_config_entry_first_refresh()
+    except Exception:
+        await session.close()
+        hass.data[DOMAIN].pop(entry.entry_id, None)
+        raise
 
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
     return True
