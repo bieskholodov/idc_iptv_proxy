@@ -14,15 +14,17 @@ A custom Home Assistant integration (`idc_iptv_proxy`) that automatically authen
 ### Manual Installation
 1. Copy the `idc_iptv_proxy` folder into your Home Assistant `config/custom_components/` directory.
    Your file structure should look like this:
-   ```text
-   config/
-   └── custom_components/
-       └── idc_iptv_proxy/
-           ├── __init__.py
-           ├── config_flow.py
-           ├── const.py
-           └── manifest.json
-   ```
+```text
+config/
+└── custom_components/
+    └── idc_iptv_proxy/
+        ├── __init__.py
+        ├── binary_sensor.py
+        ├── config_flow.py
+        ├── const.py
+        ├── diagnostics.py
+        └── manifest.json
+```
 2. Restart Home Assistant.
 3. Go to **Settings** → **Devices & Services** → **Add Integration**.
 4. Search for **IDC IPTV Proxy** and complete the configuration form.
