@@ -9,5 +9,5 @@ CONF_OUTPUT_PATH = "output_path"
 
 DEFAULT_HOST = "iptvn.idc.md"
 DEFAULT_INTERVAL = 60
-DEFAULT_TEMPLATE_PATH = "/share/idc_template.m3u"
-DEFAULT_OUTPUT_PATH = "/share/idc_tv.m3u"
+DEFAULT_TEMPLATE_PATH = "www/idc_template.m3u"
+DEFAULT_OUTPUT_PATH = "/www/idc_tv.m3u"
