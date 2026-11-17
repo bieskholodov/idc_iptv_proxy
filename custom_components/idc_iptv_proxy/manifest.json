@@ -6,7 +6,7 @@
   "documentation": "https://github.com/bieskholodov/idc_iptv_proxy",
   "iot_class": "cloud_polling",
   "requirements": ["aiohttp"],
-  "version": "4.0.4"
+  "version": "4.0.5"
 }
 
 
